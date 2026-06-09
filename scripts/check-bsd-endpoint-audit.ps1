@@ -12,12 +12,13 @@ $auditFiles = @(
     "Checks\Axiom\NonDegenerateConstructionAndKernelOfAdmissibilityAxiomCheck.lean",
     "Checks\Axiom\BSDEndpointClosureAxiomCheck.lean",
     "Checks\Axiom\BSDEndpointStatusLedgerAxiomCheck.lean",
+    "Checks\Axiom\BSDTruthBoundaryAxiomCheck.lean",
     "Checks\Axiom\BSDEndpointAuditRunnersAxiomCheck.lean",
     "Checks\Axiom\BSDFullStackAASCAxiomCheck.lean"
 )
 
-if ($auditFiles.Count -ne 6) {
-    throw "Expected 6 focused BSD audit files, found $($auditFiles.Count)."
+if ($auditFiles.Count -ne 7) {
+    throw "Expected 7 focused BSD audit files, found $($auditFiles.Count)."
 }
 
 $uniqueAuditFiles = $auditFiles | Select-Object -Unique
@@ -60,8 +61,15 @@ if ($LASTEXITCODE -ne 1) {
 Write-Host "No live axiom/sorry/admit/unsafe declarations found in active BSD audit surface."
 
 lake build MaleyLean.Papers.BSD.AuditRunners
+if ($LASTEXITCODE -ne 0) {
+    throw "BSD endpoint Lean build failed with exit code $LASTEXITCODE."
+}
+
 foreach ($auditFile in $auditFiles) {
     lake env lean $auditFile
+    if ($LASTEXITCODE -ne 0) {
+        throw "BSD audit file failed: $auditFile"
+    }
 }
 
 Write-Host "BSD endpoint audit completed."

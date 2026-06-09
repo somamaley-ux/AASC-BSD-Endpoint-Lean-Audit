@@ -29,6 +29,9 @@ The stabilized proof surface is:
 - Updated the refined formula handoff names to match the current Lean audit
   surface: `BSDFormula`, `BSDRefinedFormulaConditionalContext`, and
   `refinedBSDEndpoint_context_iff`.
+- Added a Lean truth-boundary ledger distinguishing closed proof-spine claims,
+  semantic carrier abstraction, external formula-factor standing, and the PDF
+  snapshot boundary.
 
 ## Verification
 

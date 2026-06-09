@@ -27,10 +27,14 @@ The strongest truthful claim for this archive is:
   registry:
   `MaleyLean.Papers.BSD.StatusLedger` and
   `MaleyLean.Papers.BSD.AuditRunners`.
+- The BSD audit also includes a truth-boundary ledger:
+  `MaleyLean.Papers.BSD.TruthBoundary`, which records which parts are closed
+  in the Lean proof spine and which parts remain semantic or arithmetic
+  standing.
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=82%`, and
-  `PvsNPArchiveMaturityComparable=89%`.
+  `PvsNPArchiveMaturityComparable=90%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -39,7 +43,8 @@ The strongest truthful claim for this archive is:
   first-principles formalization of the leading coefficient formula,
   Tate-Shafarevich group finiteness, regulators, Tamagawa factors, torsion,
   analytic continuation, or functional equations.
-- The six focused BSD/AASC audit files run, including the combined full-stack
+- The seven focused BSD/AASC audit files run, including the truth-boundary
+  check and the combined full-stack
   AASC/BSD check, and the focused BSD checks report
   no axioms for the audited BSD closeout anchors.
 
@@ -64,8 +69,9 @@ The audit runner:
 - scans the active Lean audit surface for live `axiom`, `sorry`, `admit`, or
   `unsafe` declarations;
 - builds `MaleyLean.Papers.BSD.AuditRunners`;
-- runs six focused AASC/BSD audit files, including the BSD closure, status
-  ledger, audit-runner, and full-stack AASC/BSD axiom checks.
+- runs seven focused AASC/BSD audit files, including the BSD closure, status
+  ledger, truth-boundary ledger, audit-runner, and full-stack AASC/BSD axiom
+  checks.
 
 Pinned environment:
 
@@ -138,6 +144,7 @@ Key BSD rank route anchors:
 - `bsdConditionalRefinedFormula_correspondence`
 - `conditionalRefinedBSDEndpoint_of_context`
 - `bsdRefinedFormulaEndpoint_remains_conditional`
+- `bsdTruthBoundaryLedgerComplete_holds`
 
 ## Scope Boundary
 

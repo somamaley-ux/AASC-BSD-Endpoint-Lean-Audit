@@ -12,8 +12,9 @@ Included:
 - Reusable AASC support files carried over from the broader working
   formalization, including bivalence/nondegenerate reasoning, minimal
   conditions/A+ support, and the nondegenerate kernel/admissibility anchor.
-- Six focused AASC/BSD audit files under `Checks/Axiom`, including BSD
-  closure, status-ledger, audit-runner, and combined full-stack axiom checks.
+- Seven focused AASC/BSD audit files under `Checks/Axiom`, including BSD
+  closure, status-ledger, truth-boundary, audit-runner, and combined full-stack
+  axiom checks.
 - Manuscript-facing BSD PDF/source snapshot under `papers/bsd`.
 - Pre-Lean manuscript-to-formalization map under `formalization_map`.
 - Audit runner: `scripts/check-bsd-endpoint-audit.ps1`.
@@ -36,10 +37,12 @@ Audit status:
   `BSDRankEndpointAuditHypotheses` package.
 - The refined formula guard is now exact:
   `refinedBSDEndpoint_context_iff`.
+- The truth-boundary ledger is audited through
+  `bsdTruthBoundaryLedgerComplete_holds`.
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=82%`,
-  `PvsNPArchiveMaturityComparable=89%`.
+  `PvsNPArchiveMaturityComparable=90%`.
 - The refined BSD formula layer remains conditional on
   `BSDFormulaFactorStandingPacket`.
 

@@ -1,4 +1,4 @@
-import MaleyLean.Papers.BSD.StatusLedger
+import MaleyLean.Papers.BSD.TruthBoundary
 
 /-!
 # BSD endpoint audit runner registry
@@ -17,6 +17,7 @@ def bsdEndpointFocusedAuditRunnerFiles : List String :=
   , "Checks/Axiom/NonDegenerateConstructionAndKernelOfAdmissibilityAxiomCheck.lean"
   , "Checks/Axiom/BSDEndpointClosureAxiomCheck.lean"
   , "Checks/Axiom/BSDEndpointStatusLedgerAxiomCheck.lean"
+  , "Checks/Axiom/BSDTruthBoundaryAxiomCheck.lean"
   , "Checks/Axiom/BSDEndpointAuditRunnersAxiomCheck.lean"
   , "Checks/Axiom/BSDFullStackAASCAxiomCheck.lean" ]
 
@@ -53,7 +54,7 @@ def bsdEndpointAuditRunnerProgressSummary : String :=
   bsdEndpointCurrentProgressSummary
 
 theorem bsdEndpointFocusedAuditRunnerFiles_count_eq :
-    bsdEndpointFocusedAuditRunnerFiles.length = 6 := by
+    bsdEndpointFocusedAuditRunnerFiles.length = 7 := by
   rfl
 
 theorem bsdEndpointAggregateAuditRunnerFiles_count_eq :
@@ -61,7 +62,7 @@ theorem bsdEndpointAggregateAuditRunnerFiles_count_eq :
   rfl
 
 theorem bsdEndpointAuditRunnerFiles_count_eq :
-    bsdEndpointAuditRunnerFiles.length = 7 := by
+    bsdEndpointAuditRunnerFiles.length = 8 := by
   rfl
 
 theorem bsdEndpointAuditRunnerFiles_decomposes :
@@ -91,15 +92,15 @@ theorem bsdEndpointAuditRunnerFilesPopulatedBool_eq_true :
   rfl
 
 def bsdEndpointAuditRunnerRegistryComplete : Prop :=
-  bsdEndpointFocusedAuditRunnerFiles.length = 6 /\
+  bsdEndpointFocusedAuditRunnerFiles.length = 7 /\
   bsdEndpointAggregateAuditRunnerFiles.length = 1 /\
-  bsdEndpointAuditRunnerFiles.length = 7 /\
+  bsdEndpointAuditRunnerFiles.length = 8 /\
   bsdEndpointAuditRunnerFiles =
     bsdEndpointFocusedAuditRunnerFiles ++
       bsdEndpointAggregateAuditRunnerFiles /\
   bsdEndpointAuditRunnerFilesDuplicateFreeBool = true /\
   bsdEndpointAuditRunnerFilesPopulatedBool = true /\
-  bsdEndpointStatusLedgerComplete
+  bsdTruthBoundaryLedgerComplete
 
 theorem bsdEndpointAuditRunnerRegistryComplete_holds :
     bsdEndpointAuditRunnerRegistryComplete := by
@@ -110,7 +111,7 @@ theorem bsdEndpointAuditRunnerRegistryComplete_holds :
           (And.intro bsdEndpointAuditRunnerFiles_decomposes
             (And.intro bsdEndpointAuditRunnerFilesDuplicateFreeBool_eq_true
               (And.intro bsdEndpointAuditRunnerFilesPopulatedBool_eq_true
-                bsdEndpointStatusLedgerComplete_holds)))))
+                bsdTruthBoundaryLedgerComplete_holds)))))
 
 end BSD
 end Papers

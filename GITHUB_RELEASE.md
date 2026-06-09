@@ -13,7 +13,8 @@ This release verifies the manuscript-facing AASC route to the BSD rank endpoint
 in a dedicated repository separated from the broader AASC working checkout. The
 audit surface includes the reusable AASC foundation layer, the BSD rank
 endpoint bridge layer, a structured conditional refined-formula standing
-packet, and a combined full-stack AASC/BSD axiom check.
+packet, a truth-boundary ledger, and a combined full-stack AASC/BSD axiom
+check.
 
 Verification passed:
 
@@ -26,13 +27,16 @@ Audit status:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=82%`
-- `PvsNPArchiveMaturityComparable=89%`
-- 6 focused AASC/BSD audit files run, including the combined full-stack check
+- `PvsNPArchiveMaturityComparable=90%`
+- 7 focused AASC/BSD audit files run, including the truth-boundary check and
+  the combined full-stack check
 - no live project-level `axiom`, `sorry`, `admit`, or `unsafe` declaration in
   the active BSD audit surface
 - BSD rank endpoint route closes through `BSDRankEndpointAASCContext`
 - refined formula guard exactness is audited through
   `refinedBSDEndpoint_context_iff`
+- truth-boundary ledger completion is audited through
+  `bsdTruthBoundaryLedgerComplete_holds`
 - refined formula endpoint remains conditional on
   `BSDFormulaFactorStandingPacket`
 

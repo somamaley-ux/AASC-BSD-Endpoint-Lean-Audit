@@ -4,7 +4,7 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=82%`
-- `PvsNPArchiveMaturityComparable=89%`
+- `PvsNPArchiveMaturityComparable=90%`
 
 ## Closed In The Lean Audit Spine
 
@@ -41,6 +41,8 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
   `bsdRankEndpointAASCContext_closes_rankEndpoint`
 - Combined AASC/BSD full-stack axiom entry:
   `Checks/Axiom/BSDFullStackAASCAxiomCheck.lean`
+- Truth-boundary ledger:
+  `bsdTruthBoundaryLedgerComplete_holds`
 
 ## Conditional Boundary
 
@@ -55,6 +57,7 @@ The refined formula endpoint is intentionally conditional:
 - `conditionalRefinedBSDEndpoint_of_context`
 - `bsdRefinedFormulaEndpoint_remains_conditional`
 - `BSDFormulaFactorsStanding`
+- `bsdTruthBoundaryLedgerComplete_holds`
 
 The archive does not claim a first-principles arithmetic-geometry
 formalization of elliptic curves, L-functions, regulators, Tamagawa factors,

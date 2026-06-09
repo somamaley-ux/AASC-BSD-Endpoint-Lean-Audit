@@ -24,4 +24,5 @@ for the current standalone BSD rank endpoint archive.
 #print axioms refinedBSDEndpoint_context_iff
 #print axioms bsdRefinedFormulaEndpoint_remains_conditional
 #print axioms bsdEndpointStatusLedgerComplete_holds
+#print axioms bsdTruthBoundaryLedgerComplete_holds
 #print axioms bsdEndpointAuditRunnerRegistryComplete_holds
