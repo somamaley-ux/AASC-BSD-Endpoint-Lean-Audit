@@ -1,8 +1,8 @@
 # Suggested GitHub Release
 
-## Release Title
+## Release Title Template
 
-AASC BSD Endpoint Lean Audit v0.1.3
+AASC BSD Endpoint Lean Audit vX.Y.Z
 
 ## Release Notes
 
@@ -19,7 +19,7 @@ The short theorem-chain handoff is in `AUDIT_HANDOFF.md`.
 Local zip packages can be created with `scripts/package-bsd-release.ps1`.
 The same audit is wired for GitHub Actions in `.github/workflows/audit.yml`,
 with the latest pushed `main` workflow run expected to pass before release.
-The current release also includes the semantic-audit-carrier wording cleanup
+The current release line also includes semantic-audit-carrier wording cleanup
 and cross-platform A+ support-audit scan hardening.
 
 Verification passed:

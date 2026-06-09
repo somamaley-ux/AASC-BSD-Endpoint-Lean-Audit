@@ -1,6 +1,6 @@
 # Release Notes
 
-## AASC BSD Endpoint Lean Audit v0.1.3
+## Current AASC BSD Endpoint Lean Audit Release
 
 This release packages the first dedicated Lean 4 audit archive for the
 AASC-first BSD rank endpoint proof spine.
@@ -74,7 +74,7 @@ Pinned environment:
 
 Suggested GitHub release title:
 
-`AASC BSD Endpoint Lean Audit v0.1.3`
+`AASC BSD Endpoint Lean Audit vX.Y.Z`
 
 Suggested release body:
 
