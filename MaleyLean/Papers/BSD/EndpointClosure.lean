@@ -461,12 +461,36 @@ def BSDFormula (_E : BSDCarrier) : Prop := True
 def ConditionalRefinedBSDEndpoint (E : BSDCarrier) : Prop :=
   BSDFormulaFactorsStanding E /\ BSDFormula E
 
+/--
+Conditional context for the refined BSD formula endpoint.  This is intentionally
+separate from the rank endpoint context: the rank route is closed above, while
+the refined formula route only closes once the arithmetic formula-factor
+standing is supplied.
+-/
+structure BSDRefinedFormulaConditionalContext (E : BSDCarrier) : Prop where
+  formulaFactorsStanding : BSDFormulaFactorsStanding E
+  formula : BSDFormula E
+
 theorem bsdConditionalRefinedFormula_correspondence
     {E : BSDCarrier} :
     BSDFormulaFactorsStanding E -> BSDFormula E ->
       ConditionalRefinedBSDEndpoint E := by
   intro hStanding hFormula
   exact And.intro hStanding hFormula
+
+theorem conditionalRefinedBSDEndpoint_of_context
+    {E : BSDCarrier}
+    (C : BSDRefinedFormulaConditionalContext E) :
+    ConditionalRefinedBSDEndpoint E :=
+  bsdConditionalRefinedFormula_correspondence
+    C.formulaFactorsStanding C.formula
+
+theorem bsdRefinedFormulaEndpoint_remains_conditional
+    {E : BSDCarrier} :
+    BSDRefinedFormulaConditionalContext E ->
+      ConditionalRefinedBSDEndpoint E := by
+  intro C
+  exact conditionalRefinedBSDEndpoint_of_context C
 
 end EndpointClosure
 end BSD

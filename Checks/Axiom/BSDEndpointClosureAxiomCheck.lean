@@ -47,4 +47,7 @@ BSD endpoint closeout has no live project axioms.
 #print axioms officialBSDRankEndpoint_of_foundationalNoClassifier
 #print axioms officialBSDRankEndpoint_of_aascContext
 #print axioms bsdRankEndpointAASCContext_closes_rankEndpoint
+#print axioms BSDRefinedFormulaConditionalContext
 #print axioms bsdConditionalRefinedFormula_correspondence
+#print axioms conditionalRefinedBSDEndpoint_of_context
+#print axioms bsdRefinedFormulaEndpoint_remains_conditional
