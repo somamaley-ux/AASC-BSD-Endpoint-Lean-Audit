@@ -29,16 +29,16 @@ The strongest truthful claim for this archive is:
   `MaleyLean.Papers.BSD.AuditRunners`.
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
-  `BSDRefinedFormulaConditionalClosure=70%`, and
-  `PvsNPArchiveMaturityComparable=85%`.
+  `BSDRefinedFormulaConditionalClosure=78%`, and
+  `PvsNPArchiveMaturityComparable=88%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
-- The refined BSD formula layer is represented only conditionally through
-  `BSDFormulaFactorsStanding`; this archive does not claim a first-principles
-  formalization of the leading coefficient formula, Tate-Shafarevich group
-  finiteness, regulators, Tamagawa factors, or the analytic continuation and
-  functional equation of L-functions.
+- The refined BSD formula layer is represented only conditionally through a
+  structured `BSDFormulaFactorStandingPacket`; this archive does not claim a
+  first-principles formalization of the leading coefficient formula,
+  Tate-Shafarevich group finiteness, regulators, Tamagawa factors, torsion,
+  analytic continuation, or functional equations.
 - The six focused BSD/AASC audit files run, including the combined full-stack
   AASC/BSD check, and the focused BSD checks report
   no axioms for the audited BSD closeout anchors.
@@ -86,6 +86,7 @@ Key carrier and endpoint anchors:
 - `BSDRankEndpointAuditHypotheses`
 - `BSDRankEndpointAASCContext`
 - `BSDRefinedFormulaConditionalContext`
+- `BSDFormulaFactorStandingPacket`
 - `BSDFormulaFactorsStanding`
 - `ConditionalRefinedBSDEndpoint`
 
@@ -131,6 +132,8 @@ Key BSD rank route anchors:
 - `officialBSDRankEndpoint_of_foundationalNoClassifier`
 - `officialBSDRankEndpoint_of_aascContext`
 - `bsdRankEndpointAASCContext_closes_rankEndpoint`
+- `bsdFormulaFactorsStanding_of_packet`
+- `bsdFormulaFactorStandingPacket_components`
 - `bsdConditionalRefinedFormula_correspondence`
 - `conditionalRefinedBSDEndpoint_of_context`
 - `bsdRefinedFormulaEndpoint_remains_conditional`
@@ -147,7 +150,7 @@ The rank endpoint and refined formula endpoint are deliberately separated:
 
 - the rank endpoint route is the closed audit spine in Lean;
 - the refined formula endpoint is conditional on the additional formula-factor
-  standing represented by `BSDFormulaFactorsStanding`.
+  standing represented by `BSDFormulaFactorStandingPacket`.
 
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
 manuscript signature map. It intentionally contains planning `constant` and

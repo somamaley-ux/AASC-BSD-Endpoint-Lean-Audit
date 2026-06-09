@@ -20,6 +20,7 @@ for the current standalone BSD rank endpoint archive.
 #print axioms bsdOfficialNegativeEndpointUse_endpointStatusGovernance
 #print axioms bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier
 #print axioms bsdRankEndpointAASCContext_closes_rankEndpoint
+#print axioms bsdFormulaFactorStandingPacket_components
 #print axioms bsdRefinedFormulaEndpoint_remains_conditional
 #print axioms bsdEndpointStatusLedgerComplete_holds
 #print axioms bsdEndpointAuditRunnerRegistryComplete_holds

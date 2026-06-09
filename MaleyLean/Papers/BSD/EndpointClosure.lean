@@ -456,10 +456,53 @@ Conditional refined formula layer.  This mirrors the manuscript boundary:
 formula closure is only claimed once formula-factor standing is supplied.
 -/
 
-def BSDFormulaFactorsStanding (_E : BSDCarrier) : Prop := True
+def BSDAnalyticContinuationStanding (_E : BSDCarrier) : Prop := True
+def BSDFunctionalEquationStanding (_E : BSDCarrier) : Prop := True
+def BSDLeadingCoefficientStanding (_E : BSDCarrier) : Prop := True
+def BSDRegulatorStanding (_E : BSDCarrier) : Prop := True
+def BSDTamagawaStanding (_E : BSDCarrier) : Prop := True
+def BSDTorsionStanding (_E : BSDCarrier) : Prop := True
+def BSDTateShafarevichStanding (_E : BSDCarrier) : Prop := True
+
+structure BSDFormulaFactorStandingPacket (E : BSDCarrier) : Prop where
+  analyticContinuation : BSDAnalyticContinuationStanding E
+  functionalEquation : BSDFunctionalEquationStanding E
+  leadingCoefficient : BSDLeadingCoefficientStanding E
+  regulator : BSDRegulatorStanding E
+  tamagawa : BSDTamagawaStanding E
+  torsion : BSDTorsionStanding E
+  tateShafarevich : BSDTateShafarevichStanding E
+
+def BSDFormulaFactorsStanding (E : BSDCarrier) : Prop :=
+  BSDFormulaFactorStandingPacket E
+
 def BSDFormula (_E : BSDCarrier) : Prop := True
 def ConditionalRefinedBSDEndpoint (E : BSDCarrier) : Prop :=
   BSDFormulaFactorsStanding E /\ BSDFormula E
+
+theorem bsdFormulaFactorsStanding_of_packet
+    {E : BSDCarrier}
+    (P : BSDFormulaFactorStandingPacket E) :
+    BSDFormulaFactorsStanding E :=
+  P
+
+theorem bsdFormulaFactorStandingPacket_components
+    {E : BSDCarrier}
+    (P : BSDFormulaFactorStandingPacket E) :
+    BSDAnalyticContinuationStanding E /\
+    BSDFunctionalEquationStanding E /\
+    BSDLeadingCoefficientStanding E /\
+    BSDRegulatorStanding E /\
+    BSDTamagawaStanding E /\
+    BSDTorsionStanding E /\
+    BSDTateShafarevichStanding E := by
+  exact
+    And.intro P.analyticContinuation
+      (And.intro P.functionalEquation
+        (And.intro P.leadingCoefficient
+          (And.intro P.regulator
+            (And.intro P.tamagawa
+              (And.intro P.torsion P.tateShafarevich)))))
 
 /--
 Conditional context for the refined BSD formula endpoint.  This is intentionally
@@ -468,8 +511,14 @@ the refined formula route only closes once the arithmetic formula-factor
 standing is supplied.
 -/
 structure BSDRefinedFormulaConditionalContext (E : BSDCarrier) : Prop where
-  formulaFactorsStanding : BSDFormulaFactorsStanding E
+  formulaFactorPacket : BSDFormulaFactorStandingPacket E
   formula : BSDFormula E
+
+theorem BSDRefinedFormulaConditionalContext.formulaFactorsStanding
+    {E : BSDCarrier}
+    (C : BSDRefinedFormulaConditionalContext E) :
+    BSDFormulaFactorsStanding E :=
+  bsdFormulaFactorsStanding_of_packet C.formulaFactorPacket
 
 theorem bsdConditionalRefinedFormula_correspondence
     {E : BSDCarrier} :

@@ -3,8 +3,8 @@
 Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
-- `BSDRefinedFormulaConditionalClosure=70%`
-- `PvsNPArchiveMaturityComparable=85%`
+- `BSDRefinedFormulaConditionalClosure=78%`
+- `PvsNPArchiveMaturityComparable=88%`
 
 ## Closed In The Lean Audit Spine
 
@@ -47,6 +47,9 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
 The refined formula endpoint is intentionally conditional:
 
 - `bsdConditionalRefinedFormula_correspondence`
+- `BSDFormulaFactorStandingPacket`
+- `bsdFormulaFactorsStanding_of_packet`
+- `bsdFormulaFactorStandingPacket_components`
 - `BSDRefinedFormulaConditionalContext`
 - `conditionalRefinedBSDEndpoint_of_context`
 - `bsdRefinedFormulaEndpoint_remains_conditional`

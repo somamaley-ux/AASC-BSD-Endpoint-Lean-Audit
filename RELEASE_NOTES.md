@@ -36,10 +36,10 @@ Audit status:
   `BSDRankEndpointAuditHypotheses` package.
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
-  `BSDRefinedFormulaConditionalClosure=70%`,
-  `PvsNPArchiveMaturityComparable=85%`.
+  `BSDRefinedFormulaConditionalClosure=78%`,
+  `PvsNPArchiveMaturityComparable=88%`.
 - The refined BSD formula layer remains conditional on
-  `BSDFormulaFactorsStanding`.
+  `BSDFormulaFactorStandingPacket`.
 
 Truth boundary:
 
@@ -49,6 +49,10 @@ L-functions, analytic rank, Mordell-Weil rank, the Tate-Shafarevich group,
 regulators, Tamagawa factors, or the full refined BSD formula. Those objects
 are represented at the audit surface by explicit carriers, fields, and
 standing hypotheses.
+
+The refined formula guard is now split into named standing components for
+analytic continuation, functional equation, leading coefficient, regulator,
+Tamagawa, torsion, and Tate-Shafarevich factors.
 
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
 signature map and is not part of the executable proof surface.

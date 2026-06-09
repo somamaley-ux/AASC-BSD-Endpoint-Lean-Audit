@@ -112,7 +112,7 @@ def bsdEndpointStatusLedger : List BSDEndpointStatusRow :=
   , { obligation := .refinedFormulaConditional
       status := .conditionalInLeanAuditSpine
       leanAnchor := "bsdRefinedFormulaEndpoint_remains_conditional"
-      sourceEvidence := "refined formula endpoint guarded by BSDRefinedFormulaConditionalContext"
+      sourceEvidence := "refined formula endpoint guarded by BSDFormulaFactorStandingPacket and BSDRefinedFormulaConditionalContext"
       suppliedInLean := true } ]
 
 def bsdEndpointStatusLedgerObligations :
@@ -141,15 +141,15 @@ def bsdEndpointStatusLedgerExternalStandingCount : Nat :=
 
 def bsdRankEndpointClosurePercent : Nat := 100
 
-def bsdRefinedFormulaClosurePercent : Nat := 70
+def bsdRefinedFormulaClosurePercent : Nat := 78
 
-def bsdPvsNPAuditMaturityPercent : Nat := 85
+def bsdPvsNPAuditMaturityPercent : Nat := 88
 
 def bsdEndpointCurrentFormalizationStatusSummary : String :=
   "BSD rank endpoint closed in Lean audit spine; refined formula conditional"
 
 def bsdEndpointCurrentProgressSummary : String :=
-  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=70%; PvsNPArchiveMaturityComparable=85%"
+  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=78%; PvsNPArchiveMaturityComparable=88%"
 
 def bsdEndpointFormalizationStatusDocument : String :=
   "MaleyLean/Papers/BSD/BSDFormalizationStatus.md"
@@ -183,11 +183,11 @@ theorem bsdRankEndpointClosurePercent_eq :
   rfl
 
 theorem bsdRefinedFormulaClosurePercent_eq :
-    bsdRefinedFormulaClosurePercent = 70 := by
+    bsdRefinedFormulaClosurePercent = 78 := by
   rfl
 
 theorem bsdPvsNPAuditMaturityPercent_eq :
-    bsdPvsNPAuditMaturityPercent = 85 := by
+    bsdPvsNPAuditMaturityPercent = 88 := by
   rfl
 
 theorem bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true :
@@ -202,7 +202,7 @@ def bsdEndpointStatusLedgerComplete : Prop :=
   bsdEndpointStatusLedgerClosedCount = 6 /\
   bsdEndpointStatusLedgerConditionalCount = 1 /\
   bsdRankEndpointClosurePercent = 100 /\
-  bsdPvsNPAuditMaturityPercent = 85 /\
+  bsdPvsNPAuditMaturityPercent = 88 /\
   bsdEndpointFormalizationStatusDocumentPopulatedBool = true
 
 theorem bsdEndpointStatusLedgerComplete_holds :
