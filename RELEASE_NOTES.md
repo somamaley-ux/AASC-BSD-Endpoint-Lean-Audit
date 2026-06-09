@@ -65,3 +65,7 @@ Pinned environment:
 Suggested GitHub release title:
 
 `AASC BSD Endpoint Lean Audit v0.1.0`
+
+Suggested release body:
+
+- see `GITHUB_RELEASE.md`

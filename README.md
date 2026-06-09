@@ -169,6 +169,7 @@ manuscript signature map. It intentionally contains planning `constant` and
 - `formalization_map/` - manuscript-to-Lean pre-formalization map.
 - `papers/bsd/` - manuscript-facing source/PDF snapshot.
 - `scripts/` - verification scripts.
+- `GITHUB_RELEASE.md` - suggested release title and notes.
 
 ## Reading Order
 
@@ -178,6 +179,7 @@ Start with:
 - `MaleyLean/Papers/BSD/BSDFormalizationStatus.md`
 - `formalization_map/BSD_EndpointClosure_PreLeanMap.lean`
 - `scripts/check-bsd-endpoint-audit.ps1`
+- `GITHUB_RELEASE.md`
 - `MaleyLean/Papers/BSD/EndpointClosure.lean`
 - `MaleyLean/Papers/BSD/StatusLedger.lean`
 - `MaleyLean/Papers/BSD/AuditRunners.lean`
