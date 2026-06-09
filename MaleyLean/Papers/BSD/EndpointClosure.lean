@@ -21,7 +21,7 @@ namespace Papers
 namespace BSD
 namespace EndpointClosure
 
-/-- A placeholder carrier for elliptic curves over `Q` in the audit surface. -/
+/-- A semantic audit carrier for elliptic curves over `Q` in the BSD route. -/
 structure EllipticCurveQ where
   id : Nat
 deriving DecidableEq, Repr

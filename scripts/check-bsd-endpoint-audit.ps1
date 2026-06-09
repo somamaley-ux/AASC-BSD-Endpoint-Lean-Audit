@@ -55,7 +55,7 @@ if ($null -ne $rgCommand) {
     $prohibitedMatches = & rg @rgArgs
     if ($LASTEXITCODE -eq 0) {
         $prohibitedMatches | ForEach-Object { Write-Host $_ }
-        throw "Prohibited Lean placeholder or escape found in active BSD audit surface."
+        throw "Prohibited Lean incomplete-proof token or escape found in active BSD audit surface."
     }
     if ($LASTEXITCODE -ne 1) {
         throw "Prohibited-token scan failed with exit code $LASTEXITCODE."
@@ -69,7 +69,7 @@ if ($null -ne $rgCommand) {
     })
     if ($prohibitedMatches.Count -ne 0) {
         $prohibitedMatches | ForEach-Object { Write-Host $_ }
-        throw "Prohibited Lean placeholder or escape found in active BSD audit surface."
+        throw "Prohibited Lean incomplete-proof token or escape found in active BSD audit surface."
     }
 }
 Write-Host "No live axiom/sorry/admit/unsafe declarations found in active BSD audit surface."
