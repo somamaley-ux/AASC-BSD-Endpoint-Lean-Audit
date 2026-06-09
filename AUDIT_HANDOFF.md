@@ -22,6 +22,12 @@ The aggregate script checks for live `axiom`, `sorry`, `admit`, or `unsafe`
 declarations in the active BSD audit surface, builds the BSD audit runner, and
 runs the focused axiom-print audit files.
 
+To create a local handoff zip and checksum from exactly the tracked files:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/package-bsd-release.ps1
+```
+
 ## Rank Endpoint Chain
 
 The main rank endpoint route is in:

@@ -1,3 +1,4 @@
 .lake/
 .codex-work/
 .tmp_corpus_*/
+dist/

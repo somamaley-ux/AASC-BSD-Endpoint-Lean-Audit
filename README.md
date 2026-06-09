@@ -62,6 +62,15 @@ Use:
 powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
 ```
 
+To create a local zip archive from exactly the tracked repository files:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/package-bsd-release.ps1
+```
+
+The package and checksum are written under `dist/`, which is intentionally not
+tracked.
+
 The audit runner:
 
 - prints the Lean toolchain;
@@ -177,6 +186,7 @@ manuscript signature map. It intentionally contains planning `constant` and
 - `formalization_map/` - manuscript-to-Lean pre-formalization map.
 - `papers/bsd/` - manuscript-facing source/PDF snapshot.
 - `scripts/` - verification scripts.
+- `dist/` - ignored local release packages created by the packaging script.
 - `GITHUB_RELEASE.md` - suggested release title and notes.
 - `AUDIT_HANDOFF.md` - short theorem-chain and truth-boundary handoff.
 

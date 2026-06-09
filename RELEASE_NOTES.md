@@ -19,6 +19,7 @@ Included:
 - Short audit handoff in `AUDIT_HANDOFF.md`.
 - Pre-Lean manuscript-to-formalization map under `formalization_map`.
 - Audit runner: `scripts/check-bsd-endpoint-audit.ps1`.
+- Local release packager: `scripts/package-bsd-release.ps1`.
 
 Verification command:
 
