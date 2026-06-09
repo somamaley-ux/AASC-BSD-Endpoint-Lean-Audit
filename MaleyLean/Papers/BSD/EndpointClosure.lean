@@ -340,6 +340,20 @@ structure BSDRankEndpointAuditHypotheses (E : BSDCarrier) : Prop where
   kernelInstantiated : BSDKernelInstantiated E
   noIndependentRankDiscriminator : Not (BSDIndependentRankDiscriminator E)
 
+/--
+Manuscript-facing AASC context for the BSD rank endpoint.  It packages the
+fixed-carrier endpoint-use facts and the shared AASC no-independent-classifier
+closure into one object, so the final closeout theorem has the same shape as
+the mature SAT endpoint route.
+-/
+structure BSDRankEndpointAASCContext : Prop where
+  endpointUse : forall E : BSDCarrier, BSDOfficialEndpointUse E
+  carrierInstantiated : forall E : BSDCarrier, BSDCarrierInstantiated E
+  carrierAdequate : forall E : BSDCarrier, BSDCarrierAdequate E
+  kernelInstantiated : forall E : BSDCarrier, BSDKernelInstantiated E
+  noIndependentSameDomainClassifier :
+    MinimalConditionsForAdmissibleConstruction.NoIndependentSameDomainFoundationalClassifier
+
 theorem bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier
     {E : BSDCarrier}
     (hUse : BSDOfficialEndpointUse E)
@@ -421,6 +435,21 @@ theorem officialBSDRankEndpoint_of_foundationalNoClassifier
     (fun E =>
       bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier
         (hUse E) (hCarrier E) (hAdequate E) (hKernel E) hNoClassifier)
+
+theorem officialBSDRankEndpoint_of_aascContext
+    (C : BSDRankEndpointAASCContext) :
+    OfficialBSDRankEndpoint :=
+  officialBSDRankEndpoint_of_foundationalNoClassifier
+    C.endpointUse
+    C.carrierInstantiated
+    C.carrierAdequate
+    C.kernelInstantiated
+    C.noIndependentSameDomainClassifier
+
+theorem bsdRankEndpointAASCContext_closes_rankEndpoint
+    (C : BSDRankEndpointAASCContext) :
+    OfficialBSDRankEndpoint :=
+  officialBSDRankEndpoint_of_aascContext C
 
 /-
 Conditional refined formula layer.  This mirrors the manuscript boundary:

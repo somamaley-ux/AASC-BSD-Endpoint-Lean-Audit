@@ -106,8 +106,8 @@ def bsdEndpointStatusLedger : List BSDEndpointStatusRow :=
       suppliedInLean := true }
   , { obligation := .rankEndpointClosure
       status := .closedInLeanAuditSpine
-      leanAnchor := "officialBSDRankEndpoint_of_auditHypotheses"
-      sourceEvidence := "rank equality forced from pointwise audit hypotheses"
+      leanAnchor := "bsdRankEndpointAASCContext_closes_rankEndpoint"
+      sourceEvidence := "single BSD AASC context packages fixed-carrier use and shared classifier exclusion"
       suppliedInLean := true }
   , { obligation := .refinedFormulaConditional
       status := .conditionalInLeanAuditSpine
@@ -143,13 +143,13 @@ def bsdRankEndpointClosurePercent : Nat := 100
 
 def bsdRefinedFormulaClosurePercent : Nat := 60
 
-def bsdPvsNPAuditMaturityPercent : Nat := 75
+def bsdPvsNPAuditMaturityPercent : Nat := 80
 
 def bsdEndpointCurrentFormalizationStatusSummary : String :=
   "BSD rank endpoint closed in Lean audit spine; refined formula conditional"
 
 def bsdEndpointCurrentProgressSummary : String :=
-  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=60%; PvsNPArchiveMaturityComparable=75%"
+  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=60%; PvsNPArchiveMaturityComparable=80%"
 
 def bsdEndpointFormalizationStatusDocument : String :=
   "MaleyLean/Papers/BSD/BSDFormalizationStatus.md"
@@ -187,7 +187,7 @@ theorem bsdRefinedFormulaClosurePercent_eq :
   rfl
 
 theorem bsdPvsNPAuditMaturityPercent_eq :
-    bsdPvsNPAuditMaturityPercent = 75 := by
+    bsdPvsNPAuditMaturityPercent = 80 := by
   rfl
 
 theorem bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true :
@@ -202,7 +202,7 @@ def bsdEndpointStatusLedgerComplete : Prop :=
   bsdEndpointStatusLedgerClosedCount = 6 /\
   bsdEndpointStatusLedgerConditionalCount = 1 /\
   bsdRankEndpointClosurePercent = 100 /\
-  bsdPvsNPAuditMaturityPercent = 75 /\
+  bsdPvsNPAuditMaturityPercent = 80 /\
   bsdEndpointFormalizationStatusDocumentPopulatedBool = true
 
 theorem bsdEndpointStatusLedgerComplete_holds :

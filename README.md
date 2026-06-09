@@ -30,7 +30,7 @@ The strongest truthful claim for this archive is:
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=60%`, and
-  `PvsNPArchiveMaturityComparable=75%`.
+  `PvsNPArchiveMaturityComparable=80%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -83,6 +83,7 @@ Key carrier and endpoint anchors:
 - `BSDCarrier`
 - `OfficialBSDRankEndpoint`
 - `BSDRankEndpointAuditHypotheses`
+- `BSDRankEndpointAASCContext`
 - `BSDFormulaFactorsStanding`
 - `ConditionalRefinedBSDEndpoint`
 
@@ -126,6 +127,8 @@ Key BSD rank route anchors:
 - `bsdRankEquality_forced`
 - `officialBSDRankEndpoint_of_auditHypotheses`
 - `officialBSDRankEndpoint_of_foundationalNoClassifier`
+- `officialBSDRankEndpoint_of_aascContext`
+- `bsdRankEndpointAASCContext_closes_rankEndpoint`
 - `bsdConditionalRefinedFormula_correspondence`
 
 ## Scope Boundary

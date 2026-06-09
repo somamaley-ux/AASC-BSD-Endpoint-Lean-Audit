@@ -4,7 +4,7 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=60%`
-- `PvsNPArchiveMaturityComparable=75%`
+- `PvsNPArchiveMaturityComparable=80%`
 
 ## Closed In The Lean Audit Spine
 
@@ -35,6 +35,10 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
   `bsdRankEquality_forced`,
   `officialBSDRankEndpoint_of_auditHypotheses`,
   `officialBSDRankEndpoint_of_foundationalNoClassifier`
+- Single AASC-context closeout:
+  `BSDRankEndpointAASCContext`,
+  `officialBSDRankEndpoint_of_aascContext`,
+  `bsdRankEndpointAASCContext_closes_rankEndpoint`
 
 ## Conditional Boundary
 
