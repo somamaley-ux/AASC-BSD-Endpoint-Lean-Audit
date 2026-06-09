@@ -1,6 +1,6 @@
 # Release Notes
 
-## AASC BSD Endpoint Lean Audit v0.1.2
+## AASC BSD Endpoint Lean Audit v0.1.3
 
 This release packages the first dedicated Lean 4 audit archive for the
 AASC-first BSD rank endpoint proof spine.
@@ -21,6 +21,8 @@ Included:
 - Audit runner: `scripts/check-bsd-endpoint-audit.ps1`.
 - GitHub audit workflow: `.github/workflows/audit.yml`.
 - Local release packager: `scripts/package-bsd-release.ps1`.
+- Cross-platform support-audit scanning for the reusable Minimal Conditions /
+  A+ audit script.
 
 Verification command:
 
@@ -72,7 +74,7 @@ Pinned environment:
 
 Suggested GitHub release title:
 
-`AASC BSD Endpoint Lean Audit v0.1.2`
+`AASC BSD Endpoint Lean Audit v0.1.3`
 
 Suggested release body:
 
