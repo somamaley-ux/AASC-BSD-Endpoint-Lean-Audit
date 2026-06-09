@@ -15,6 +15,8 @@ Included:
 - Seven focused AASC/BSD audit files under `Checks/Axiom`, including BSD
   closure, status-ledger, truth-boundary, audit-runner, and combined full-stack
   axiom checks.
+- Parse-only check for the pre-Lean manuscript signature map under
+  `formalization_map`.
 - Manuscript-facing BSD PDF/source snapshot under `papers/bsd`.
 - Short audit handoff in `AUDIT_HANDOFF.md`.
 - Pre-Lean manuscript-to-formalization map under `formalization_map`.
@@ -38,6 +40,8 @@ Audit status:
   `sorry`, `admit`, or `unsafe` declarations.
 - The focused BSD endpoint axiom checks report no axioms for the audited BSD
   closeout, status-ledger, and audit-runner anchors.
+- The pre-Lean manuscript signature map parses outside the audited proof
+  surface.
 - The rank endpoint route closes pointwise rank mismatch under the explicit
   `BSDRankEndpointAuditHypotheses` package.
 - The refined formula guard is now exact:

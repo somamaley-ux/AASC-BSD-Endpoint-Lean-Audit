@@ -20,7 +20,8 @@ powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
 
 The aggregate script checks for live `axiom`, `sorry`, `admit`, or `unsafe`
 declarations in the active BSD audit surface, builds the BSD audit runner, and
-runs the focused axiom-print audit files.
+runs the focused axiom-print audit files. It also parses the pre-Lean
+manuscript signature map outside the audited proof surface.
 
 To create a local handoff zip and checksum from exactly the tracked files:
 

@@ -47,6 +47,10 @@ The strongest truthful claim for this archive is:
   check and the combined full-stack
   AASC/BSD check, and the focused BSD checks report
   no axioms for the audited BSD closeout anchors.
+- The aggregate audit also parses the manuscript signature map in
+  `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` outside the audited
+  proof surface, so stale theorem handles are caught without treating that map
+  as an axiom-free proof.
 
 This archive should be read as an AASC endpoint-structure audit for the BSD
 rank endpoint, not as a full arithmetic-geometry library. Elliptic curves,
@@ -84,7 +88,9 @@ The audit runner:
 - builds `MaleyLean.Papers.BSD.AuditRunners`;
 - runs seven focused AASC/BSD audit files, including the BSD closure, status
   ledger, truth-boundary ledger, audit-runner, and full-stack AASC/BSD axiom
-  checks.
+  checks;
+- parses the pre-Lean manuscript signature map outside the active axiom-free
+  audit surface.
 
 Pinned environment:
 

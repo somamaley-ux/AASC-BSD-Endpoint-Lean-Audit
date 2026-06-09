@@ -17,6 +17,8 @@ $auditFiles = @(
     "Checks/Axiom/BSDFullStackAASCAxiomCheck.lean"
 )
 
+$signatureMapFile = "formalization_map/BSD_EndpointClosure_PreLeanMap.lean"
+
 if ($auditFiles.Count -ne 7) {
     throw "Expected 7 focused BSD audit files, found $($auditFiles.Count)."
 }
@@ -30,6 +32,10 @@ foreach ($auditFile in $auditFiles) {
     if (-not (Test-Path -LiteralPath $auditFile -PathType Leaf)) {
         throw "Missing BSD audit file: $auditFile"
     }
+}
+
+if (-not (Test-Path -LiteralPath $signatureMapFile -PathType Leaf)) {
+    throw "Missing BSD manuscript signature map: $signatureMapFile"
 }
 
 Write-Host "Lean toolchain:"
@@ -84,6 +90,13 @@ foreach ($auditFile in $auditFiles) {
     if ($LASTEXITCODE -ne 0) {
         throw "BSD audit file failed: $auditFile"
     }
+}
+
+Write-Host "Checking manuscript signature map parses outside the audit surface:"
+Write-Host $signatureMapFile
+lake env lean $signatureMapFile
+if ($LASTEXITCODE -ne 0) {
+    throw "BSD manuscript signature map failed to parse: $signatureMapFile"
 }
 
 Write-Host "BSD endpoint audit completed."

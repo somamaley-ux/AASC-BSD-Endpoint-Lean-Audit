@@ -36,6 +36,7 @@ Audit status:
 - `BSDReferenceArchiveMaturityComparable=93%`
 - 7 focused AASC/BSD audit files run, including the truth-boundary check and
   the combined full-stack check
+- pre-Lean manuscript signature map parses outside the audited proof surface
 - no live project-level `axiom`, `sorry`, `admit`, or `unsafe` declaration in
   the active BSD audit surface
 - BSD rank endpoint route closes through `BSDRankEndpointAASCContext`
