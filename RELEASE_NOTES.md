@@ -34,10 +34,12 @@ Audit status:
   closeout, status-ledger, and audit-runner anchors.
 - The rank endpoint route closes pointwise rank mismatch under the explicit
   `BSDRankEndpointAuditHypotheses` package.
+- The refined formula guard is now exact:
+  `refinedBSDEndpoint_context_iff`.
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
-  `BSDRefinedFormulaConditionalClosure=78%`,
-  `PvsNPArchiveMaturityComparable=88%`.
+  `BSDRefinedFormulaConditionalClosure=82%`,
+  `PvsNPArchiveMaturityComparable=89%`.
 - The refined BSD formula layer remains conditional on
   `BSDFormulaFactorStandingPacket`.
 

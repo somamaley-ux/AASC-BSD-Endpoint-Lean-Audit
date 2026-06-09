@@ -29,8 +29,8 @@ The strongest truthful claim for this archive is:
   `MaleyLean.Papers.BSD.AuditRunners`.
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
-  `BSDRefinedFormulaConditionalClosure=78%`, and
-  `PvsNPArchiveMaturityComparable=88%`.
+  `BSDRefinedFormulaConditionalClosure=82%`, and
+  `PvsNPArchiveMaturityComparable=89%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -134,6 +134,7 @@ Key BSD rank route anchors:
 - `bsdRankEndpointAASCContext_closes_rankEndpoint`
 - `bsdFormulaFactorsStanding_of_packet`
 - `bsdFormulaFactorStandingPacket_components`
+- `refinedBSDEndpoint_context_iff`
 - `bsdConditionalRefinedFormula_correspondence`
 - `conditionalRefinedBSDEndpoint_of_context`
 - `bsdRefinedFormulaEndpoint_remains_conditional`

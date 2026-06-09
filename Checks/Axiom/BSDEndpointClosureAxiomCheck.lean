@@ -62,4 +62,7 @@ BSD endpoint closeout has no live project axioms.
 #print axioms BSDRefinedFormulaConditionalContext.formulaFactorsStanding
 #print axioms bsdConditionalRefinedFormula_correspondence
 #print axioms conditionalRefinedBSDEndpoint_of_context
+#print axioms refinedBSDEndpoint_formulaFactorsStanding
+#print axioms refinedBSDEndpoint_formula
+#print axioms refinedBSDEndpoint_context_iff
 #print axioms bsdRefinedFormulaEndpoint_remains_conditional

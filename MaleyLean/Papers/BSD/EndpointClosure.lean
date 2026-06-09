@@ -534,6 +534,32 @@ theorem conditionalRefinedBSDEndpoint_of_context
   bsdConditionalRefinedFormula_correspondence
     C.formulaFactorsStanding C.formula
 
+theorem refinedBSDEndpoint_formulaFactorsStanding
+    {E : BSDCarrier} :
+    ConditionalRefinedBSDEndpoint E ->
+      BSDFormulaFactorsStanding E := by
+  intro hEndpoint
+  exact hEndpoint.1
+
+theorem refinedBSDEndpoint_formula
+    {E : BSDCarrier} :
+    ConditionalRefinedBSDEndpoint E -> BSDFormula E := by
+  intro hEndpoint
+  exact hEndpoint.2
+
+theorem refinedBSDEndpoint_context_iff
+    {E : BSDCarrier} :
+    ConditionalRefinedBSDEndpoint E <->
+      BSDRefinedFormulaConditionalContext E := by
+  constructor
+  · intro hEndpoint
+    exact
+      { formulaFactorPacket :=
+          refinedBSDEndpoint_formulaFactorsStanding hEndpoint
+        formula := refinedBSDEndpoint_formula hEndpoint }
+  · intro C
+    exact conditionalRefinedBSDEndpoint_of_context C
+
 theorem bsdRefinedFormulaEndpoint_remains_conditional
     {E : BSDCarrier} :
     BSDRefinedFormulaConditionalContext E ->

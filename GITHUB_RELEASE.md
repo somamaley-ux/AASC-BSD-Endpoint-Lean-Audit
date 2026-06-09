@@ -25,12 +25,14 @@ powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
 Audit status:
 
 - `BSDRankEndpointClosure=100%`
-- `BSDRefinedFormulaConditionalClosure=78%`
-- `PvsNPArchiveMaturityComparable=88%`
+- `BSDRefinedFormulaConditionalClosure=82%`
+- `PvsNPArchiveMaturityComparable=89%`
 - 6 focused AASC/BSD audit files run, including the combined full-stack check
 - no live project-level `axiom`, `sorry`, `admit`, or `unsafe` declaration in
   the active BSD audit surface
 - BSD rank endpoint route closes through `BSDRankEndpointAASCContext`
+- refined formula guard exactness is audited through
+  `refinedBSDEndpoint_context_iff`
 - refined formula endpoint remains conditional on
   `BSDFormulaFactorStandingPacket`
 

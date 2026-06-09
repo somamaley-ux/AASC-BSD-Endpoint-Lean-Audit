@@ -21,6 +21,7 @@ for the current standalone BSD rank endpoint archive.
 #print axioms bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier
 #print axioms bsdRankEndpointAASCContext_closes_rankEndpoint
 #print axioms bsdFormulaFactorStandingPacket_components
+#print axioms refinedBSDEndpoint_context_iff
 #print axioms bsdRefinedFormulaEndpoint_remains_conditional
 #print axioms bsdEndpointStatusLedgerComplete_holds
 #print axioms bsdEndpointAuditRunnerRegistryComplete_holds
