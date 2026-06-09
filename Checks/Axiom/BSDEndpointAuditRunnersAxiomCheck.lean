@@ -1,0 +1,21 @@
+import MaleyLean.Papers.BSD.AuditRunners
+
+open MaleyLean.Papers.BSD
+
+/-!
+# BSD endpoint audit runner registry axiom surface
+-/
+
+#print axioms bsdEndpointFocusedAuditRunnerFiles
+#print axioms bsdEndpointAggregateAuditRunnerFiles
+#print axioms bsdEndpointAuditRunnerFiles
+#print axioms bsdEndpointFocusedAuditRunnerFiles_count_eq
+#print axioms bsdEndpointAggregateAuditRunnerFiles_count_eq
+#print axioms bsdEndpointAuditRunnerFiles_count_eq
+#print axioms bsdEndpointAuditRunnerFiles_decomposes
+#print axioms bsdEndpointFocusedAuditRunnerFilesDuplicateFreeBool_eq_true
+#print axioms bsdEndpointAggregateAuditRunnerFilesDuplicateFreeBool_eq_true
+#print axioms bsdEndpointAuditRunnerFilesDuplicateFreeBool_eq_true
+#print axioms bsdEndpointFocusedAuditRunnerFilesPopulatedBool_eq_true
+#print axioms bsdEndpointAuditRunnerFilesPopulatedBool_eq_true
+#print axioms bsdEndpointAuditRunnerRegistryComplete_holds

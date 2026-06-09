@@ -70,8 +70,14 @@ def BSDRankMismatchNormalForm (E : BSDCarrier) : Prop :=
 def BSDRankBridgeImageExclusion (E : BSDCarrier) : Prop :=
   BSDRankMismatch E
 
+def BSDRankBridgeImageSeparatorBranch (E : BSDCarrier) : Prop :=
+  BSDRankBridgeImageExclusion E
+
 def BSDOfficialNegativeEndpointUse (E : BSDCarrier) : Prop :=
   BSDOfficialEndpointUse E /\ BSDRankMismatch E
+
+def BSDRankMismatchEndpointOccupation (E : BSDCarrier) : Prop :=
+  BSDOfficialNegativeEndpointUse E
 
 def BSDTheoremLevelRankStatusDiscriminator (E : BSDCarrier) : Prop :=
   BSDRankBridgeImageExclusion E /\ BSDOfficialNegativeEndpointUse E
@@ -81,6 +87,24 @@ def BSDRankEndpointStatusGovernance (E : BSDCarrier) : Prop :=
 
 def BSDIndependentRankDiscriminator (E : BSDCarrier) : Prop :=
   BSDRankEndpointStatusGovernance E
+
+inductive BSDRankEndpointStatus where
+  | positive
+  | separator
+deriving DecidableEq, Repr
+
+def BSDRankEndpointStatusOccupation
+    (E : BSDCarrier) : BSDRankEndpointStatus -> Prop
+  | .positive => E.analyticRank = E.mordellWeilRank
+  | .separator => BSDRankMismatchEndpointOccupation E
+
+def BSDGovernedEndpointUse (E : BSDCarrier) : Prop :=
+  BSDOfficialEndpointUse E /\
+  (BSDRankEndpointStatusOccupation E .positive \/
+    BSDRankEndpointStatusOccupation E .separator)
+
+def BSDNegativeGovernedEndpointUse (E : BSDCarrier) : Prop :=
+  BSDGovernedEndpointUse E /\ BSDRankMismatch E
 
 inductive BSDRankMismatchUseKind where
   | proofSupportObservation
@@ -168,6 +192,33 @@ theorem bsdRankMismatch_iff_bridgeImageExclusion
     BSDRankMismatch E <-> BSDRankBridgeImageExclusion E :=
   Iff.rfl
 
+theorem bsdBridgeImageExclusion_iff_separatorBranch
+    {E : BSDCarrier} :
+    BSDRankBridgeImageExclusion E <->
+      BSDRankBridgeImageSeparatorBranch E :=
+  Iff.rfl
+
+theorem bsdRankMismatch_iff_bridgeImageSeparatorBranch
+    {E : BSDCarrier} :
+    BSDRankMismatch E <-> BSDRankBridgeImageSeparatorBranch E :=
+  Iff.rfl
+
+theorem bsdRankMismatchOccupation_exhaustion
+    {E : BSDCarrier} :
+    BSDRankMismatchEndpointOccupation E ->
+      BSDRankBridgeImageSeparatorBranch E := by
+  intro hOccupation
+  exact (bsdRankMismatch_iff_bridgeImageSeparatorBranch).1 hOccupation.2
+
+theorem bsdRankMismatchOccupation_nonoptional
+    {E : BSDCarrier} :
+    BSDOfficialEndpointUse E -> BSDCarrierInstantiated E ->
+      BSDRankMismatch E -> BSDRankBridgeImageSeparatorBranch E := by
+  intro hUse _hCarrier hMismatch
+  have hOccupation : BSDRankMismatchEndpointOccupation E :=
+    And.intro hUse hMismatch
+  exact bsdRankMismatchOccupation_exhaustion hOccupation
+
 theorem bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator
     {E : BSDCarrier} :
     BSDRankBridgeImageExclusion E -> BSDOfficialNegativeEndpointUse E ->
@@ -188,6 +239,29 @@ theorem bsdRankMismatch_pointwiseNegativeBranch
   intro hUse _hCarrier hMismatch
   exact And.intro hUse hMismatch
 
+theorem bsdGovernedEndpointUse_bivalent
+    {E : BSDCarrier} :
+    BSDGovernedEndpointUse E ->
+      BSDRankEndpointStatusOccupation E .positive \/
+        BSDRankEndpointStatusOccupation E .separator := by
+  intro hUse
+  exact hUse.2
+
+theorem bsdNegativeGovernedEndpointUse_has_separatorStatus
+    {E : BSDCarrier} :
+    BSDNegativeGovernedEndpointUse E ->
+      BSDRankEndpointStatusOccupation E .separator := by
+  intro hNegative
+  exact And.intro hNegative.1.1 hNegative.2
+
+theorem bsdRankBridgeImageSeparatorBranch_of_negativeGovernedEndpointUse
+    {E : BSDCarrier} :
+    BSDNegativeGovernedEndpointUse E ->
+      BSDRankBridgeImageSeparatorBranch E := by
+  intro hNegative
+  exact bsdRankMismatchOccupation_exhaustion
+    (bsdNegativeGovernedEndpointUse_has_separatorStatus hNegative)
+
 theorem bsdTheoremLevelDiscriminator_endpointGovernance
     {E : BSDCarrier} :
     BSDTheoremLevelRankStatusDiscriminator E ->
@@ -195,6 +269,37 @@ theorem bsdTheoremLevelDiscriminator_endpointGovernance
       BSDRankEndpointStatusGovernance E := by
   intro hDisc _hNegative
   exact hDisc
+
+theorem bsdRankBridgeImageSeparatorBranch_theoremLevelDiscriminator
+    {E : BSDCarrier} :
+    BSDRankBridgeImageSeparatorBranch E ->
+    BSDOfficialNegativeEndpointUse E ->
+      BSDTheoremLevelRankStatusDiscriminator E := by
+  intro hSeparator hNegative
+  exact bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator
+    ((bsdBridgeImageExclusion_iff_separatorBranch).2 hSeparator) hNegative
+
+theorem bsdOfficialNegativeEndpointUse_endpointStatusGovernance
+    {E : BSDCarrier} :
+    BSDOfficialNegativeEndpointUse E ->
+      BSDRankEndpointStatusGovernance E := by
+  intro hNegative
+  have hSeparator : BSDRankBridgeImageSeparatorBranch E :=
+    bsdRankMismatchOccupation_exhaustion hNegative
+  have hDisc :
+      BSDTheoremLevelRankStatusDiscriminator E :=
+    bsdRankBridgeImageSeparatorBranch_theoremLevelDiscriminator
+      hSeparator hNegative
+  exact bsdTheoremLevelDiscriminator_endpointGovernance hDisc hNegative
+
+theorem bsdEndpointResolvingMismatchTheorem_is_endpointStatusGovernance
+    {E : BSDCarrier} :
+    BSDRankMismatchUseClassification
+      BSDRankMismatchUseKind.endpointResolvingMismatchTheorem ->
+    BSDOfficialNegativeEndpointUse E ->
+      BSDRankEndpointStatusGovernance E := by
+  intro _hClassification hNegative
+  exact bsdOfficialNegativeEndpointUse_endpointStatusGovernance hNegative
 
 theorem bsdEndpointGovernance_independentRankDiscriminator
     {E : BSDCarrier} :

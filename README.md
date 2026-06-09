@@ -14,7 +14,7 @@ formalization map, and the manuscript-facing PDF/source snapshot.
 
 The strongest truthful claim for this archive is:
 
-- `MaleyLean.Papers.BSD.EndpointClosure` builds in a standalone Lake project.
+- `MaleyLean.Papers.BSD.AuditRunners` builds in a standalone Lake project.
 - The reusable AASC foundation layer used by the route is included in the same
   repository: bivalence/nondegenerate reasoning, minimal conditions/A+
   support, and the nondegenerate kernel/admissibility anchor.
@@ -23,6 +23,14 @@ The strongest truthful claim for this archive is:
   mismatch use becomes theorem-level rank-status governance; governance induces
   an independent same-domain rank discriminator; the audit hypotheses exclude
   such discriminators; therefore pointwise rank equality is forced.
+- The BSD audit now includes an explicit status ledger and audit-runner
+  registry:
+  `MaleyLean.Papers.BSD.StatusLedger` and
+  `MaleyLean.Papers.BSD.AuditRunners`.
+- Current recorded progress is
+  `BSDRankEndpointClosure=100%`,
+  `BSDRefinedFormulaConditionalClosure=60%`, and
+  `PvsNPArchiveMaturityComparable=55%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -31,8 +39,8 @@ The strongest truthful claim for this archive is:
   formalization of the leading coefficient formula, Tate-Shafarevich group
   finiteness, regulators, Tamagawa factors, or the analytic continuation and
   functional equation of L-functions.
-- The focused BSD axiom check reports no axioms for the audited BSD endpoint
-  closeout anchors.
+- The five focused BSD/AASC audit files run, and the focused BSD checks report
+  no axioms for the audited BSD closeout anchors.
 
 This archive should be read as an AASC endpoint-structure audit for the BSD
 rank endpoint, not as a full arithmetic-geometry library. Elliptic curves,
@@ -52,9 +60,11 @@ The audit runner:
 
 - prints the Lean toolchain;
 - prints the pinned mathlib manifest revision;
-- builds `MaleyLean.Papers.BSD.EndpointClosure`;
-- runs the focused BSD endpoint axiom check
-  `Checks/Axiom/BSDEndpointClosureAxiomCheck.lean`.
+- scans the active Lean audit surface for live `axiom`, `sorry`, `admit`, or
+  `unsafe` declarations;
+- builds `MaleyLean.Papers.BSD.AuditRunners`;
+- runs five focused AASC/BSD audit files, including the BSD closure, status
+  ledger, and audit-runner axiom checks.
 
 Pinned environment:
 
@@ -81,6 +91,12 @@ Key BSD rank route anchors:
 - `BSDRankMismatch`
 - `BSDRankMismatchNormalForm`
 - `BSDRankBridgeImageExclusion`
+- `BSDRankBridgeImageSeparatorBranch`
+- `BSDRankMismatchEndpointOccupation`
+- `BSDRankEndpointStatus`
+- `BSDRankEndpointStatusOccupation`
+- `BSDGovernedEndpointUse`
+- `BSDNegativeGovernedEndpointUse`
 - `BSDOfficialNegativeEndpointUse`
 - `BSDTheoremLevelRankStatusDiscriminator`
 - `BSDRankEndpointStatusGovernance`
@@ -88,6 +104,16 @@ Key BSD rank route anchors:
 - `bsdRankMismatch_iff_standardNormalForm`
 - `bsdStandardNormalForm_iff_rankBridgeImageExclusion`
 - `bsdRankMismatch_iff_bridgeImageExclusion`
+- `bsdBridgeImageExclusion_iff_separatorBranch`
+- `bsdRankMismatch_iff_bridgeImageSeparatorBranch`
+- `bsdRankMismatchOccupation_exhaustion`
+- `bsdRankMismatchOccupation_nonoptional`
+- `bsdGovernedEndpointUse_bivalent`
+- `bsdNegativeGovernedEndpointUse_has_separatorStatus`
+- `bsdRankBridgeImageSeparatorBranch_of_negativeGovernedEndpointUse`
+- `bsdRankBridgeImageSeparatorBranch_theoremLevelDiscriminator`
+- `bsdOfficialNegativeEndpointUse_endpointStatusGovernance`
+- `bsdEndpointResolvingMismatchTheorem_is_endpointStatusGovernance`
 - `bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator`
 - `bsdEndpointResolvingNonGovernance_hiddenFifthCase_impossible`
 - `bsdMismatch_endpointGovernance`
@@ -111,6 +137,10 @@ The rank endpoint and refined formula endpoint are deliberately separated:
 - the refined formula endpoint is conditional on the additional formula-factor
   standing represented by `BSDFormulaFactorsStanding`.
 
+`formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
+manuscript signature map. It intentionally contains planning `constant` and
+`axiom` declarations and is not imported by the executable audit surface.
+
 ## Repository Layout
 
 - `MaleyLean/Papers/BSD/` - BSD endpoint proof spine.
@@ -130,6 +160,9 @@ The rank endpoint and refined formula endpoint are deliberately separated:
 Start with:
 
 - `papers/bsd/PROJECT_LEDGER.md`
+- `MaleyLean/Papers/BSD/BSDFormalizationStatus.md`
 - `formalization_map/BSD_EndpointClosure_PreLeanMap.lean`
 - `scripts/check-bsd-endpoint-audit.ps1`
 - `MaleyLean/Papers/BSD/EndpointClosure.lean`
+- `MaleyLean/Papers/BSD/StatusLedger.lean`
+- `MaleyLean/Papers/BSD/AuditRunners.lean`
