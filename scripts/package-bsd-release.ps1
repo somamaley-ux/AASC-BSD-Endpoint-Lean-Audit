@@ -55,9 +55,14 @@ try {
 
     $hash = Get-FileHash -Algorithm SHA256 -LiteralPath $zipPath
     "$($hash.Hash)  $(Split-Path -Leaf $zipPath)" | Set-Content -LiteralPath $shaPath
+    Remove-Item -LiteralPath $stagingDir -Recurse -Force
 
     Write-Host "Created release package:"
     Write-Host $zipPath
+    Write-Host "Manifest:"
+    Write-Host $manifestPath
+    Write-Host "Checksum:"
+    Write-Host $shaPath
     Write-Host "SHA256:"
     Write-Host $hash.Hash
 }
