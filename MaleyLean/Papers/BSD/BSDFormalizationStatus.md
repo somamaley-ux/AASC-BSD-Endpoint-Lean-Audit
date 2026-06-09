@@ -66,5 +66,5 @@ Tate-Shafarevich finiteness, or the refined leading coefficient formula.
 ## Pre-Lean Map Boundary
 
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a manuscript
-signature map.  It intentionally contains `constant` and `axiom` declarations
-as planning anchors and is not imported by the executable Lean audit surface.
+signature map.  It intentionally contains `axiom` declarations as planning
+anchors and is not imported by the executable Lean audit surface.

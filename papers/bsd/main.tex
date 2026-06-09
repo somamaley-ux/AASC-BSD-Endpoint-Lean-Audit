@@ -1348,11 +1348,18 @@ theorem bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator :
   BSDOfficialNegativeEndpointUse E ->
     BSDTheoremLevelRankStatusDiscriminator E
 
-theorem bsdATSClassifiesMismatchUse :
-  BSDRankMismatch E -> BSDATSUseClassification E
+theorem bsdGovernedEndpointUse_bivalent :
+  BSDGovernedEndpointUse E ->
+    BSDRankEndpointStatusOccupation E .positive \/
+      BSDRankEndpointStatusOccupation E .separator
 
-theorem bsdUEAPBoundForNegativeRankReport :
-  BSDOfficialNegativeEndpointUse E -> BSDRankEndpointStatusGovernance E
+theorem bsdNegativeGovernedEndpointUse_has_separatorStatus :
+  BSDNegativeGovernedEndpointUse E ->
+    BSDRankEndpointStatusOccupation E .separator
+
+theorem bsdRankBridgeImageSeparatorBranch_of_negativeGovernedEndpointUse :
+  BSDNegativeGovernedEndpointUse E ->
+    BSDRankBridgeImageSeparatorBranch E
 
 theorem bsdRankMismatch_pointwiseNegativeBranch :
   BSDRankEndpointUnderAudit -> BSDCarrierInstantiated E ->
@@ -1389,10 +1396,8 @@ theorem bsdRankEndpoint_officialCorrespondence :
 \begin{verbatim}
 def BSDFormulaFactorsStanding (E : BSDCarrier) : Prop := ...
 def BSDFormula (E : BSDCarrier) : Prop := ...
+structure BSDFormulaFactorStandingPacket (E : BSDCarrier) : Prop where ...
 def BSDRefinedFormulaConditionalContext (E : BSDCarrier) : Prop := ...
-def BSDFormulaMismatch (E : BSDCarrier) : Prop := ...
-def BSDFormulaEndpointStatusGovernance (E : BSDCarrier) : Prop := ...
-def BSDIndependentFormulaDiscriminator (E : BSDCarrier) : Prop := ...
 
 theorem bsdConditionalRefinedFormula_correspondence :
   BSDFormulaFactorsStanding E -> BSDFormula E ->
@@ -1401,16 +1406,6 @@ theorem bsdConditionalRefinedFormula_correspondence :
 theorem refinedBSDEndpoint_context_iff :
   ConditionalRefinedBSDEndpoint E <->
     BSDRefinedFormulaConditionalContext E
-
-theorem bsdFormulaMismatch_endpointGovernance :
-  BSDOfficialFormulaNegativeEndpointUse E ->
-    BSDFormulaEndpointStatusGovernance E
-
-theorem bsdFormulaMismatch_independentDiscriminator :
-  BSDFormulaMismatch E -> BSDIndependentFormulaDiscriminator E
-
-theorem bsdNoIndependentFormulaDiscriminator :
-  BSDKernelInstantiated E -> Not (BSDIndependentFormulaDiscriminator E)
 
 theorem bsdRefinedFormulaEndpoint_remains_conditional :
   BSDRefinedFormulaConditionalContext E ->

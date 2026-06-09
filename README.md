@@ -174,8 +174,8 @@ The rank endpoint and refined formula endpoint are deliberately separated:
   standing represented by `BSDFormulaFactorStandingPacket`.
 
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
-manuscript signature map. It intentionally contains planning `constant` and
-`axiom` declarations and is not imported by the executable audit surface.
+manuscript signature map. It intentionally contains planning `axiom`
+declarations and is not imported by the executable audit surface.
 
 ## Repository Layout
 

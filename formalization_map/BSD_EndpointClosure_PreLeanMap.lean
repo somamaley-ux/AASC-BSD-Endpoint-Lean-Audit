@@ -7,10 +7,10 @@ as a completed machine-checked proof of the arithmetic geometry background.
 
 namespace BSD.EndpointClosure
 
-constant EllipticCurveQ : Type
-constant LFunction : EllipticCurveQ -> Type
-constant MordellWeilGroup : EllipticCurveQ -> Type
-constant BSDLawfulEquivalence : EllipticCurveQ -> Type
+axiom EllipticCurveQ : Type
+axiom LFunction : EllipticCurveQ -> Type
+axiom MordellWeilGroup : EllipticCurveQ -> Type
+axiom BSDLawfulEquivalence : EllipticCurveQ -> Type
 
 structure BSDCarrier where
   curve : EllipticCurveQ
@@ -18,45 +18,54 @@ structure BSDCarrier where
   MWGroup : MordellWeilGroup curve
   lawfulEquiv : BSDLawfulEquivalence curve
 
-constant analyticRank : BSDCarrier -> Nat
-constant mordellWeilRank : BSDCarrier -> Nat
+axiom analyticRank : BSDCarrier -> Nat
+axiom mordellWeilRank : BSDCarrier -> Nat
 
-constant BSDRankEndpointUnderAudit : Prop
-constant BSDOfficialEndpointUse : BSDCarrier -> Prop
-constant BSDOfficialNegativeEndpointUse : BSDCarrier -> Prop
-constant BSDCarrierInstantiated : BSDCarrier -> Prop
-constant StandardBSDCarrierInstantiated : BSDCarrier -> Prop
-constant BSDCarrierAdequate : BSDCarrier -> Prop
-constant BSDEndpointAdequate : BSDCarrier -> Prop
-constant BSDKernelInstantiated : BSDCarrier -> Prop
-constant BSDLossOfNonDegenerateEndpointStatus : BSDCarrier -> Prop
-constant BSDLocalKernelPacketK1K13 : BSDCarrier -> Prop
+axiom BSDRankEndpointUnderAudit : Prop
+axiom BSDOfficialEndpointUse : BSDCarrier -> Prop
+axiom BSDOfficialNegativeEndpointUse : BSDCarrier -> Prop
+axiom BSDCarrierInstantiated : BSDCarrier -> Prop
+axiom StandardBSDCarrierInstantiated : BSDCarrier -> Prop
+axiom BSDCarrierAdequate : BSDCarrier -> Prop
+axiom BSDEndpointAdequate : BSDCarrier -> Prop
+axiom BSDKernelInstantiated : BSDCarrier -> Prop
+axiom BSDLossOfNonDegenerateEndpointStatus : BSDCarrier -> Prop
+axiom BSDLocalKernelPacketK1K13 : BSDCarrier -> Prop
 
-constant BSDAnalyticStanding : BSDCarrier -> Nat -> Prop
-constant BSDRankReadout : BSDCarrier -> Nat -> Prop
-constant BSDRankMismatch : BSDCarrier -> Prop
-constant BSDRankMismatchNormalForm : BSDCarrier -> Prop
-constant BSDRankBridgeImageExclusion : BSDCarrier -> Prop
-constant BSDTheoremLevelRankStatusDiscriminator : BSDCarrier -> Prop
-constant BSDRankEndpointStatusGovernance : BSDCarrier -> Prop
-constant BSDATSUseClassification : BSDCarrier -> Prop
-constant BSDIndependentRankDiscriminator : BSDCarrier -> Prop
-constant OfficialBSDRankEndpoint : Prop
+axiom BSDAnalyticStanding : BSDCarrier -> Nat -> Prop
+axiom BSDRankReadout : BSDCarrier -> Nat -> Prop
+axiom BSDRankMismatch : BSDCarrier -> Prop
+axiom BSDRankMismatchNormalForm : BSDCarrier -> Prop
+axiom BSDRankBridgeImageExclusion : BSDCarrier -> Prop
+axiom BSDRankBridgeImageSeparatorBranch : BSDCarrier -> Prop
+axiom BSDRankMismatchEndpointOccupation : BSDCarrier -> Prop
+axiom BSDGovernedEndpointUse : BSDCarrier -> Prop
+axiom BSDNegativeGovernedEndpointUse : BSDCarrier -> Prop
+axiom BSDTheoremLevelRankStatusDiscriminator : BSDCarrier -> Prop
+axiom BSDRankEndpointStatusGovernance : BSDCarrier -> Prop
+axiom BSDIndependentRankDiscriminator : BSDCarrier -> Prop
+axiom OfficialBSDRankEndpoint : Prop
 
-constant BSDFormulaFactorsStanding : BSDCarrier -> Prop
-constant BSDFormula : BSDCarrier -> Prop
-constant ConditionalRefinedBSDEndpoint : BSDCarrier -> Prop
-constant BSDRefinedFormulaConditionalContext : BSDCarrier -> Prop
-constant BSDFormulaMismatch : BSDCarrier -> Prop
-constant BSDFormulaEndpointStatusGovernance : BSDCarrier -> Prop
-constant BSDIndependentFormulaDiscriminator : BSDCarrier -> Prop
-constant BSDOfficialFormulaNegativeEndpointUse : BSDCarrier -> Prop
+inductive BSDRankEndpointStatus where
+  | positive
+  | separator
+
+axiom BSDRankEndpointStatusOccupation :
+  BSDCarrier -> BSDRankEndpointStatus -> Prop
+
+axiom BSDFormulaFactorsStanding : BSDCarrier -> Prop
+axiom BSDFormula : BSDCarrier -> Prop
+axiom ConditionalRefinedBSDEndpoint : BSDCarrier -> Prop
+axiom BSDRefinedFormulaConditionalContext : BSDCarrier -> Prop
 
 inductive BSDRankMismatchUseKind where
   | proofSupportObservation
   | endpointResolvingMismatchTheorem
   | endpointResolvingNonGovernance
   | carrierChangingMismatchClaim
+
+axiom BSDRankMismatchUseClassification :
+  BSDRankMismatchUseKind -> Prop
 
 axiom bsdEndpointUnderAudit_pointwiseUse
     {E : BSDCarrier} :
@@ -114,13 +123,21 @@ axiom bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator
     BSDRankBridgeImageExclusion E -> BSDOfficialNegativeEndpointUse E ->
       BSDTheoremLevelRankStatusDiscriminator E
 
-axiom bsdATSClassifiesMismatchUse
+axiom bsdGovernedEndpointUse_bivalent
     {E : BSDCarrier} :
-    BSDRankMismatch E -> BSDATSUseClassification E
+    BSDGovernedEndpointUse E ->
+      BSDRankEndpointStatusOccupation E BSDRankEndpointStatus.positive \/
+        BSDRankEndpointStatusOccupation E BSDRankEndpointStatus.separator
 
-axiom bsdUEAPBoundForNegativeRankReport
+axiom bsdNegativeGovernedEndpointUse_has_separatorStatus
     {E : BSDCarrier} :
-    BSDOfficialNegativeEndpointUse E -> BSDRankEndpointStatusGovernance E
+    BSDNegativeGovernedEndpointUse E ->
+      BSDRankEndpointStatusOccupation E BSDRankEndpointStatus.separator
+
+axiom bsdRankBridgeImageSeparatorBranch_of_negativeGovernedEndpointUse
+    {E : BSDCarrier} :
+    BSDNegativeGovernedEndpointUse E ->
+      BSDRankBridgeImageSeparatorBranch E
 
 axiom bsdRankMismatch_pointwiseNegativeBranch
     {E : BSDCarrier} :
@@ -128,7 +145,8 @@ axiom bsdRankMismatch_pointwiseNegativeBranch
       BSDRankMismatch E -> BSDOfficialNegativeEndpointUse E
 
 axiom bsdEndpointResolvingNonGovernance_hiddenFifthCase_impossible :
-    Not BSDRankMismatchUseKind.endpointResolvingNonGovernance
+    Not (BSDRankMismatchUseClassification
+      BSDRankMismatchUseKind.endpointResolvingNonGovernance)
 
 axiom bsdTheoremLevelDiscriminator_endpointGovernance
     {E : BSDCarrier} :
@@ -175,18 +193,6 @@ axiom refinedBSDEndpoint_context_iff
     {E : BSDCarrier} :
     ConditionalRefinedBSDEndpoint E <->
       BSDRefinedFormulaConditionalContext E
-
-axiom bsdFormulaMismatch_endpointGovernance
-    {E : BSDCarrier} :
-    BSDOfficialFormulaNegativeEndpointUse E -> BSDFormulaEndpointStatusGovernance E
-
-axiom bsdFormulaMismatch_independentDiscriminator
-    {E : BSDCarrier} :
-    BSDFormulaMismatch E -> BSDIndependentFormulaDiscriminator E
-
-axiom bsdNoIndependentFormulaDiscriminator
-    {E : BSDCarrier} :
-    BSDKernelInstantiated E -> Not (BSDIndependentFormulaDiscriminator E)
 
 axiom bsdRefinedFormulaEndpoint_remains_conditional
     {E : BSDCarrier} :
