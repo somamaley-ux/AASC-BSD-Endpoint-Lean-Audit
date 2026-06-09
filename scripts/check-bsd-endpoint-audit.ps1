@@ -43,20 +43,34 @@ if ($null -eq $mathlib) {
 }
 Write-Host $mathlib.rev
 
-$rgArgs = @(
-    "-n",
-    "--glob",
-    "*.lean",
-    $prohibitedPattern
-) + $scanRoots
+$rgCommand = Get-Command rg -ErrorAction SilentlyContinue
+if ($null -ne $rgCommand) {
+    $rgArgs = @(
+        "-n",
+        "--glob",
+        "*.lean",
+        $prohibitedPattern
+    ) + $scanRoots
 
-$prohibitedMatches = & rg @rgArgs
-if ($LASTEXITCODE -eq 0) {
-    $prohibitedMatches | ForEach-Object { Write-Host $_ }
-    throw "Prohibited Lean placeholder or escape found in active BSD audit surface."
-}
-if ($LASTEXITCODE -ne 1) {
-    throw "Prohibited-token scan failed with exit code $LASTEXITCODE."
+    $prohibitedMatches = & rg @rgArgs
+    if ($LASTEXITCODE -eq 0) {
+        $prohibitedMatches | ForEach-Object { Write-Host $_ }
+        throw "Prohibited Lean placeholder or escape found in active BSD audit surface."
+    }
+    if ($LASTEXITCODE -ne 1) {
+        throw "Prohibited-token scan failed with exit code $LASTEXITCODE."
+    }
+} else {
+    Write-Host "ripgrep not found; using PowerShell fallback scan."
+    $prohibitedMatches = foreach ($scanRoot in $scanRoots) {
+        Get-ChildItem -LiteralPath $scanRoot -Recurse -File -Filter "*.lean" |
+            Select-String -Pattern $prohibitedPattern |
+            ForEach-Object { "$($_.Path):$($_.LineNumber):$($_.Line)" }
+    }
+    if ($prohibitedMatches.Count -ne 0) {
+        $prohibitedMatches | ForEach-Object { Write-Host $_ }
+        throw "Prohibited Lean placeholder or escape found in active BSD audit surface."
+    }
 }
 Write-Host "No live axiom/sorry/admit/unsafe declarations found in active BSD audit surface."
 
