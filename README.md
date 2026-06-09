@@ -178,12 +178,14 @@ manuscript signature map. It intentionally contains planning `constant` and
 - `papers/bsd/` - manuscript-facing source/PDF snapshot.
 - `scripts/` - verification scripts.
 - `GITHUB_RELEASE.md` - suggested release title and notes.
+- `AUDIT_HANDOFF.md` - short theorem-chain and truth-boundary handoff.
 
 ## Reading Order
 
 Start with:
 
 - `papers/bsd/PROJECT_LEDGER.md`
+- `AUDIT_HANDOFF.md`
 - `MaleyLean/Papers/BSD/BSDFormalizationStatus.md`
 - `formalization_map/BSD_EndpointClosure_PreLeanMap.lean`
 - `scripts/check-bsd-endpoint-audit.ps1`

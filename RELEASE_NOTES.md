@@ -16,6 +16,7 @@ Included:
   closure, status-ledger, truth-boundary, audit-runner, and combined full-stack
   axiom checks.
 - Manuscript-facing BSD PDF/source snapshot under `papers/bsd`.
+- Short audit handoff in `AUDIT_HANDOFF.md`.
 - Pre-Lean manuscript-to-formalization map under `formalization_map`.
 - Audit runner: `scripts/check-bsd-endpoint-audit.ps1`.
 
