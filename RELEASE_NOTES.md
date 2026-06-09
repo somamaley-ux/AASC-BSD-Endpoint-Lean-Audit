@@ -1,6 +1,6 @@
 # Release Notes
 
-## AASC BSD Endpoint Lean Audit v0.1.0
+## AASC BSD Endpoint Lean Audit v0.1.2
 
 This release packages the first dedicated Lean 4 audit archive for the
 AASC-first BSD rank endpoint proof spine.
@@ -45,7 +45,7 @@ Audit status:
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=82%`,
-  `PvsNPArchiveMaturityComparable=90%`.
+  `PvsNPArchiveMaturityComparable=93%`.
 - The refined BSD formula layer remains conditional on
   `BSDFormulaFactorStandingPacket`.
 
@@ -72,7 +72,7 @@ Pinned environment:
 
 Suggested GitHub release title:
 
-`AASC BSD Endpoint Lean Audit v0.1.0`
+`AASC BSD Endpoint Lean Audit v0.1.2`
 
 Suggested release body:
 

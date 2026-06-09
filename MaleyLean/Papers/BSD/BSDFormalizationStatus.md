@@ -4,7 +4,7 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=82%`
-- `PvsNPArchiveMaturityComparable=90%`
+- `PvsNPArchiveMaturityComparable=93%`
 
 ## Closed In The Lean Audit Spine
 

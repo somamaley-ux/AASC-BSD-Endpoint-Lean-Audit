@@ -34,7 +34,7 @@ The strongest truthful claim for this archive is:
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=82%`, and
-  `PvsNPArchiveMaturityComparable=90%`.
+  `PvsNPArchiveMaturityComparable=93%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -64,6 +64,7 @@ powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
 
 GitHub also runs this audit on push, pull request, and manual dispatch through
 `.github/workflows/audit.yml`.
+The latest pushed `main` workflow run is expected to pass before each release.
 
 To create a local zip archive from exactly the tracked repository files:
 

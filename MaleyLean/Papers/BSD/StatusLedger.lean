@@ -152,13 +152,13 @@ def bsdRankEndpointClosurePercent : Nat := 100
 
 def bsdRefinedFormulaClosurePercent : Nat := 82
 
-def bsdPvsNPAuditMaturityPercent : Nat := 90
+def bsdPvsNPAuditMaturityPercent : Nat := 93
 
 def bsdEndpointCurrentFormalizationStatusSummary : String :=
   "BSD rank endpoint closed in Lean audit spine; refined formula conditional"
 
 def bsdEndpointCurrentProgressSummary : String :=
-  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=82%; PvsNPArchiveMaturityComparable=90%"
+  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=82%; PvsNPArchiveMaturityComparable=93%"
 
 def bsdEndpointFormalizationStatusDocument : String :=
   "MaleyLean/Papers/BSD/BSDFormalizationStatus.md"
@@ -196,7 +196,7 @@ theorem bsdRefinedFormulaClosurePercent_eq :
   rfl
 
 theorem bsdPvsNPAuditMaturityPercent_eq :
-    bsdPvsNPAuditMaturityPercent = 90 := by
+    bsdPvsNPAuditMaturityPercent = 93 := by
   rfl
 
 theorem bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true :
@@ -211,7 +211,7 @@ def bsdEndpointStatusLedgerComplete : Prop :=
   bsdEndpointStatusLedgerClosedCount = 7 /\
   bsdEndpointStatusLedgerConditionalCount = 1 /\
   bsdRankEndpointClosurePercent = 100 /\
-  bsdPvsNPAuditMaturityPercent = 90 /\
+  bsdPvsNPAuditMaturityPercent = 93 /\
   bsdEndpointFormalizationStatusDocumentPopulatedBool = true
 
 theorem bsdEndpointStatusLedgerComplete_holds :

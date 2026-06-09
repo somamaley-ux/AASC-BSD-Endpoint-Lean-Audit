@@ -6,7 +6,7 @@ This file is the short audit path for the standalone BSD endpoint archive.
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=82%`
-- `PvsNPArchiveMaturityComparable=90%`
+- `PvsNPArchiveMaturityComparable=93%`
 
 The rank endpoint is the closed Lean proof-spine target.  The refined formula
 endpoint is intentionally conditional on explicit formula-factor standing.

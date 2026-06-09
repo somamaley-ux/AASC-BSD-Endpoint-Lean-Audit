@@ -2,7 +2,7 @@
 
 ## Release Title
 
-AASC BSD Endpoint Lean Audit v0.1.0
+AASC BSD Endpoint Lean Audit v0.1.2
 
 ## Release Notes
 
@@ -17,7 +17,8 @@ packet, a truth-boundary ledger, and a combined full-stack AASC/BSD axiom
 check.
 The short theorem-chain handoff is in `AUDIT_HANDOFF.md`.
 Local zip packages can be created with `scripts/package-bsd-release.ps1`.
-The same audit is wired for GitHub Actions in `.github/workflows/audit.yml`.
+The same audit is wired for GitHub Actions in `.github/workflows/audit.yml`,
+with the latest pushed `main` workflow run expected to pass before release.
 
 Verification passed:
 
@@ -30,7 +31,7 @@ Audit status:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=82%`
-- `PvsNPArchiveMaturityComparable=90%`
+- `PvsNPArchiveMaturityComparable=93%`
 - 7 focused AASC/BSD audit files run, including the truth-boundary check and
   the combined full-stack check
 - no live project-level `axiom`, `sorry`, `admit`, or `unsafe` declaration in
