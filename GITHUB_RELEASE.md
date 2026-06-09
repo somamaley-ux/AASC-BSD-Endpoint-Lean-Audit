@@ -19,8 +19,10 @@ The short theorem-chain handoff is in `AUDIT_HANDOFF.md`.
 Local zip packages can be created with `scripts/package-bsd-release.ps1`.
 The same audit is wired for GitHub Actions in `.github/workflows/audit.yml`,
 with the latest pushed `main` workflow run expected to pass before release.
-The current release line also includes semantic-audit-carrier wording cleanup
-and cross-platform A+ support-audit scan hardening.
+The current release line also includes BSD-native status naming,
+manuscript-map alignment with the executable Lean spine, parse checking for
+the pre-Lean signature map, semantic-audit-carrier wording cleanup, and
+cross-platform A+ support-audit scan hardening.
 
 Verification passed:
 
