@@ -37,7 +37,7 @@ def bsdEndpointStatusObligationTitle :
   | .theoremLevelGovernance =>
       "Theorem-level rank exclusion is endpoint-status governance"
   | .independentRankDiscriminatorExclusion =>
-      "Independent same-domain rank discriminators are excluded"
+      "Independent same-domain rank discriminators are excluded through AASC classifier closure"
   | .rankEndpointClosure =>
       "Pointwise rank equality and the official rank endpoint are forced"
   | .refinedFormulaConditional =>
@@ -101,8 +101,8 @@ def bsdEndpointStatusLedger : List BSDEndpointStatusRow :=
       suppliedInLean := true }
   , { obligation := .independentRankDiscriminatorExclusion
       status := .closedInLeanAuditSpine
-      leanAnchor := "bsdRankMismatch_impossible"
-      sourceEvidence := "kernel/no-independent-rank-discriminator audit package"
+      leanAnchor := "bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier"
+      sourceEvidence := "BSD rank discriminator mapped into the shared AASC foundational-candidate classifier exclusion"
       suppliedInLean := true }
   , { obligation := .rankEndpointClosure
       status := .closedInLeanAuditSpine
@@ -143,13 +143,13 @@ def bsdRankEndpointClosurePercent : Nat := 100
 
 def bsdRefinedFormulaClosurePercent : Nat := 60
 
-def bsdPvsNPAuditMaturityPercent : Nat := 55
+def bsdPvsNPAuditMaturityPercent : Nat := 75
 
 def bsdEndpointCurrentFormalizationStatusSummary : String :=
   "BSD rank endpoint closed in Lean audit spine; refined formula conditional"
 
 def bsdEndpointCurrentProgressSummary : String :=
-  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=60%; PvsNPArchiveMaturityComparable=55%"
+  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=60%; PvsNPArchiveMaturityComparable=75%"
 
 def bsdEndpointFormalizationStatusDocument : String :=
   "MaleyLean/Papers/BSD/BSDFormalizationStatus.md"
@@ -187,7 +187,7 @@ theorem bsdRefinedFormulaClosurePercent_eq :
   rfl
 
 theorem bsdPvsNPAuditMaturityPercent_eq :
-    bsdPvsNPAuditMaturityPercent = 55 := by
+    bsdPvsNPAuditMaturityPercent = 75 := by
   rfl
 
 theorem bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true :
@@ -202,7 +202,7 @@ def bsdEndpointStatusLedgerComplete : Prop :=
   bsdEndpointStatusLedgerClosedCount = 6 /\
   bsdEndpointStatusLedgerConditionalCount = 1 /\
   bsdRankEndpointClosurePercent = 100 /\
-  bsdPvsNPAuditMaturityPercent = 55 /\
+  bsdPvsNPAuditMaturityPercent = 75 /\
   bsdEndpointFormalizationStatusDocumentPopulatedBool = true
 
 theorem bsdEndpointStatusLedgerComplete_holds :

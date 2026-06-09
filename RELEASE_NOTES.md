@@ -37,7 +37,7 @@ Audit status:
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=60%`,
-  `PvsNPArchiveMaturityComparable=55%`.
+  `PvsNPArchiveMaturityComparable=75%`.
 - The refined BSD formula layer remains conditional on
   `BSDFormulaFactorsStanding`.
 

@@ -30,7 +30,7 @@ The strongest truthful claim for this archive is:
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=60%`, and
-  `PvsNPArchiveMaturityComparable=55%`.
+  `PvsNPArchiveMaturityComparable=75%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -101,6 +101,7 @@ Key BSD rank route anchors:
 - `BSDTheoremLevelRankStatusDiscriminator`
 - `BSDRankEndpointStatusGovernance`
 - `BSDIndependentRankDiscriminator`
+- `BSDRankFoundationalCandidate`
 - `bsdRankMismatch_iff_standardNormalForm`
 - `bsdStandardNormalForm_iff_rankBridgeImageExclusion`
 - `bsdRankMismatch_iff_bridgeImageExclusion`
@@ -114,6 +115,9 @@ Key BSD rank route anchors:
 - `bsdRankBridgeImageSeparatorBranch_theoremLevelDiscriminator`
 - `bsdOfficialNegativeEndpointUse_endpointStatusGovernance`
 - `bsdEndpointResolvingMismatchTheorem_is_endpointStatusGovernance`
+- `bsdRankFoundationalCandidate_classifier_iff`
+- `bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier`
+- `bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier`
 - `bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator`
 - `bsdEndpointResolvingNonGovernance_hiddenFifthCase_impossible`
 - `bsdMismatch_endpointGovernance`
@@ -121,6 +125,7 @@ Key BSD rank route anchors:
 - `bsdRankMismatch_impossible`
 - `bsdRankEquality_forced`
 - `officialBSDRankEndpoint_of_auditHypotheses`
+- `officialBSDRankEndpoint_of_foundationalNoClassifier`
 - `bsdConditionalRefinedFormula_correspondence`
 
 ## Scope Boundary

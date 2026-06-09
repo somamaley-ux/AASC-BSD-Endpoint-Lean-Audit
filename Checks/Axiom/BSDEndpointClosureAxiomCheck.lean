@@ -18,6 +18,7 @@ BSD endpoint closeout has no live project axioms.
 #print axioms BSDRankEndpointStatusOccupation
 #print axioms BSDGovernedEndpointUse
 #print axioms BSDNegativeGovernedEndpointUse
+#print axioms BSDRankFoundationalCandidate
 #print axioms BSDRankEndpointAuditHypotheses
 #print axioms bsdRankMismatch_iff_standardNormalForm
 #print axioms bsdStandardNormalForm_iff_rankBridgeImageExclusion
@@ -33,10 +34,14 @@ BSD endpoint closeout has no live project axioms.
 #print axioms bsdRankBridgeImageSeparatorBranch_theoremLevelDiscriminator
 #print axioms bsdOfficialNegativeEndpointUse_endpointStatusGovernance
 #print axioms bsdEndpointResolvingMismatchTheorem_is_endpointStatusGovernance
+#print axioms bsdRankFoundationalCandidate_classifier_iff
+#print axioms bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier
+#print axioms bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier
 #print axioms bsdMismatch_endpointGovernance
 #print axioms bsdMismatch_independentRankDiscriminator
 #print axioms bsdRankMismatch_impossible
 #print axioms bsdRankEquality_forced
 #print axioms bsdRankEndpoint_officialCorrespondence
 #print axioms officialBSDRankEndpoint_of_auditHypotheses
+#print axioms officialBSDRankEndpoint_of_foundationalNoClassifier
 #print axioms bsdConditionalRefinedFormula_correspondence

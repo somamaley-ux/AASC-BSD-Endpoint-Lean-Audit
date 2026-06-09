@@ -4,7 +4,7 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=60%`
-- `PvsNPArchiveMaturityComparable=55%`
+- `PvsNPArchiveMaturityComparable=75%`
 
 ## Closed In The Lean Audit Spine
 
@@ -24,11 +24,17 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
   `bsdOfficialNegativeEndpointUse_endpointStatusGovernance`
 - Endpoint governance induces an independent rank discriminator:
   `bsdMismatch_independentRankDiscriminator`
+- BSD rank governance is mapped into the shared AASC foundational-candidate
+  classifier exclusion:
+  `BSDRankFoundationalCandidate`,
+  `bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier`,
+  `bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier`
 - The no-independent-rank-discriminator package excludes mismatch:
   `bsdRankMismatch_impossible`
 - Pointwise rank equality and official rank endpoint:
   `bsdRankEquality_forced`,
-  `officialBSDRankEndpoint_of_auditHypotheses`
+  `officialBSDRankEndpoint_of_auditHypotheses`,
+  `officialBSDRankEndpoint_of_foundationalNoClassifier`
 
 ## Conditional Boundary
 

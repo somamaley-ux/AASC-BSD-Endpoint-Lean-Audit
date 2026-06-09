@@ -88,6 +88,12 @@ def BSDRankEndpointStatusGovernance (E : BSDCarrier) : Prop :=
 def BSDIndependentRankDiscriminator (E : BSDCarrier) : Prop :=
   BSDRankEndpointStatusGovernance E
 
+def BSDRankFoundationalCandidate (E : BSDCarrier) :
+    MinimalConditionsForAdmissibleConstruction.FoundationalCandidate where
+  independentGovernance := BSDRankEndpointStatusGovernance E
+  generatedFromBelow := False
+  independentSameDomainClassifier := BSDIndependentRankDiscriminator E
+
 inductive BSDRankEndpointStatus where
   | positive
   | separator
@@ -307,6 +313,18 @@ theorem bsdEndpointGovernance_independentRankDiscriminator
   intro hGovernance
   exact hGovernance
 
+theorem bsdRankFoundationalCandidate_classifier_iff
+    {E : BSDCarrier} :
+    (BSDRankFoundationalCandidate E).independentSameDomainClassifier <->
+      BSDIndependentRankDiscriminator E :=
+  Iff.rfl
+
+theorem bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier
+    {E : BSDCarrier}
+    (hNoClassifier : MinimalConditionsForAdmissibleConstruction.NoIndependentSameDomainFoundationalClassifier) :
+    Not (BSDIndependentRankDiscriminator E) := by
+  exact hNoClassifier (BSDRankFoundationalCandidate E)
+
 theorem bsdKernel_noIndependentRankDiscriminator
     {E : BSDCarrier}
     (hNoIndependent : Not (BSDIndependentRankDiscriminator E)) :
@@ -321,6 +339,21 @@ structure BSDRankEndpointAuditHypotheses (E : BSDCarrier) : Prop where
   carrierAdequate : BSDCarrierAdequate E
   kernelInstantiated : BSDKernelInstantiated E
   noIndependentRankDiscriminator : Not (BSDIndependentRankDiscriminator E)
+
+theorem bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier
+    {E : BSDCarrier}
+    (hUse : BSDOfficialEndpointUse E)
+    (hCarrier : BSDCarrierInstantiated E)
+    (hAdequate : BSDCarrierAdequate E)
+    (hKernel : BSDKernelInstantiated E)
+    (hNoClassifier : MinimalConditionsForAdmissibleConstruction.NoIndependentSameDomainFoundationalClassifier) :
+    BSDRankEndpointAuditHypotheses E where
+  endpointUse := hUse
+  carrierInstantiated := hCarrier
+  carrierAdequate := hAdequate
+  kernelInstantiated := hKernel
+  noIndependentRankDiscriminator :=
+    bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier hNoClassifier
 
 theorem bsdMismatch_endpointGovernance
     {E : BSDCarrier}
@@ -376,6 +409,18 @@ theorem officialBSDRankEndpoint_of_auditHypotheses
     OfficialBSDRankEndpoint :=
   bsdRankEndpoint_officialCorrespondence
     (fun E => bsdRankEquality_forced (hAudit E))
+
+theorem officialBSDRankEndpoint_of_foundationalNoClassifier
+    (hUse : forall E : BSDCarrier, BSDOfficialEndpointUse E)
+    (hCarrier : forall E : BSDCarrier, BSDCarrierInstantiated E)
+    (hAdequate : forall E : BSDCarrier, BSDCarrierAdequate E)
+    (hKernel : forall E : BSDCarrier, BSDKernelInstantiated E)
+    (hNoClassifier : MinimalConditionsForAdmissibleConstruction.NoIndependentSameDomainFoundationalClassifier) :
+    OfficialBSDRankEndpoint :=
+  officialBSDRankEndpoint_of_auditHypotheses
+    (fun E =>
+      bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier
+        (hUse E) (hCarrier E) (hAdequate E) (hKernel E) hNoClassifier)
 
 /-
 Conditional refined formula layer.  This mirrors the manuscript boundary:
