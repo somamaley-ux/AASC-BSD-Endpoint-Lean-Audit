@@ -30,7 +30,7 @@ The strongest truthful claim for this archive is:
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=70%`, and
-  `PvsNPArchiveMaturityComparable=82%`.
+  `PvsNPArchiveMaturityComparable=85%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -39,7 +39,8 @@ The strongest truthful claim for this archive is:
   formalization of the leading coefficient formula, Tate-Shafarevich group
   finiteness, regulators, Tamagawa factors, or the analytic continuation and
   functional equation of L-functions.
-- The five focused BSD/AASC audit files run, and the focused BSD checks report
+- The six focused BSD/AASC audit files run, including the combined full-stack
+  AASC/BSD check, and the focused BSD checks report
   no axioms for the audited BSD closeout anchors.
 
 This archive should be read as an AASC endpoint-structure audit for the BSD
@@ -63,8 +64,8 @@ The audit runner:
 - scans the active Lean audit surface for live `axiom`, `sorry`, `admit`, or
   `unsafe` declarations;
 - builds `MaleyLean.Papers.BSD.AuditRunners`;
-- runs five focused AASC/BSD audit files, including the BSD closure, status
-  ledger, and audit-runner axiom checks.
+- runs six focused AASC/BSD audit files, including the BSD closure, status
+  ledger, audit-runner, and full-stack AASC/BSD axiom checks.
 
 Pinned environment:
 

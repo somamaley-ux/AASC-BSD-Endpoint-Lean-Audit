@@ -12,11 +12,12 @@ $auditFiles = @(
     "Checks\Axiom\NonDegenerateConstructionAndKernelOfAdmissibilityAxiomCheck.lean",
     "Checks\Axiom\BSDEndpointClosureAxiomCheck.lean",
     "Checks\Axiom\BSDEndpointStatusLedgerAxiomCheck.lean",
-    "Checks\Axiom\BSDEndpointAuditRunnersAxiomCheck.lean"
+    "Checks\Axiom\BSDEndpointAuditRunnersAxiomCheck.lean",
+    "Checks\Axiom\BSDFullStackAASCAxiomCheck.lean"
 )
 
-if ($auditFiles.Count -ne 5) {
-    throw "Expected 5 focused BSD audit files, found $($auditFiles.Count)."
+if ($auditFiles.Count -ne 6) {
+    throw "Expected 6 focused BSD audit files, found $($auditFiles.Count)."
 }
 
 $uniqueAuditFiles = $auditFiles | Select-Object -Unique

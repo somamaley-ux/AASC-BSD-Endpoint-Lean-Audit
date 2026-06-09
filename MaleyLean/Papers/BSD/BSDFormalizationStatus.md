@@ -4,7 +4,7 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=70%`
-- `PvsNPArchiveMaturityComparable=82%`
+- `PvsNPArchiveMaturityComparable=85%`
 
 ## Closed In The Lean Audit Spine
 
@@ -39,6 +39,8 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
   `BSDRankEndpointAASCContext`,
   `officialBSDRankEndpoint_of_aascContext`,
   `bsdRankEndpointAASCContext_closes_rankEndpoint`
+- Combined AASC/BSD full-stack axiom entry:
+  `Checks/Axiom/BSDFullStackAASCAxiomCheck.lean`
 
 ## Conditional Boundary
 

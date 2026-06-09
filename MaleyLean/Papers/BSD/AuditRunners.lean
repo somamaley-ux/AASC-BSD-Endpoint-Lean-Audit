@@ -17,7 +17,8 @@ def bsdEndpointFocusedAuditRunnerFiles : List String :=
   , "Checks/Axiom/NonDegenerateConstructionAndKernelOfAdmissibilityAxiomCheck.lean"
   , "Checks/Axiom/BSDEndpointClosureAxiomCheck.lean"
   , "Checks/Axiom/BSDEndpointStatusLedgerAxiomCheck.lean"
-  , "Checks/Axiom/BSDEndpointAuditRunnersAxiomCheck.lean" ]
+  , "Checks/Axiom/BSDEndpointAuditRunnersAxiomCheck.lean"
+  , "Checks/Axiom/BSDFullStackAASCAxiomCheck.lean" ]
 
 /-- Aggregate PowerShell audit runner for the BSD endpoint route. -/
 def bsdEndpointAggregateAuditRunnerFiles : List String :=
@@ -52,7 +53,7 @@ def bsdEndpointAuditRunnerProgressSummary : String :=
   bsdEndpointCurrentProgressSummary
 
 theorem bsdEndpointFocusedAuditRunnerFiles_count_eq :
-    bsdEndpointFocusedAuditRunnerFiles.length = 5 := by
+    bsdEndpointFocusedAuditRunnerFiles.length = 6 := by
   rfl
 
 theorem bsdEndpointAggregateAuditRunnerFiles_count_eq :
@@ -60,7 +61,7 @@ theorem bsdEndpointAggregateAuditRunnerFiles_count_eq :
   rfl
 
 theorem bsdEndpointAuditRunnerFiles_count_eq :
-    bsdEndpointAuditRunnerFiles.length = 6 := by
+    bsdEndpointAuditRunnerFiles.length = 7 := by
   rfl
 
 theorem bsdEndpointAuditRunnerFiles_decomposes :
@@ -90,9 +91,9 @@ theorem bsdEndpointAuditRunnerFilesPopulatedBool_eq_true :
   rfl
 
 def bsdEndpointAuditRunnerRegistryComplete : Prop :=
-  bsdEndpointFocusedAuditRunnerFiles.length = 5 /\
+  bsdEndpointFocusedAuditRunnerFiles.length = 6 /\
   bsdEndpointAggregateAuditRunnerFiles.length = 1 /\
-  bsdEndpointAuditRunnerFiles.length = 6 /\
+  bsdEndpointAuditRunnerFiles.length = 7 /\
   bsdEndpointAuditRunnerFiles =
     bsdEndpointFocusedAuditRunnerFiles ++
       bsdEndpointAggregateAuditRunnerFiles /\
