@@ -17,6 +17,7 @@ packet, a truth-boundary ledger, and a combined full-stack AASC/BSD axiom
 check.
 The short theorem-chain handoff is in `AUDIT_HANDOFF.md`.
 Local zip packages can be created with `scripts/package-bsd-release.ps1`.
+The same audit is wired for GitHub Actions in `.github/workflows/audit.yml`.
 
 Verification passed:
 

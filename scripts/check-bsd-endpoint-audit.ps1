@@ -4,17 +4,17 @@ $ErrorActionPreference = "Stop"
 $prohibitedPattern = "^\s*(axiom|unsafe)\b|\b(sorry|admit)\b"
 $scanRoots = @(
     "MaleyLean",
-    "Checks\Axiom"
+    "Checks/Axiom"
 )
 
 $auditFiles = @(
-    "Checks\Axiom\MinimalConditionsForAdmissibleConstructionAxiomCheck.lean",
-    "Checks\Axiom\NonDegenerateConstructionAndKernelOfAdmissibilityAxiomCheck.lean",
-    "Checks\Axiom\BSDEndpointClosureAxiomCheck.lean",
-    "Checks\Axiom\BSDEndpointStatusLedgerAxiomCheck.lean",
-    "Checks\Axiom\BSDTruthBoundaryAxiomCheck.lean",
-    "Checks\Axiom\BSDEndpointAuditRunnersAxiomCheck.lean",
-    "Checks\Axiom\BSDFullStackAASCAxiomCheck.lean"
+    "Checks/Axiom/MinimalConditionsForAdmissibleConstructionAxiomCheck.lean",
+    "Checks/Axiom/NonDegenerateConstructionAndKernelOfAdmissibilityAxiomCheck.lean",
+    "Checks/Axiom/BSDEndpointClosureAxiomCheck.lean",
+    "Checks/Axiom/BSDEndpointStatusLedgerAxiomCheck.lean",
+    "Checks/Axiom/BSDTruthBoundaryAxiomCheck.lean",
+    "Checks/Axiom/BSDEndpointAuditRunnersAxiomCheck.lean",
+    "Checks/Axiom/BSDFullStackAASCAxiomCheck.lean"
 )
 
 if ($auditFiles.Count -ne 7) {

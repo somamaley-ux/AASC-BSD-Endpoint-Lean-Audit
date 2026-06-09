@@ -62,6 +62,9 @@ Use:
 powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
 ```
 
+GitHub also runs this audit on push, pull request, and manual dispatch through
+`.github/workflows/audit.yml`.
+
 To create a local zip archive from exactly the tracked repository files:
 
 ```powershell
