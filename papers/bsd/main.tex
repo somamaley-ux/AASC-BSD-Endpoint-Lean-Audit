@@ -1388,14 +1388,19 @@ theorem bsdRankEndpoint_officialCorrespondence :
 \subsection{Refined formula anchors}
 \begin{verbatim}
 def BSDFormulaFactorsStanding (E : BSDCarrier) : Prop := ...
+def BSDFormula (E : BSDCarrier) : Prop := ...
+def BSDRefinedFormulaConditionalContext (E : BSDCarrier) : Prop := ...
 def BSDFormulaMismatch (E : BSDCarrier) : Prop := ...
 def BSDFormulaEndpointStatusGovernance (E : BSDCarrier) : Prop := ...
 def BSDIndependentFormulaDiscriminator (E : BSDCarrier) : Prop := ...
-def BSDRefinedFormula (E : BSDCarrier) : Prop := ...
 
 theorem bsdConditionalRefinedFormula_correspondence :
-  BSDFormulaFactorsStanding E -> BSDRefinedFormula E ->
+  BSDFormulaFactorsStanding E -> BSDFormula E ->
     ConditionalRefinedBSDEndpoint E
+
+theorem refinedBSDEndpoint_context_iff :
+  ConditionalRefinedBSDEndpoint E <->
+    BSDRefinedFormulaConditionalContext E
 
 theorem bsdFormulaMismatch_endpointGovernance :
   BSDOfficialFormulaNegativeEndpointUse E ->
@@ -1407,8 +1412,9 @@ theorem bsdFormulaMismatch_independentDiscriminator :
 theorem bsdNoIndependentFormulaDiscriminator :
   BSDKernelInstantiated E -> Not (BSDIndependentFormulaDiscriminator E)
 
-theorem bsdConditionalRefinedFormula_forced :
-  BSDFormulaFactorsStanding E -> BSDRefinedFormula E
+theorem bsdRefinedFormulaEndpoint_remains_conditional :
+  BSDRefinedFormulaConditionalContext E ->
+    ConditionalRefinedBSDEndpoint E
 \end{verbatim}
 
 \section{Main theorem and conclusion}

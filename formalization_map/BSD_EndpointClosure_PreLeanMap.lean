@@ -46,6 +46,7 @@ constant OfficialBSDRankEndpoint : Prop
 constant BSDFormulaFactorsStanding : BSDCarrier -> Prop
 constant BSDFormula : BSDCarrier -> Prop
 constant ConditionalRefinedBSDEndpoint : BSDCarrier -> Prop
+constant BSDRefinedFormulaConditionalContext : BSDCarrier -> Prop
 constant BSDFormulaMismatch : BSDCarrier -> Prop
 constant BSDFormulaEndpointStatusGovernance : BSDCarrier -> Prop
 constant BSDIndependentFormulaDiscriminator : BSDCarrier -> Prop
@@ -162,6 +163,19 @@ axiom bsdConditionalRefinedFormula_correspondence
     BSDFormulaFactorsStanding E -> BSDFormula E ->
       ConditionalRefinedBSDEndpoint E
 
+axiom refinedBSDEndpoint_formulaFactorsStanding
+    {E : BSDCarrier} :
+    ConditionalRefinedBSDEndpoint E -> BSDFormulaFactorsStanding E
+
+axiom refinedBSDEndpoint_formula
+    {E : BSDCarrier} :
+    ConditionalRefinedBSDEndpoint E -> BSDFormula E
+
+axiom refinedBSDEndpoint_context_iff
+    {E : BSDCarrier} :
+    ConditionalRefinedBSDEndpoint E <->
+      BSDRefinedFormulaConditionalContext E
+
 axiom bsdFormulaMismatch_endpointGovernance
     {E : BSDCarrier} :
     BSDOfficialFormulaNegativeEndpointUse E -> BSDFormulaEndpointStatusGovernance E
@@ -174,8 +188,9 @@ axiom bsdNoIndependentFormulaDiscriminator
     {E : BSDCarrier} :
     BSDKernelInstantiated E -> Not (BSDIndependentFormulaDiscriminator E)
 
-axiom bsdConditionalRefinedFormula_forced
+axiom bsdRefinedFormulaEndpoint_remains_conditional
     {E : BSDCarrier} :
-    BSDFormulaFactorsStanding E -> BSDFormula E
+    BSDRefinedFormulaConditionalContext E ->
+      ConditionalRefinedBSDEndpoint E
 
 end BSD.EndpointClosure
