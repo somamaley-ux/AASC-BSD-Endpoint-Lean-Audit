@@ -34,7 +34,7 @@ The strongest truthful claim for this archive is:
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=82%`, and
-  `PvsNPArchiveMaturityComparable=93%`.
+  `BSDReferenceArchiveMaturityComparable=93%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.

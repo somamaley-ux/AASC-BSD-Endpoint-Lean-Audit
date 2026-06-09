@@ -3,10 +3,11 @@ import MaleyLean.Papers.BSD.EndpointClosure
 /-!
 # BSD endpoint status ledger
 
-This ledger records the current BSD audit-spine state in the same spirit as the
-P vs NP SAT status ledger.  It is intentionally modest: the rank endpoint route
-is closed at the audit-spine level, while the refined formula layer remains a
-conditional endpoint guarded by formula-factor standing.
+This ledger records the current BSD audit-spine state using the prior SAT
+endpoint archive as a maturity reference point.  It is intentionally modest:
+the rank endpoint route is closed at the audit-spine level, while the refined
+formula layer remains a conditional endpoint guarded by formula-factor
+standing.
 -/
 
 namespace MaleyLean
@@ -152,13 +153,13 @@ def bsdRankEndpointClosurePercent : Nat := 100
 
 def bsdRefinedFormulaClosurePercent : Nat := 82
 
-def bsdPvsNPAuditMaturityPercent : Nat := 93
+def bsdReferenceArchiveMaturityPercent : Nat := 93
 
 def bsdEndpointCurrentFormalizationStatusSummary : String :=
   "BSD rank endpoint closed in Lean audit spine; refined formula conditional"
 
 def bsdEndpointCurrentProgressSummary : String :=
-  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=82%; PvsNPArchiveMaturityComparable=93%"
+  "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=82%; BSDReferenceArchiveMaturityComparable=93%"
 
 def bsdEndpointFormalizationStatusDocument : String :=
   "MaleyLean/Papers/BSD/BSDFormalizationStatus.md"
@@ -195,8 +196,8 @@ theorem bsdRefinedFormulaClosurePercent_eq :
     bsdRefinedFormulaClosurePercent = 82 := by
   rfl
 
-theorem bsdPvsNPAuditMaturityPercent_eq :
-    bsdPvsNPAuditMaturityPercent = 93 := by
+theorem bsdReferenceArchiveMaturityPercent_eq :
+    bsdReferenceArchiveMaturityPercent = 93 := by
   rfl
 
 theorem bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true :
@@ -211,7 +212,7 @@ def bsdEndpointStatusLedgerComplete : Prop :=
   bsdEndpointStatusLedgerClosedCount = 7 /\
   bsdEndpointStatusLedgerConditionalCount = 1 /\
   bsdRankEndpointClosurePercent = 100 /\
-  bsdPvsNPAuditMaturityPercent = 93 /\
+  bsdReferenceArchiveMaturityPercent = 93 /\
   bsdEndpointFormalizationStatusDocumentPopulatedBool = true
 
 theorem bsdEndpointStatusLedgerComplete_holds :
@@ -223,7 +224,7 @@ theorem bsdEndpointStatusLedgerComplete_holds :
             (And.intro bsdEndpointStatusLedgerClosedCount_eq
               (And.intro bsdEndpointStatusLedgerConditionalCount_eq
                 (And.intro bsdRankEndpointClosurePercent_eq
-                  (And.intro bsdPvsNPAuditMaturityPercent_eq
+                  (And.intro bsdReferenceArchiveMaturityPercent_eq
                     bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true))))))
 
 end BSD

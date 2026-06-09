@@ -18,6 +18,6 @@ open MaleyLean.Papers.BSD
 #print axioms bsdEndpointStatusLedgerConditionalCount_eq
 #print axioms bsdRankEndpointClosurePercent_eq
 #print axioms bsdRefinedFormulaClosurePercent_eq
-#print axioms bsdPvsNPAuditMaturityPercent_eq
+#print axioms bsdReferenceArchiveMaturityPercent_eq
 #print axioms bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true
 #print axioms bsdEndpointStatusLedgerComplete_holds

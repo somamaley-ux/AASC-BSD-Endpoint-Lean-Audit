@@ -33,7 +33,7 @@ Audit status:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaConditionalClosure=82%`
-- `PvsNPArchiveMaturityComparable=93%`
+- `BSDReferenceArchiveMaturityComparable=93%`
 - 7 focused AASC/BSD audit files run, including the truth-boundary check and
   the combined full-stack check
 - no live project-level `axiom`, `sorry`, `admit`, or `unsafe` declaration in
