@@ -4,7 +4,7 @@ $ErrorActionPreference = "Stop"
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
 Push-Location $repoRoot
 try {
-    $status = git status --porcelain
+    $status = @(git status --porcelain)
     if ($LASTEXITCODE -ne 0) {
         throw "Could not inspect git status."
     }
