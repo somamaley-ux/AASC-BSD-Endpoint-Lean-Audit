@@ -62,11 +62,11 @@ if ($null -ne $rgCommand) {
     }
 } else {
     Write-Host "ripgrep not found; using PowerShell fallback scan."
-    $prohibitedMatches = foreach ($scanRoot in $scanRoots) {
+    $prohibitedMatches = @(foreach ($scanRoot in $scanRoots) {
         Get-ChildItem -LiteralPath $scanRoot -Recurse -File -Filter "*.lean" |
             Select-String -Pattern $prohibitedPattern |
             ForEach-Object { "$($_.Path):$($_.LineNumber):$($_.Line)" }
-    }
+    })
     if ($prohibitedMatches.Count -ne 0) {
         $prohibitedMatches | ForEach-Object { Write-Host $_ }
         throw "Prohibited Lean placeholder or escape found in active BSD audit surface."
