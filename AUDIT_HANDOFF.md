@@ -21,7 +21,9 @@ powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
 The aggregate script checks for live `axiom`, `sorry`, `admit`, or `unsafe`
 declarations in the active BSD audit surface, builds the BSD audit runner, and
 runs the focused axiom-print audit files. It also parses the pre-Lean
-manuscript signature map outside the audited proof surface.
+manuscript signature map outside the audited proof surface. It now also checks
+that the pre-Lean signature map is not imported by the active Lean audit
+surface.
 
 To create a local handoff zip and checksum from exactly the tracked files:
 
@@ -78,6 +80,10 @@ The archive has an explicit Lean truth-boundary ledger:
 - `MaleyLean/Papers/BSD/TruthBoundary.lean`
 - `Checks/Axiom/BSDTruthBoundaryAxiomCheck.lean`
 - `bsdTruthBoundaryLedgerComplete_holds`
+
+The ledger completion now includes metadata checks for populated item titles,
+Lean anchors, and explanatory boundary text, plus the expected closed,
+external-standing, and snapshot row counts.
 
 That ledger separates:
 

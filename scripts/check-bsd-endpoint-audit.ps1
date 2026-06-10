@@ -2,6 +2,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $prohibitedPattern = "^\s*(axiom|unsafe)\b|\b(sorry|admit)\b"
+$signatureMapImportPattern = "^\s*import\s+.*(BSD_EndpointClosure_PreLeanMap|formalization_map)"
 $scanRoots = @(
     "MaleyLean",
     "Checks/Axiom"
@@ -79,6 +80,28 @@ if ($null -ne $rgCommand) {
     }
 }
 Write-Host "No live axiom/sorry/admit/unsafe declarations found in active BSD audit surface."
+
+if ($null -ne $rgCommand) {
+    $signatureMapImportMatches = & rg -n --glob "*.lean" $signatureMapImportPattern @scanRoots
+    if ($LASTEXITCODE -eq 0) {
+        $signatureMapImportMatches | ForEach-Object { Write-Host $_ }
+        throw "Pre-Lean manuscript signature map is imported from the active Lean audit surface."
+    }
+    if ($LASTEXITCODE -ne 1) {
+        throw "Signature-map import scan failed with exit code $LASTEXITCODE."
+    }
+} else {
+    $signatureMapImportMatches = @(foreach ($scanRoot in $scanRoots) {
+        Get-ChildItem -LiteralPath $scanRoot -Recurse -File -Filter "*.lean" |
+            Select-String -Pattern $signatureMapImportPattern |
+            ForEach-Object { "$($_.Path):$($_.LineNumber):$($_.Line)" }
+    })
+    if ($signatureMapImportMatches.Count -ne 0) {
+        $signatureMapImportMatches | ForEach-Object { Write-Host $_ }
+        throw "Pre-Lean manuscript signature map is imported from the active Lean audit surface."
+    }
+}
+Write-Host "Pre-Lean manuscript signature map is not imported by the active Lean audit surface."
 
 lake build MaleyLean.Papers.BSD.AuditRunners
 if ($LASTEXITCODE -ne 0) {

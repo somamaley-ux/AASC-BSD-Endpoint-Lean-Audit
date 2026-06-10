@@ -41,7 +41,13 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
   `bsdRankEndpointAASCContext_closes_rankEndpoint`
 - Combined AASC/BSD full-stack axiom entry:
   `Checks/Axiom/BSDFullStackAASCAxiomCheck.lean`
+- Status-ledger metadata completion:
+  `bsdEndpointStatusObligationTitlesPopulatedBool_eq_true`,
+  `bsdEndpointStatusLedgerLeanAnchorsPopulatedBool_eq_true`,
+  `bsdEndpointStatusLedgerSourceEvidencePopulatedBool_eq_true`
 - Truth-boundary ledger:
+  `bsdTruthBoundaryMetadataComplete_holds`,
+  `bsdTruthBoundaryCountComplete_holds`,
   `bsdTruthBoundaryLedgerComplete_holds`
 
 ## Conditional Boundary
@@ -68,4 +74,5 @@ Tate-Shafarevich finiteness, or the refined leading coefficient formula.
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a manuscript
 signature map.  It intentionally contains `axiom` declarations as planning
 anchors and is not imported by the executable Lean audit surface.  The
-aggregate audit parses it separately to catch stale theorem handles.
+aggregate audit verifies that it is not imported by the active Lean surface,
+then parses it separately to catch stale theorem handles.

@@ -37,6 +37,13 @@ The stabilized proof surface is:
   snapshot boundary.
 - Added aggregate parse checking for the pre-Lean manuscript signature map,
   outside the active axiom-free proof surface.
+- Added an aggregate import-boundary guard verifying that the pre-Lean
+  manuscript signature map is not imported by the active Lean audit surface.
+- Strengthened the BSD status ledger with populated obligation-title,
+  Lean-anchor, source-evidence, current-status, and progress-summary checks.
+- Strengthened the truth-boundary ledger with item-catalog, row-count,
+  Lean-anchor, explanatory-text, metadata-completion, and count-completion
+  checks.
 
 ## Verification
 

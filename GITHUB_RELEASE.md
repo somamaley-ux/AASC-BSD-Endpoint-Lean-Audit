@@ -22,7 +22,11 @@ with the latest pushed `main` workflow run expected to pass before release.
 The current release line also includes BSD-native status naming,
 manuscript-map alignment with the executable Lean spine, parse checking for
 the pre-Lean signature map, semantic-audit-carrier wording cleanup, and
-cross-platform A+ support-audit scan hardening.
+cross-platform A+ support-audit scan hardening. The audit now also checks that
+the pre-Lean manuscript signature map is not imported by the active Lean proof
+surface, and it strengthens the status/truth-boundary ledgers with metadata
+completion anchors for titles, Lean anchors, source evidence, explanatory
+boundary text, row counts, and current progress summaries.
 
 Verification passed:
 
@@ -39,6 +43,8 @@ Audit status:
 - 7 focused AASC/BSD audit files run, including the truth-boundary check and
   the combined full-stack check
 - pre-Lean manuscript signature map parses outside the audited proof surface
+- aggregate audit verifies the pre-Lean manuscript signature map is not
+  imported by the active Lean audit surface
 - no live project-level `axiom`, `sorry`, `admit`, or `unsafe` declaration in
   the active BSD audit surface
 - BSD rank endpoint route closes through `BSDRankEndpointAASCContext`
@@ -46,6 +52,11 @@ Audit status:
   `refinedBSDEndpoint_context_iff`
 - truth-boundary ledger completion is audited through
   `bsdTruthBoundaryLedgerComplete_holds`
+- status-ledger metadata completion is audited through
+  `bsdEndpointStatusLedgerComplete`
+- truth-boundary metadata and row-count completion are audited through
+  `bsdTruthBoundaryMetadataComplete_holds` and
+  `bsdTruthBoundaryCountComplete_holds`
 - refined formula endpoint remains conditional on
   `BSDFormulaFactorStandingPacket`
 

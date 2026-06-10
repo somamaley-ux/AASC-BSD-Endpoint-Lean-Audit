@@ -27,10 +27,13 @@ The strongest truthful claim for this archive is:
   registry:
   `MaleyLean.Papers.BSD.StatusLedger` and
   `MaleyLean.Papers.BSD.AuditRunners`.
+  The status ledger also checks that obligation titles, Lean anchors, source
+  evidence, progress summaries, and boundary percentages are populated.
 - The BSD audit also includes a truth-boundary ledger:
   `MaleyLean.Papers.BSD.TruthBoundary`, which records which parts are closed
   in the Lean proof spine and which parts remain semantic or arithmetic
-  standing.
+  standing. The truth-boundary ledger checks its item catalog, row counts,
+  Lean anchors, and explanatory boundary text.
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=82%`, and
@@ -50,7 +53,8 @@ The strongest truthful claim for this archive is:
 - The aggregate audit also parses the manuscript signature map in
   `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` outside the audited
   proof surface, so stale theorem handles are caught without treating that map
-  as an axiom-free proof.
+  as an axiom-free proof. The aggregate audit also checks that this pre-Lean
+  signature map is not imported by the active Lean audit surface.
 
 This archive should be read as an AASC endpoint-structure audit for the BSD
 rank endpoint, not as a full arithmetic-geometry library. Elliptic curves,
@@ -89,6 +93,8 @@ The audit runner:
 - runs seven focused AASC/BSD audit files, including the BSD closure, status
   ledger, truth-boundary ledger, audit-runner, and full-stack AASC/BSD axiom
   checks;
+- checks that the pre-Lean manuscript signature map is not imported by the
+  active Lean audit surface;
 - parses the pre-Lean manuscript signature map outside the active axiom-free
   audit surface.
 
@@ -182,6 +188,8 @@ The rank endpoint and refined formula endpoint are deliberately separated:
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
 manuscript signature map. It intentionally contains planning `axiom`
 declarations and is not imported by the executable audit surface.
+The aggregate audit enforces that non-import boundary before parsing the map
+separately.
 
 ## Repository Layout
 

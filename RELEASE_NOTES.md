@@ -17,6 +17,8 @@ Included:
   axiom checks.
 - Parse-only check for the pre-Lean manuscript signature map under
   `formalization_map`.
+- Import-boundary check confirming the pre-Lean manuscript signature map is
+  not imported by the active Lean audit surface.
 - Manuscript-facing BSD PDF/source snapshot under `papers/bsd`.
 - Short audit handoff in `AUDIT_HANDOFF.md`.
 - Pre-Lean manuscript-to-formalization map under `formalization_map`.
@@ -42,12 +44,19 @@ Audit status:
   closeout, status-ledger, and audit-runner anchors.
 - The pre-Lean manuscript signature map parses outside the audited proof
   surface.
+- The aggregate audit also verifies that the pre-Lean manuscript signature map
+  is not imported by the active Lean audit surface.
 - The rank endpoint route closes pointwise rank mismatch under the explicit
   `BSDRankEndpointAuditHypotheses` package.
 - The refined formula guard is now exact:
   `refinedBSDEndpoint_context_iff`.
 - The truth-boundary ledger is audited through
   `bsdTruthBoundaryLedgerComplete_holds`.
+- The status ledger now audits populated obligation titles, Lean anchors,
+  source-evidence rows, current-status summaries, and progress summaries.
+- The truth-boundary ledger now audits item catalogs, row counts, Lean anchors,
+  explanatory boundary text, and ledger completion separately before combining
+  them with the BSD status ledger.
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaConditionalClosure=82%`,
@@ -69,7 +78,9 @@ analytic continuation, functional equation, leading coefficient, regulator,
 Tamagawa, torsion, and Tate-Shafarevich factors.
 
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
-signature map and is not part of the executable proof surface.
+signature map and is not part of the executable proof surface. The aggregate
+audit script verifies that this map is not imported by active Lean files before
+parsing it separately as a handoff artifact.
 
 Pinned environment:
 

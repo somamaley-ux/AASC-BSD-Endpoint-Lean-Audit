@@ -53,6 +53,12 @@ def bsdEndpointAuditRunnerFormalizationStatusSummary : String :=
 def bsdEndpointAuditRunnerProgressSummary : String :=
   bsdEndpointCurrentProgressSummary
 
+def bsdEndpointAuditRunnerFormalizationStatusSummaryPopulatedBool : Bool :=
+  !bsdEndpointAuditRunnerFormalizationStatusSummary.isEmpty
+
+def bsdEndpointAuditRunnerProgressSummaryPopulatedBool : Bool :=
+  !bsdEndpointAuditRunnerProgressSummary.isEmpty
+
 theorem bsdEndpointFocusedAuditRunnerFiles_count_eq :
     bsdEndpointFocusedAuditRunnerFiles.length = 7 := by
   rfl
@@ -91,27 +97,39 @@ theorem bsdEndpointAuditRunnerFilesPopulatedBool_eq_true :
     bsdEndpointAuditRunnerFilesPopulatedBool = true := by
   rfl
 
+theorem bsdEndpointAuditRunnerFormalizationStatusSummaryPopulatedBool_eq_true :
+    bsdEndpointAuditRunnerFormalizationStatusSummaryPopulatedBool = true := by
+  rfl
+
+theorem bsdEndpointAuditRunnerProgressSummaryPopulatedBool_eq_true :
+    bsdEndpointAuditRunnerProgressSummaryPopulatedBool = true := by
+  rfl
+
 def bsdEndpointAuditRunnerRegistryComplete : Prop :=
   bsdEndpointFocusedAuditRunnerFiles.length = 7 /\
   bsdEndpointAggregateAuditRunnerFiles.length = 1 /\
   bsdEndpointAuditRunnerFiles.length = 8 /\
   bsdEndpointAuditRunnerFiles =
-    bsdEndpointFocusedAuditRunnerFiles ++
-      bsdEndpointAggregateAuditRunnerFiles /\
+      bsdEndpointFocusedAuditRunnerFiles ++
+        bsdEndpointAggregateAuditRunnerFiles /\
   bsdEndpointAuditRunnerFilesDuplicateFreeBool = true /\
   bsdEndpointAuditRunnerFilesPopulatedBool = true /\
+  bsdEndpointAuditRunnerFormalizationStatusSummaryPopulatedBool = true /\
+  bsdEndpointAuditRunnerProgressSummaryPopulatedBool = true /\
   bsdTruthBoundaryLedgerComplete
 
 theorem bsdEndpointAuditRunnerRegistryComplete_holds :
     bsdEndpointAuditRunnerRegistryComplete := by
-  exact
-    And.intro bsdEndpointFocusedAuditRunnerFiles_count_eq
-      (And.intro bsdEndpointAggregateAuditRunnerFiles_count_eq
-        (And.intro bsdEndpointAuditRunnerFiles_count_eq
-          (And.intro bsdEndpointAuditRunnerFiles_decomposes
-            (And.intro bsdEndpointAuditRunnerFilesDuplicateFreeBool_eq_true
-              (And.intro bsdEndpointAuditRunnerFilesPopulatedBool_eq_true
-                bsdTruthBoundaryLedgerComplete_holds)))))
+  refine And.intro bsdEndpointFocusedAuditRunnerFiles_count_eq ?_
+  refine And.intro bsdEndpointAggregateAuditRunnerFiles_count_eq ?_
+  refine And.intro bsdEndpointAuditRunnerFiles_count_eq ?_
+  refine And.intro bsdEndpointAuditRunnerFiles_decomposes ?_
+  refine And.intro bsdEndpointAuditRunnerFilesDuplicateFreeBool_eq_true ?_
+  refine And.intro bsdEndpointAuditRunnerFilesPopulatedBool_eq_true ?_
+  refine And.intro
+    bsdEndpointAuditRunnerFormalizationStatusSummaryPopulatedBool_eq_true ?_
+  refine And.intro bsdEndpointAuditRunnerProgressSummaryPopulatedBool_eq_true ?_
+  exact bsdTruthBoundaryLedgerComplete_holds
 
 end BSD
 end Papers

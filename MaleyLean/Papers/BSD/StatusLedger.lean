@@ -61,6 +61,12 @@ theorem bsdEndpointStatusObligations_length_eq :
     bsdEndpointStatusObligations.length = 8 := by
   rfl
 
+def bsdEndpointStatusObligationTitles : List String :=
+  bsdEndpointStatusObligations.map bsdEndpointStatusObligationTitle
+
+def bsdEndpointStatusObligationTitlesPopulatedBool : Bool :=
+  bsdEndpointStatusObligationTitles.all (fun title => !title.isEmpty)
+
 /-- Status labels for the BSD audit ledger. -/
 inductive BSDEndpointStatus where
   | closedInLeanAuditSpine
@@ -135,6 +141,19 @@ def bsdEndpointStatusLedgerSuppliedFlags : List Bool :=
 def bsdEndpointStatusLedgerAllSuppliedBool : Bool :=
   bsdEndpointStatusLedgerSuppliedFlags.all id
 
+def bsdEndpointStatusLedgerLeanAnchors : List String :=
+  bsdEndpointStatusLedger.map (fun row => row.leanAnchor)
+
+def bsdEndpointStatusLedgerLeanAnchorsPopulatedBool : Bool :=
+  bsdEndpointStatusLedgerLeanAnchors.all (fun anchor => !anchor.isEmpty)
+
+def bsdEndpointStatusLedgerSourceEvidence : List String :=
+  bsdEndpointStatusLedger.map (fun row => row.sourceEvidence)
+
+def bsdEndpointStatusLedgerSourceEvidencePopulatedBool : Bool :=
+  bsdEndpointStatusLedgerSourceEvidence.all
+    (fun evidence => !evidence.isEmpty)
+
 def bsdEndpointStatusLedgerClosedCount : Nat :=
   (bsdEndpointStatusLedger.filter
     (fun row => row.status == BSDEndpointStatus.closedInLeanAuditSpine)).length
@@ -161,6 +180,12 @@ def bsdEndpointCurrentFormalizationStatusSummary : String :=
 def bsdEndpointCurrentProgressSummary : String :=
   "BSDRankEndpointClosure=100%; BSDRefinedFormulaConditionalClosure=82%; BSDReferenceArchiveMaturityComparable=93%"
 
+def bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool : Bool :=
+  !bsdEndpointCurrentFormalizationStatusSummary.isEmpty
+
+def bsdEndpointCurrentProgressSummaryPopulatedBool : Bool :=
+  !bsdEndpointCurrentProgressSummary.isEmpty
+
 def bsdEndpointFormalizationStatusDocument : String :=
   "MaleyLean/Papers/BSD/BSDFormalizationStatus.md"
 
@@ -172,8 +197,20 @@ theorem bsdEndpointStatusLedger_obligations_match :
       bsdEndpointStatusObligations := by
   rfl
 
+theorem bsdEndpointStatusObligationTitlesPopulatedBool_eq_true :
+    bsdEndpointStatusObligationTitlesPopulatedBool = true := by
+  rfl
+
 theorem bsdEndpointStatusLedgerAllSuppliedBool_eq_true :
     bsdEndpointStatusLedgerAllSuppliedBool = true := by
+  rfl
+
+theorem bsdEndpointStatusLedgerLeanAnchorsPopulatedBool_eq_true :
+    bsdEndpointStatusLedgerLeanAnchorsPopulatedBool = true := by
+  rfl
+
+theorem bsdEndpointStatusLedgerSourceEvidencePopulatedBool_eq_true :
+    bsdEndpointStatusLedgerSourceEvidencePopulatedBool = true := by
   rfl
 
 theorem bsdEndpointStatusLedgerClosedCount_eq :
@@ -200,6 +237,14 @@ theorem bsdReferenceArchiveMaturityPercent_eq :
     bsdReferenceArchiveMaturityPercent = 93 := by
   rfl
 
+theorem bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool_eq_true :
+    bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool = true := by
+  rfl
+
+theorem bsdEndpointCurrentProgressSummaryPopulatedBool_eq_true :
+    bsdEndpointCurrentProgressSummaryPopulatedBool = true := by
+  rfl
+
 theorem bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true :
     bsdEndpointFormalizationStatusDocumentPopulatedBool = true := by
   rfl
@@ -208,24 +253,39 @@ def bsdEndpointStatusLedgerComplete : Prop :=
   bsdEndpointStatusObligations.length = 8 /\
   bsdEndpointStatusLedgerObligations =
     bsdEndpointStatusObligations /\
+  bsdEndpointStatusObligationTitlesPopulatedBool = true /\
   bsdEndpointStatusLedgerAllSuppliedBool = true /\
+  bsdEndpointStatusLedgerLeanAnchorsPopulatedBool = true /\
+  bsdEndpointStatusLedgerSourceEvidencePopulatedBool = true /\
   bsdEndpointStatusLedgerClosedCount = 7 /\
   bsdEndpointStatusLedgerConditionalCount = 1 /\
+  bsdEndpointStatusLedgerExternalStandingCount = 0 /\
   bsdRankEndpointClosurePercent = 100 /\
+  bsdRefinedFormulaClosurePercent = 82 /\
   bsdReferenceArchiveMaturityPercent = 93 /\
+  bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool = true /\
+  bsdEndpointCurrentProgressSummaryPopulatedBool = true /\
   bsdEndpointFormalizationStatusDocumentPopulatedBool = true
 
 theorem bsdEndpointStatusLedgerComplete_holds :
     bsdEndpointStatusLedgerComplete := by
-  exact
-    And.intro bsdEndpointStatusObligations_length_eq
-      (And.intro bsdEndpointStatusLedger_obligations_match
-        (And.intro bsdEndpointStatusLedgerAllSuppliedBool_eq_true
-            (And.intro bsdEndpointStatusLedgerClosedCount_eq
-              (And.intro bsdEndpointStatusLedgerConditionalCount_eq
-                (And.intro bsdRankEndpointClosurePercent_eq
-                  (And.intro bsdReferenceArchiveMaturityPercent_eq
-                    bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true))))))
+  refine And.intro bsdEndpointStatusObligations_length_eq ?_
+  refine And.intro bsdEndpointStatusLedger_obligations_match ?_
+  refine And.intro bsdEndpointStatusObligationTitlesPopulatedBool_eq_true ?_
+  refine And.intro bsdEndpointStatusLedgerAllSuppliedBool_eq_true ?_
+  refine And.intro bsdEndpointStatusLedgerLeanAnchorsPopulatedBool_eq_true ?_
+  refine And.intro
+    bsdEndpointStatusLedgerSourceEvidencePopulatedBool_eq_true ?_
+  refine And.intro bsdEndpointStatusLedgerClosedCount_eq ?_
+  refine And.intro bsdEndpointStatusLedgerConditionalCount_eq ?_
+  refine And.intro bsdEndpointStatusLedgerExternalStandingCount_eq ?_
+  refine And.intro bsdRankEndpointClosurePercent_eq ?_
+  refine And.intro bsdRefinedFormulaClosurePercent_eq ?_
+  refine And.intro bsdReferenceArchiveMaturityPercent_eq ?_
+  refine And.intro
+    bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool_eq_true ?_
+  refine And.intro bsdEndpointCurrentProgressSummaryPopulatedBool_eq_true ?_
+  exact bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true
 
 end BSD
 end Papers
