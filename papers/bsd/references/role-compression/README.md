@@ -16,6 +16,10 @@ decompressed carrier/standing/readout/bridge architecture. The BSD endpoint
 Lean archive uses that framing to distinguish rank endpoint closure,
 bridge/factor-standing boundaries, and classical arithmetic construction.
 
+In the main BSD endpoint archive, this supports the strongest truthful framing:
+the rank endpoint route is complete in the AASC endpoint-structure proof class,
+while classical arithmetic construction remains a distinct proof class.
+
 Truth boundary:
 
 These files are reference artifacts. They do not add Lean theorem content by

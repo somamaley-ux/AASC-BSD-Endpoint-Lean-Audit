@@ -12,6 +12,19 @@ The rank endpoint is the closed Lean proof-spine target.  The refined formula
 layer is recorded as an explicit AASC bridge/factor-standing boundary, not as
 an unfinished analytic construction route.
 
+Result claim: this archive records a complete AASC endpoint-structure proof
+route for the BSD rank endpoint. Fixed-carrier BSD endpoint use enters the
+kernel-governed endpoint regime; the analytic-arithmetic mismatch branch
+becomes theorem-level same-domain endpoint-status governance; the resulting
+independent rank discriminator is excluded by AASC no-second-classifier
+closure; rank mismatch is impossible; and the official BSD rank endpoint
+follows.
+
+Truth boundary: this is not a conventional arithmetic-geometric construction
+proof of BSD. It does not construct rational points, prove a new descent
+theorem, prove Sha finiteness by arithmetic methods, or analytically derive the
+full refined leading-coefficient formula from first principles.
+
 ## Verification Commands
 
 ```powershell

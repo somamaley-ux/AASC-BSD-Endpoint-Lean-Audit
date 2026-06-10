@@ -5,6 +5,17 @@
 This release packages the first dedicated Lean 4 audit archive for the
 AASC-first BSD rank endpoint proof spine.
 
+Result claim:
+
+This release records a complete AASC endpoint-structure proof route for the
+BSD rank endpoint. In the audited proof class, fixed-carrier BSD endpoint use
+forces the kernel-governed endpoint regime; analytic-arithmetic mismatch
+induces theorem-level same-domain endpoint-status governance; the corresponding
+independent rank discriminator is excluded by reusable AASC
+no-second-classifier closure; and the official BSD rank endpoint follows. The
+refined formula layer is closed as an explicit bridge/factor-standing boundary,
+not as a conventional analytic-construction route.
+
 Included:
 
 - BSD endpoint Lean files under `MaleyLean/Papers/BSD`, including
@@ -67,12 +78,12 @@ Audit status:
 
 Truth boundary:
 
-This is an AASC endpoint-structure Lean audit archive for the BSD rank endpoint
-route. It is not a complete first-principles formalization of elliptic curves,
-L-functions, analytic rank, Mordell-Weil rank, the Tate-Shafarevich group,
-regulators, Tamagawa factors, or the full refined BSD formula. Those objects
-are represented at the audit surface by explicit carriers, fields, and
-standing hypotheses.
+This is a complete AASC endpoint-structure Lean audit archive for the BSD rank
+endpoint route. It is not a conventional first-principles arithmetic
+formalization or construction proof of elliptic curves, L-functions, analytic
+rank, Mordell-Weil rank, the Tate-Shafarevich group, regulators, Tamagawa
+factors, or the full refined BSD formula. Those objects are represented at the
+audit surface by explicit carriers, fields, and standing hypotheses.
 
 The refined formula guard is now split into named bridge/factor-standing
 components for analytic continuation, functional equation, leading

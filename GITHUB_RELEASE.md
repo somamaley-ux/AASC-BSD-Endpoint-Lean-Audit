@@ -9,12 +9,18 @@ AASC BSD Endpoint Lean Audit vX.Y.Z
 Standalone Lean 4 archive for the AASC-first Birch and Swinnerton-Dyer rank
 endpoint proof spine.
 
-This release verifies the manuscript-facing AASC route to the BSD rank endpoint
-in a dedicated repository separated from the broader AASC working checkout. The
-audit surface includes the reusable AASC foundation layer, the BSD rank
+This release verifies the complete manuscript-facing AASC endpoint-structure
+route to the BSD rank endpoint in a dedicated repository separated from the
+broader AASC working checkout. In the audited AASC proof class, fixed-carrier
+BSD endpoint use forces the kernel-governed endpoint regime; analytic-arithmetic
+mismatch becomes theorem-level same-domain endpoint-status governance; the
+corresponding independent rank discriminator is excluded by the reusable AASC
+no-second-classifier closure; and the official BSD rank endpoint follows.
+
+The audit surface includes the reusable AASC foundation layer, the BSD rank
 endpoint bridge layer, a structured conditional refined-formula standing
-packet, an explicit refined-formula bridge-boundary ledger, and a combined full-stack AASC/BSD axiom
-check.
+packet, an explicit refined-formula bridge-boundary ledger, and a combined
+full-stack AASC/BSD axiom check.
 The short theorem-chain handoff is in `AUDIT_HANDOFF.md`.
 Local zip packages can be created with `scripts/package-bsd-release.ps1`.
 The same audit is wired for GitHub Actions in `.github/workflows/audit.yml`,
@@ -63,10 +69,13 @@ Audit status:
 
 Truth boundary:
 
-This is an AASC endpoint-structure Lean audit archive for the BSD rank endpoint
-route. It does not claim a first-principles formalization of elliptic curves,
-L-functions, analytic rank, Mordell-Weil rank, regulators, Tamagawa factors,
-torsion, Tate-Shafarevich finiteness, or the full refined BSD formula.
+This is a complete AASC endpoint-structure Lean audit archive for the BSD rank
+endpoint route. It does not claim a conventional first-principles arithmetic
+formalization or construction proof of elliptic curves, L-functions, analytic
+rank, Mordell-Weil rank, regulators, Tamagawa factors, torsion,
+Tate-Shafarevich finiteness, or the full refined BSD formula. The refined
+formula layer is fully located as a bridge/factor-standing boundary, not as an
+unfinished analytic-construction route.
 
 Pinned environment:
 

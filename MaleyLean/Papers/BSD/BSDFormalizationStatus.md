@@ -10,6 +10,24 @@ The refined formula figure is no longer a partial analytic-construction
 percentage. It records that the AASC bridge/factor-standing boundary is
 explicit in Lean, matching the role-compression analysis.
 
+## Result Claim
+
+The Lean audit records a complete AASC endpoint-structure proof route for the
+BSD rank endpoint. The closed route is:
+
+1. fixed-carrier official BSD endpoint use;
+2. rank mismatch as bridge-image exclusion;
+3. endpoint-resolving mismatch as theorem-level endpoint-status governance;
+4. independent same-domain rank discrimination;
+5. AASC no-second-classifier exclusion;
+6. rank mismatch impossibility;
+7. pointwise rank equality;
+8. official BSD rank endpoint correspondence.
+
+This is a complete result in the AASC endpoint proof class. It is not a
+conventional arithmetic-geometric construction proof of rational points,
+descent, Sha finiteness, or the full refined leading-coefficient formula.
+
 ## Closed In The Lean Audit Spine
 
 - Fixed-carrier official endpoint use:

@@ -1,5 +1,20 @@
 # Project ledger - BSD Endpoint Closure, Lean audit snapshot
 
+## Result claim
+
+The repository records a complete AASC endpoint-structure proof route for the
+BSD rank endpoint. In that proof class, fixed-carrier BSD endpoint use forces
+the kernel-governed endpoint regime; analytic-arithmetic mismatch becomes
+theorem-level same-domain endpoint-status governance; the resulting
+independent rank discriminator is excluded by reusable AASC
+no-second-classifier closure; rank mismatch is impossible; pointwise rank
+equality follows; and the fixed-carrier equality is identified with the
+official BSD rank endpoint.
+
+This is not a conventional arithmetic-geometric construction proof. The
+refined formula layer is fully recorded as an explicit bridge/factor-standing
+boundary rather than as an unfinished analytic proof route.
+
 ## Proof surface
 
 The stabilized proof surface is:

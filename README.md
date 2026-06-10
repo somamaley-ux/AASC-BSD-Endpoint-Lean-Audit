@@ -10,6 +10,25 @@ AASC working checkout. It contains the reusable AASC support spine, the BSD
 rank-endpoint Lean audit module, focused axiom checks, the pre-Lean
 formalization map, and the manuscript-facing PDF/source snapshot.
 
+## Result Claim
+
+This release records a complete AASC endpoint-structure proof route for the
+Birch and Swinnerton-Dyer rank endpoint. In the audited AASC proof class,
+official fixed-carrier BSD endpoint use forces the kernel-governed endpoint
+regime; the analytic-arithmetic mismatch branch becomes theorem-level
+same-domain endpoint-status governance; the corresponding independent rank
+discriminator is excluded by the reusable AASC no-second-classifier closure;
+therefore rank mismatch is impossible and the official BSD rank endpoint
+follows.
+
+The refined leading-coefficient formula is not treated as an unfinished
+analytic construction. It is recorded as a fully explicit bridge/factor-standing
+boundary: once the formula-factor roles have endpoint standing, the guard and
+conditional refined endpoint correspondence are audited in Lean. This archive
+does not claim a conventional arithmetic-geometric construction of rational
+points, analytic continuation, Sha finiteness, descent data, or the refined
+leading-coefficient formula from first principles.
+
 ## Current Status
 
 The strongest truthful claim for this archive is:
