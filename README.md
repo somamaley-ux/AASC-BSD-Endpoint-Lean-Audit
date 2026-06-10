@@ -37,7 +37,7 @@ The strongest truthful claim for this archive is:
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaBridgeBoundary=100%`, and
-  `BSDReferenceArchiveMaturityComparable=93%`.
+  `BSDReferenceArchiveMaturityComparable=100%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
@@ -206,6 +206,9 @@ separately.
 - `Checks/Axiom/` - focused Lean axiom-print entry points.
 - `formalization_map/` - manuscript-to-Lean pre-formalization map.
 - `papers/bsd/` - manuscript-facing source/PDF snapshot.
+- `papers/bsd/references/role-compression/` - local copy of the BSD
+  role-compression source package and PDF used as the AASC claim-class
+  reference layer.
 - `scripts/` - verification scripts.
 - `dist/` - ignored local release packages created by the packaging script.
 - `GITHUB_RELEASE.md` - suggested release title and notes.

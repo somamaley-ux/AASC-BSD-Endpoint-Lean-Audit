@@ -172,13 +172,13 @@ def bsdRankEndpointClosurePercent : Nat := 100
 
 def bsdRefinedFormulaBridgeBoundaryPercent : Nat := 100
 
-def bsdReferenceArchiveMaturityPercent : Nat := 93
+def bsdReferenceArchiveMaturityPercent : Nat := 100
 
 def bsdEndpointCurrentFormalizationStatusSummary : String :=
   "BSD rank endpoint closed in Lean audit spine; refined formula recorded as explicit bridge/factor-standing boundary"
 
 def bsdEndpointCurrentProgressSummary : String :=
-  "BSDRankEndpointClosure=100%; BSDRefinedFormulaBridgeBoundary=100%; BSDReferenceArchiveMaturityComparable=93%"
+  "BSDRankEndpointClosure=100%; BSDRefinedFormulaBridgeBoundary=100%; BSDReferenceArchiveMaturityComparable=100%"
 
 def bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool : Bool :=
   !bsdEndpointCurrentFormalizationStatusSummary.isEmpty
@@ -235,7 +235,7 @@ theorem bsdRefinedFormulaBridgeBoundaryPercent_eq :
   rfl
 
 theorem bsdReferenceArchiveMaturityPercent_eq :
-    bsdReferenceArchiveMaturityPercent = 93 := by
+    bsdReferenceArchiveMaturityPercent = 100 := by
   rfl
 
 theorem bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool_eq_true :
@@ -263,7 +263,7 @@ def bsdEndpointStatusLedgerComplete : Prop :=
   bsdEndpointStatusLedgerExternalStandingCount = 0 /\
   bsdRankEndpointClosurePercent = 100 /\
   bsdRefinedFormulaBridgeBoundaryPercent = 100 /\
-  bsdReferenceArchiveMaturityPercent = 93 /\
+  bsdReferenceArchiveMaturityPercent = 100 /\
   bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool = true /\
   bsdEndpointCurrentProgressSummaryPopulatedBool = true /\
   bsdEndpointFormalizationStatusDocumentPopulatedBool = true

@@ -56,7 +56,7 @@ def BSDTruthBoundaryItem.title : BSDTruthBoundaryItem -> String
   | .refinedFormulaGuardExact =>
       "Refined formula endpoint has an exact conditional guard"
   | .manuscriptPdfSnapshot =>
-      "Bundled manuscript PDF is a snapshot until regenerated"
+      "Bundled manuscript PDF is refreshed from the Codex handoff render"
 
 def bsdTruthBoundaryItemCatalog : List BSDTruthBoundaryItem :=
   [ .carrierAndRankReadouts
@@ -116,7 +116,7 @@ def bsdTruthBoundaryRows : List BSDTruthBoundaryRow :=
   , { item := .manuscriptPdfSnapshot
       kind := .manuscriptSnapshotBoundary
       leanAnchor := "papers/bsd/PROJECT_LEDGER.md"
-      truthBoundary := "main.tex has current Lean names; the bundled PDF is a pre-regeneration snapshot"
+      truthBoundary := "main.tex has current Lean names; the bundled PDF is refreshed from the Codex handoff render"
       declared := true } ]
 
 def bsdTruthBoundaryItems : List BSDTruthBoundaryItem :=

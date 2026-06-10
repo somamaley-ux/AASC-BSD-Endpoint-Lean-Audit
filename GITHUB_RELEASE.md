@@ -39,7 +39,7 @@ Audit status:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaBridgeBoundary=100%`
-- `BSDReferenceArchiveMaturityComparable=93%`
+- `BSDReferenceArchiveMaturityComparable=100%`
 - 7 focused AASC/BSD audit files run, including the truth-boundary check and
   the combined full-stack check
 - pre-Lean manuscript signature map parses outside the audited proof surface

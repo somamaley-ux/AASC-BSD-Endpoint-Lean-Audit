@@ -4,7 +4,7 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaBridgeBoundary=100%`
-- `BSDReferenceArchiveMaturityComparable=93%`
+- `BSDReferenceArchiveMaturityComparable=100%`
 
 The refined formula figure is no longer a partial analytic-construction
 percentage. It records that the AASC bridge/factor-standing boundary is
@@ -86,6 +86,11 @@ That source locates the classical BSD/refined formula content as bridge
 completion inside the decompressed role architecture. The Lean audit archive
 uses that framing to keep rank endpoint closure, carrier abstraction, and
 factor-standing boundaries separate.
+
+The source PDF and zip for that reference are included locally under
+`papers/bsd/references/role-compression/`. The BSD endpoint PDF has also been
+refreshed from the Codex handoff render, so the reference archive maturity is
+closed at `100%`.
 
 ## Pre-Lean Map Boundary
 

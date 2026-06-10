@@ -6,7 +6,7 @@ This file is the short audit path for the standalone BSD endpoint archive.
 
 - `BSDRankEndpointClosure=100%`
 - `BSDRefinedFormulaBridgeBoundary=100%`
-- `BSDReferenceArchiveMaturityComparable=93%`
+- `BSDReferenceArchiveMaturityComparable=100%`
 
 The rank endpoint is the closed Lean proof-spine target.  The refined formula
 layer is recorded as an explicit AASC bridge/factor-standing boundary, not as
@@ -104,6 +104,14 @@ The bundled PDF is:
 
 - `papers/bsd/BSD_Endpoint_Closure_AASC.pdf`
 
-The PDF was built before the latest Lean-name alignment for the refined formula
-guard.  Regenerate it in a LaTeX-enabled environment before treating the PDF as
-the latest source render.
+The bundled PDF has been refreshed from the Codex handoff render:
+
+- `The_Birch_and_Swinnerton_Dyer_Endpoint_by_Exclusion_of_Analytic_Arithmetic_Mismatch.pdf`
+
+The BSD role-compression reference layer is now local:
+
+- `papers/bsd/references/role-compression/A_Structural_Solution_to_the_Birch_and_Swinnerton_Dyer_Role_Compression_Problem.pdf`
+- `papers/bsd/references/role-compression/A_Structural_Solution_to_the_Birch_and_Swinnerton_Dyer_Role_Compression_Problem.zip`
+
+The reference layer is now closed at `100%`: current source, current PDF
+render, role-compression PDF/source, and Lean audit ledgers are all present.

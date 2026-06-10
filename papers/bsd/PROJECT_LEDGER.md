@@ -47,12 +47,17 @@ The stabilized proof surface is:
 - Reframed the refined formula layer from an `82%` partial closure signal to a
   `100%` explicit bridge-boundary signal, in line with the BSD
   role-compression analysis.
+- Added the BSD role-compression paper PDF/source zip as local reference
+  artifacts under `papers/bsd/references/role-compression/`.
 
 ## Verification
 
-Bundled PDF snapshot: retained from the manuscript handoff archive. It is a
-snapshot artifact, not the authoritative current source render.
+Bundled PDF snapshot: refreshed from the Codex handoff render
+`The_Birch_and_Swinnerton_Dyer_Endpoint_by_Exclusion_of_Analytic_Arithmetic_Mismatch.pdf`.
 
-Current source note: `main.tex` has since received the Lean-name alignment for
-the refined formula guard. The PDF should be regenerated in a LaTeX-enabled
-environment before treating the bundled PDF as the latest source render.
+Current source note: `main.tex` contains the Lean-name alignment for the
+refined formula guard, and the bundled PDF has been refreshed for the release
+archive.
+
+Reference archive note: the role-compression reference layer is now local and
+self-contained. The reference layer is closed at `100%`.
