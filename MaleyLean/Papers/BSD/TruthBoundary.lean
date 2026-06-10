@@ -37,6 +37,7 @@ inductive BSDTruthBoundaryItem where
   | roleCompressionArchitecture
   | rankEndpointRoute
   | aascClassifierExclusion
+  | weakeningResistance
   | refinedFormulaFactorStanding
   | refinedFormulaGuardExact
   | manuscriptPdfSnapshot
@@ -51,6 +52,8 @@ def BSDTruthBoundaryItem.title : BSDTruthBoundaryItem -> String
       "Rank endpoint route is closed in the AASC proof spine"
   | .aascClassifierExclusion =>
       "Independent same-domain classifier exclusion is supplied by AASC"
+  | .weakeningResistance =>
+      "Weakening-resistance patch records the K5/K6/K11/K13 same-carrier hardening"
   | .refinedFormulaFactorStanding =>
       "Refined formula factors are an explicit bridge/factor-standing boundary"
   | .refinedFormulaGuardExact =>
@@ -63,6 +66,7 @@ def bsdTruthBoundaryItemCatalog : List BSDTruthBoundaryItem :=
   , .roleCompressionArchitecture
   , .rankEndpointRoute
   , .aascClassifierExclusion
+  , .weakeningResistance
   , .refinedFormulaFactorStanding
   , .refinedFormulaGuardExact
   , .manuscriptPdfSnapshot ]
@@ -102,6 +106,11 @@ def bsdTruthBoundaryRows : List BSDTruthBoundaryRow :=
       kind := .leanClosedProofSpine
       leanAnchor := "bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier"
       truthBoundary := "BSD rank discriminator exclusion is routed through the shared AASC same-domain classifier closure"
+      declared := true }
+  , { item := .weakeningResistance
+      kind := .leanClosedProofSpine
+      leanAnchor := "bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance"
+      truthBoundary := "strict same-carrier BSD weakening is audited as endpoint-equivalent, support-level, carrier-shifting, lawful coequal-targeted, or second-governing"
       declared := true }
   , { item := .refinedFormulaFactorStanding
       kind := .structuralRoleCompressionBoundary
@@ -161,11 +170,11 @@ def bsdTruthBoundarySnapshotCount : Nat :=
       row.kind == BSDTruthBoundaryKind.manuscriptSnapshotBoundary)).length
 
 theorem bsdTruthBoundaryRows_count_eq :
-    bsdTruthBoundaryRows.length = 7 := by
+    bsdTruthBoundaryRows.length = 8 := by
   rfl
 
 theorem bsdTruthBoundaryItemCatalog_count_eq :
-    bsdTruthBoundaryItemCatalog.length = 7 := by
+    bsdTruthBoundaryItemCatalog.length = 8 := by
   rfl
 
 theorem bsdTruthBoundaryItems_match_catalog :
@@ -190,7 +199,7 @@ theorem bsdTruthBoundaryTextsPopulatedBool_eq_true :
   rfl
 
 theorem bsdTruthBoundaryLeanClosedCount_eq :
-    bsdTruthBoundaryLeanClosedCount = 3 := by
+    bsdTruthBoundaryLeanClosedCount = 4 := by
   rfl
 
 theorem bsdTruthBoundaryExternalStandingCount_eq :
@@ -206,8 +215,8 @@ theorem bsdTruthBoundarySnapshotCount_eq :
   rfl
 
 def bsdTruthBoundaryMetadataComplete : Prop :=
-  bsdTruthBoundaryRows.length = 7 /\
-  bsdTruthBoundaryItemCatalog.length = 7 /\
+  bsdTruthBoundaryRows.length = 8 /\
+  bsdTruthBoundaryItemCatalog.length = 8 /\
   bsdTruthBoundaryItems = bsdTruthBoundaryItemCatalog /\
   bsdTruthBoundaryItemTitlesPopulatedBool = true /\
   bsdTruthBoundaryAllDeclaredBool = true /\
@@ -215,7 +224,7 @@ def bsdTruthBoundaryMetadataComplete : Prop :=
   bsdTruthBoundaryTextsPopulatedBool = true
 
 def bsdTruthBoundaryCountComplete : Prop :=
-  bsdTruthBoundaryLeanClosedCount = 3 /\
+  bsdTruthBoundaryLeanClosedCount = 4 /\
   bsdTruthBoundaryExternalStandingCount = 0 /\
   bsdTruthBoundaryStructuralBoundaryCount = 2 /\
   bsdTruthBoundarySnapshotCount = 1

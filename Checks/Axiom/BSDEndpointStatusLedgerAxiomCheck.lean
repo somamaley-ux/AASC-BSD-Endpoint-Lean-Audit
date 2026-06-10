@@ -27,3 +27,7 @@ open MaleyLean.Papers.BSD
 #print axioms bsdEndpointCurrentProgressSummaryPopulatedBool_eq_true
 #print axioms bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true
 #print axioms bsdEndpointStatusLedgerComplete_holds
+#print axioms BSDWeakeningResistanceNodes
+#print axioms BSDWeakeningResistanceNodeTitlesPopulatedBool_eq_true
+#print axioms bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance
+#print axioms BSDWeakeningResistanceLedgerComplete_holds

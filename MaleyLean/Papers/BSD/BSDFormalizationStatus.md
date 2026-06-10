@@ -71,6 +71,9 @@ descent, Sha finiteness, or the full refined leading-coefficient formula.
   `bsdTruthBoundaryMetadataComplete_holds`,
   `bsdTruthBoundaryCountComplete_holds`,
   `bsdTruthBoundaryLedgerComplete_holds`
+- Weakening-resistance hardening:
+  `bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance`,
+  `BSDWeakeningResistanceLedgerComplete_holds`
 
 ## Bridge Boundary
 

@@ -39,6 +39,12 @@ manuscript signature map outside the audited proof surface. It now also checks
 that the pre-Lean signature map is not imported by the active Lean audit
 surface.
 
+The current hardening also includes a strict same-carrier weakening-resistance
+anchor:
+
+- `bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance`
+- `BSDWeakeningResistanceLedgerComplete_holds`
+
 To create a local handoff zip and checksum from exactly the tracked files:
 
 ```powershell
@@ -67,6 +73,7 @@ The shortest theorem chain for audit is:
 - `officialBSDRankEndpoint_of_foundationalNoClassifier`
 - `officialBSDRankEndpoint_of_aascContext`
 - `bsdRankEndpointAASCContext_closes_rankEndpoint`
+- `bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance`
 
 The final theorem has the same shape as the P vs NP SAT archive: once the
 fixed BSD endpoint use, carrier standing, kernel standing, and AASC

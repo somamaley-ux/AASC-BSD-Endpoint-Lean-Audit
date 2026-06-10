@@ -53,6 +53,11 @@ The strongest truthful claim for this archive is:
   in the Lean proof spine and which parts remain semantic or arithmetic
   standing. The truth-boundary ledger checks its item catalog, row counts,
   Lean anchors, and explanatory boundary text.
+- This hardening release adds a Poincare-style weakening-resistance audit:
+  `MaleyLean.Papers.BSD.WeakeningResistance`. The new anchor
+  `bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance` records that a
+  strict same-carrier weakening cannot preserve BSD endpoint use while
+  permitting analytic-arithmetic mismatch governance.
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaBridgeBoundary=100%`, and
@@ -189,6 +194,8 @@ Key BSD rank route anchors:
 - `bsdConditionalRefinedFormula_correspondence`
 - `conditionalRefinedBSDEndpoint_of_context`
 - `bsdRefinedFormulaEndpoint_remains_conditional`
+- `bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance`
+- `BSDWeakeningResistanceLedgerComplete_holds`
 - `bsdTruthBoundaryLedgerComplete_holds`
 
 ## Scope Boundary

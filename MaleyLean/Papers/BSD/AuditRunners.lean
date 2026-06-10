@@ -97,10 +97,12 @@ theorem bsdEndpointAuditRunnerFilesPopulatedBool_eq_true :
     bsdEndpointAuditRunnerFilesPopulatedBool = true := by
   rfl
 
+set_option maxRecDepth 10000 in
 theorem bsdEndpointAuditRunnerFormalizationStatusSummaryPopulatedBool_eq_true :
     bsdEndpointAuditRunnerFormalizationStatusSummaryPopulatedBool = true := by
   rfl
 
+set_option maxRecDepth 10000 in
 theorem bsdEndpointAuditRunnerProgressSummaryPopulatedBool_eq_true :
     bsdEndpointAuditRunnerProgressSummaryPopulatedBool = true := by
   rfl

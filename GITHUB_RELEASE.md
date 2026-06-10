@@ -1,8 +1,8 @@
-# Suggested GitHub Release
+# GitHub Release
 
-## Release Title Template
+## Release Title
 
-AASC BSD Endpoint Lean Audit vX.Y.Z
+AASC BSD Endpoint Lean Audit v0.1.13
 
 ## Release Notes
 
@@ -27,12 +27,15 @@ The same audit is wired for GitHub Actions in `.github/workflows/audit.yml`,
 with the latest pushed `main` workflow run expected to pass before release.
 The current release line also includes BSD-native status naming,
 manuscript-map alignment with the executable Lean spine, parse checking for
-the pre-Lean signature map, semantic-audit-carrier wording cleanup, and
-cross-platform A+ support-audit scan hardening. The audit now also checks that
-the pre-Lean manuscript signature map is not imported by the active Lean proof
-surface, and it strengthens the status/truth-boundary ledgers with metadata
-completion anchors for titles, Lean anchors, source evidence, explanatory
-boundary text, row counts, and current progress summaries. This release line
+the pre-Lean signature map, semantic-audit-carrier wording cleanup,
+cross-platform A+ support-audit scan hardening, and Poincare-style
+weakening-resistance hardening. The audit now also checks that the pre-Lean
+manuscript signature map is not imported by the active Lean proof surface, and
+it strengthens the status/truth-boundary ledgers with metadata completion
+anchors for titles, Lean anchors, source evidence, explanatory boundary text,
+row counts, current progress summaries, and the strict same-carrier
+weakening-resistance anchor
+`bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance`. This release line
 also refreshes the bundled BSD endpoint PDF, source snapshot, and parse-only
 manuscript-to-Lean map from the finalized handoff package.
 
@@ -60,6 +63,10 @@ Audit status:
   `refinedBSDEndpoint_context_iff`
 - truth-boundary ledger completion is audited through
   `bsdTruthBoundaryLedgerComplete_holds`
+- weakening-resistance ledger completion is audited through
+  `BSDWeakeningResistanceLedgerComplete_holds`
+- strict same-carrier weakening resistance is anchored by
+  `bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance`
 - status-ledger metadata completion is audited through
   `bsdEndpointStatusLedgerComplete`
 - truth-boundary metadata and row-count completion are audited through
@@ -83,3 +90,7 @@ Pinned environment:
 
 - Lean toolchain: `leanprover/lean4:v4.28.0`
 - mathlib revision: `8f9d9cff6bd728b17a24e163c9402775d9e6a365`
+
+Manuscript archive DOI:
+
+- `10.5281/zenodo.20619017`

@@ -1,9 +1,9 @@
 # Release Notes
 
-## Current AASC BSD Endpoint Lean Audit Release
+## AASC BSD Endpoint Lean Audit v0.1.13
 
-This release packages the first dedicated Lean 4 audit archive for the
-AASC-first BSD rank endpoint proof spine.
+This release packages the hardened Lean 4 audit archive for the AASC-first BSD
+rank endpoint proof spine.
 
 Result claim:
 
@@ -40,6 +40,9 @@ Included:
   A+ audit script.
 - Final-paper snapshot refresh for the BSD endpoint PDF, source, and parse-only
   manuscript-to-Lean map.
+- Poincare-style weakening-resistance hardening through
+  `MaleyLean.Papers.BSD.WeakeningResistance`, with the public anchor
+  `bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance`.
 
 Verification command:
 
@@ -70,6 +73,8 @@ Audit status:
 - The truth-boundary ledger now audits item catalogs, row counts, Lean anchors,
   explanatory boundary text, and ledger completion separately before combining
   them with the BSD status ledger.
+- The status/truth-boundary surface now records the strict same-carrier
+  weakening-resistance patch as part of the BSD endpoint hardening layer.
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
   `BSDRefinedFormulaBridgeBoundary=100%`,
@@ -101,9 +106,9 @@ Pinned environment:
 - Lean toolchain: `leanprover/lean4:v4.28.0`
 - mathlib revision: `8f9d9cff6bd728b17a24e163c9402775d9e6a365`
 
-Suggested GitHub release title:
+GitHub release title:
 
-`AASC BSD Endpoint Lean Audit vX.Y.Z`
+`AASC BSD Endpoint Lean Audit v0.1.13`
 
 Suggested release body:
 

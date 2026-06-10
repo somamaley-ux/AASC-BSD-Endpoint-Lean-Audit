@@ -1,4 +1,4 @@
-import MaleyLean.Papers.BSD.EndpointClosure
+import MaleyLean.Papers.BSD.WeakeningResistance
 
 /-!
 # BSD endpoint status ledger
@@ -23,6 +23,7 @@ inductive BSDEndpointStatusObligation where
   | negativeOccupationExhaustion
   | theoremLevelGovernance
   | independentRankDiscriminatorExclusion
+  | weakeningResistance
   | rankEndpointClosure
   | refinedFormulaGuardExact
   | refinedFormulaBridgeBoundary
@@ -40,6 +41,8 @@ def bsdEndpointStatusObligationTitle :
       "Theorem-level rank exclusion is endpoint-status governance"
   | .independentRankDiscriminatorExclusion =>
       "Independent same-domain rank discriminators are excluded through AASC classifier closure"
+  | .weakeningResistance =>
+      "Strict same-carrier weakening cannot preserve BSD endpoint use while permitting mismatch governance"
   | .rankEndpointClosure =>
       "Pointwise rank equality and the official rank endpoint are forced"
   | .refinedFormulaGuardExact =>
@@ -53,12 +56,13 @@ def bsdEndpointStatusObligations : List BSDEndpointStatusObligation :=
   , .negativeOccupationExhaustion
   , .theoremLevelGovernance
   , .independentRankDiscriminatorExclusion
+  , .weakeningResistance
   , .rankEndpointClosure
   , .refinedFormulaGuardExact
   , .refinedFormulaBridgeBoundary ]
 
 theorem bsdEndpointStatusObligations_length_eq :
-    bsdEndpointStatusObligations.length = 8 := by
+    bsdEndpointStatusObligations.length = 9 := by
   rfl
 
 def bsdEndpointStatusObligationTitles : List String :=
@@ -114,6 +118,11 @@ def bsdEndpointStatusLedger : List BSDEndpointStatusRow :=
       status := .closedInLeanAuditSpine
       leanAnchor := "bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier"
       sourceEvidence := "BSD rank discriminator mapped into the shared AASC foundational-candidate classifier exclusion"
+      suppliedInLean := true }
+  , { obligation := .weakeningResistance
+      status := .closedInLeanAuditSpine
+      leanAnchor := "bsdNoStrictSameCarrierWeakeningPermitsMismatchGovernance"
+      sourceEvidence := "Poincare-style BSD hardening audits K5, K6, K11, and K13 against strict same-carrier weakenings"
       suppliedInLean := true }
   , { obligation := .rankEndpointClosure
       status := .closedInLeanAuditSpine
@@ -175,7 +184,7 @@ def bsdRefinedFormulaBridgeBoundaryPercent : Nat := 100
 def bsdReferenceArchiveMaturityPercent : Nat := 100
 
 def bsdEndpointCurrentFormalizationStatusSummary : String :=
-  "BSD rank endpoint closed in Lean audit spine; refined formula recorded as explicit bridge/factor-standing boundary"
+  "BSD rank endpoint closed in Lean audit spine; weakening-resistance clarification recorded; refined formula recorded as explicit bridge/factor-standing boundary"
 
 def bsdEndpointCurrentProgressSummary : String :=
   "BSDRankEndpointClosure=100%; BSDRefinedFormulaBridgeBoundary=100%; BSDReferenceArchiveMaturityComparable=100%"
@@ -215,7 +224,7 @@ theorem bsdEndpointStatusLedgerSourceEvidencePopulatedBool_eq_true :
   rfl
 
 theorem bsdEndpointStatusLedgerClosedCount_eq :
-    bsdEndpointStatusLedgerClosedCount = 7 := by
+    bsdEndpointStatusLedgerClosedCount = 8 := by
   rfl
 
 theorem bsdEndpointStatusLedgerBridgeBoundaryCount_eq :
@@ -238,10 +247,12 @@ theorem bsdReferenceArchiveMaturityPercent_eq :
     bsdReferenceArchiveMaturityPercent = 100 := by
   rfl
 
+set_option maxRecDepth 10000 in
 theorem bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool_eq_true :
     bsdEndpointCurrentFormalizationStatusSummaryPopulatedBool = true := by
   rfl
 
+set_option maxRecDepth 10000 in
 theorem bsdEndpointCurrentProgressSummaryPopulatedBool_eq_true :
     bsdEndpointCurrentProgressSummaryPopulatedBool = true := by
   rfl
@@ -251,14 +262,14 @@ theorem bsdEndpointFormalizationStatusDocumentPopulatedBool_eq_true :
   rfl
 
 def bsdEndpointStatusLedgerComplete : Prop :=
-  bsdEndpointStatusObligations.length = 8 /\
+  bsdEndpointStatusObligations.length = 9 /\
   bsdEndpointStatusLedgerObligations =
     bsdEndpointStatusObligations /\
   bsdEndpointStatusObligationTitlesPopulatedBool = true /\
   bsdEndpointStatusLedgerAllSuppliedBool = true /\
   bsdEndpointStatusLedgerLeanAnchorsPopulatedBool = true /\
   bsdEndpointStatusLedgerSourceEvidencePopulatedBool = true /\
-  bsdEndpointStatusLedgerClosedCount = 7 /\
+  bsdEndpointStatusLedgerClosedCount = 8 /\
   bsdEndpointStatusLedgerBridgeBoundaryCount = 1 /\
   bsdEndpointStatusLedgerExternalStandingCount = 0 /\
   bsdRankEndpointClosurePercent = 100 /\

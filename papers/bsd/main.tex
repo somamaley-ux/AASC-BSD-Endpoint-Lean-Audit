@@ -10,7 +10,7 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 
-\hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black}
+\hypersetup{colorlinks=true,allcolors=black}
 \setlist[itemize]{leftmargin=2.2em}
 \setlist[enumerate]{leftmargin=2.4em}
 \renewcommand{\arraystretch}{1.18}
@@ -54,6 +54,8 @@
 \newcommand{\TensorGov}{\mathrm{TensorGov}_{\BSD}}
 \newcommand{\ATS}{\textsc{ATS}}
 \newcommand{\FormulaMismatch}{\mathrm{FormulaMismatch}}
+\newcommand{\FormulaUse}{\mathrm{FormulaUse}^{\mathrm{off}}}
+\newcommand{\FormulaNeg}{\mathrm{FormulaNeg}^{\mathrm{off}}}
 \newcommand{\Carrier}{\mathrm{Carrier}}
 \newcommand{\Bridge}{\mathrm{Bridge}}
 \newcommand{\Gov}{\mathrm{Gov}}
@@ -63,6 +65,7 @@
 \newcommand{\Adm}{\mathrm{Adm}}
 \newcommand{\Irr}{\mathrm{Irr}}
 \newcommand{\Kern}{\mathcal{K}}
+\newcommand{\NonDegBSD}{\mathrm{NonDegenerateBSDRankRegime}}
 \newcommand{\Home}{\mathrm{Home}}
 \newcommand{\slot}{\mathrm{slot}}
 \newcommand{\adm}{\mathrm{adm}}
@@ -83,7 +86,7 @@
 \end{center}
 
 \begin{abstract}
-This manuscript proves the Birch and Swinnerton-Dyer endpoint by fixed-carrier exclusion of analytic-arithmetic mismatch. The earlier structural BSD role-compression paper established the role architecture: elliptic-curve carrier, analytic $L$-function standing, Mordell-Weil rank readout, and the analytic-arithmetic bridge. The present paper moves from role architecture to endpoint closure. It proves that once the official BSD endpoint is used as a determinate theorem-bearing target on the fixed elliptic-curve carrier, the kernel roles of reference, standing, admissibility, and irreversibility are already in effect. Under those already-necessary non-degeneracy conditions, a same-carrier analytic-arithmetic mismatch cannot survive as a stable endpoint branch.
+This manuscript proves the Birch and Swinnerton-Dyer endpoint by fixed-carrier exclusion of analytic-arithmetic mismatch. The earlier structural BSD role-compression paper established the role architecture: elliptic-curve carrier, analytic $L$-function standing, Mordell-Weil rank readout, and the analytic-arithmetic bridge. The present paper moves from role architecture to endpoint closure. Its dependency order is regime-first: any non-degenerate same-carrier BSD endpoint regime already requires kernel governance by reference, standing, admissibility, and irreversibility. The official BSD target fixes the curvewise endpoint slot under evaluation; it does not supply the truth of the endpoint. Under the already-necessary non-degeneracy conditions, a same-carrier analytic-arithmetic mismatch cannot survive as a stable endpoint branch.
 
 For an elliptic curve $E/\Q$, define analytic standing by
 \[
@@ -102,8 +105,14 @@ The proof shows that endpoint-resolving use of this branch is endpoint-status go
 \ord_{s=1}L(E,s)=\rank E(\Q).
 \]
 
-The refined leading-coefficient formula is treated by the same endpoint-governance pattern after rank equality and formula-factor standing are fixed. The formula-mismatch branch induces independent same-domain formula-status governance and is excluded. Thus the standard refined BSD formula follows conditionally at the standing-fixed factor layer. A separate factor-standing theorem, including finite-order standing for $\Sha(E)$, is the unconditional refined-formula burden.
+The refined leading-coefficient formula is treated by the same endpoint-governance pattern after rank equality and formula-factor standing are fixed. When formula mismatch is used to resolve the standing-fixed refined endpoint, it induces independent same-domain formula-status governance and is excluded. Thus the standard refined BSD formula follows conditionally at the standing-fixed refined formula endpoint. A separate factor-standing theorem, including finite-order standing for $\Sha(E)$, is the unconditional refined-formula burden.
 \end{abstract}
+
+\section*{Mathematical-status lock and Lean support boundary}
+\addcontentsline{toc}{section}{Mathematical-status lock and Lean support boundary}
+\textbf{Mathematical-status lock.} AASC is used here as a mathematical constraint formalism, not as philosophical commentary, metaphor, optional narration, or an interpretive overlay. The proof is the theorem chain stated in this manuscript. The AASC primitives used here---reference, standing, admissibility, irreversibility, bivalence, no-generator closure, no-carrier transfer, no-repair, AMetric no-selector discipline, UEAP report preservation, ATS layer discipline, and no-independent-classifier closure---are theorem-bearing mathematical constraints on non-degenerate fixed-carrier endpoint use. A same-mode objection must therefore address the mathematical constraint chain, the kernel-to-BSD instantiation, or the endpoint-governance inferences. It is not a refutation to classify AASC as non-arithmetic vocabulary or to demand a descent-native, Euler-system-native, Iwasawa-native, point-construction, or analytic-estimate route.
+
+\textbf{Lean support boundary.} The proof of this paper is the manuscript proof, not a Lean substitute. Lean 4 material is kept to the audit appendix and proof-routing map in this release. It records the endpoint-spine support surface for the manuscript-facing route: kernel discipline, below-kernel underivability posture, endpoint routing, mismatch-use classification, no-hidden-fifth closure, no-independent-classifier closure, rank endpoint closeout, and the refined formula bridge/factor-standing boundary. A challenge to Lean support must identify a mismatch between the cited support surface and the manuscript theorem chain. It is not enough to observe that Lean is not itself the proof, because the manuscript does not claim that it is.
 
 \tableofcontents
 \newpage
@@ -111,16 +120,16 @@ The refined leading-coefficient formula is treated by the same endpoint-governan
 \section*{Read this first: endpoint proof spine}
 \addcontentsline{toc}{section}{Read this first: endpoint proof spine}
 
-The proof route is intentionally short at its live spine.
+The live endpoint proof spine is compact.
 \[
 \begin{aligned}
-&\text{official BSD endpoint use}
-\Rightarrow \text{non-degenerate fixed BSD carrier}\\
+&\text{ordinary BSD target fixes a curvewise endpoint slot}\\
+&\Rightarrow \text{non-degenerate fixed-carrier BSD regime}\\
 &\Rightarrow \Kern_{\BSD}
 \Rightarrow \text{analytic/arithmetic bridge governance}.
 \end{aligned}
 \]
-Then the pointwise mismatch branch is not retyped in one step. It passes through correspondence bridges:
+The pointwise mismatch branch is routed through correspondence bridges before endpoint-governance analysis:
 \[
 \begin{aligned}
 \RankMismatch(E)
@@ -161,12 +170,11 @@ The dependency order is not
 The dependency order is
 \[
 \begin{aligned}
-&\text{BSD as theorem-bearing endpoint}\\
-&\Rightarrow \text{non-degenerate fixed-carrier regime}\\
-&\Rightarrow \text{kernel roles already active}.
+&\text{non-degenerate fixed-carrier BSD endpoint regime}\\
+&\Rightarrow \text{kernel governance already active}.
 \end{aligned}
 \]
-AASC names and audits the already-necessary roles. It does not impose them from outside.
+The official BSD target fixes the curvewise endpoint slot under evaluation. It does not supply rank equality, formula equality, or any arithmetic bridge completion. Once the endpoint is evaluated as a determinate same-carrier target at all---in proof, refutation, bridge construction, counterexample analysis, or endpoint audit---the kernel roles are already required. AASC names and audits those already-necessary roles; it does not impose them from outside arithmetic geometry.
 
 
 \subsection*{Cost of denying the kernel}
@@ -192,8 +200,9 @@ A same-mode rejection must deny at least one live theorem link.
 \toprule
 \textbf{Proof link} & \textbf{Standing denial burden}\\
 \midrule
-Official BSD endpoint use instantiates the kernel & Show a theorem-bearing BSD endpoint that preserves fixed carrier and theorem consequence while paying none of the kernel-denial costs: no lost reference, no lost standing, no lost admissibility, and no lost irreversibility.\\
-Cost of kernel denial & Specify which minimal endpoint condition is abandoned and prove that BSD remains a non-degenerate same-carrier theorem endpoint after that abandonment.\\
+Kernel governance is regime necessity & Exhibit a non-degenerate fixed-carrier BSD rank regime that preserves the same curve, analytic carrier, Mordell-Weil carrier, target slot, report evaluability, same-regime fidelity, and act-time finality while lacking the kernel roles.\\
+Cost of kernel denial & Specify which minimal endpoint condition is abandoned and prove that BSD remains a non-degenerate same-carrier endpoint regime after that abandonment.\\
+Strict weakening of the local kernel packet & Exhibit a weaker same-carrier regime that preserves target-slot fixation, minimal report evaluability, standing-admissibility discipline, no carrier shift, and no post-hoc repair while permitting endpoint-resolving mismatch governance that is not proof support, bookkeeping, bridge completion, lawful coequal target role, or second endpoint authority.\\
 Standard BSD carrier instantiation & Exhibit ordinary elliptic-curve BSD data that do not instantiate the fixed carrier while preserving the official BSD endpoint target.\\
 BSD carrier adequacy & Identify a carrier mismatch: analytic rank, Mordell-Weil rank, or formula-factor status is not faithfully represented by the fixed carrier.\\
 Rank mismatch normal form & Produce a fixed-carrier analytic-arithmetic mismatch not expressible as $\exists n,m[\Van(E,n)\wedge\RankRead(E,m)\wedge n\neq m]$.\\
@@ -317,19 +326,19 @@ $\mathrm{BSDCarrierInstantiated}(E)$ means that the fixed official BSD carrier $
 \end{definition}
 
 \begin{definition}[Official BSD endpoint use]
-$\mathrm{OfficialBSDEndpointUse}(E)$ means theorem-bearing use of the BSD rank endpoint on the fixed carrier $C_{\BSD}(E)$. It is not a string, a heuristic, or a partial report; it is the act of using BSD as a determinate theorem endpoint for the fixed curve carrier.
+$\mathrm{OfficialBSDEndpointUse}(E)$ means determinate theorem-target use of the BSD rank endpoint on the fixed carrier $C_{\BSD}(E)$. It is not a string, a heuristic, a partial report, or an assumption of rank equality. It is the curvewise target-fixation act that evaluates the official BSD rank endpoint on the fixed curve carrier.
 \end{definition}
 
 \begin{definition}[BSD rank endpoint under audit]\label{def:rank-endpoint-under-audit}
-$\mathrm{BSDRankEndpointUnderAudit}$ denotes the official universal rank-BSD theorem target under audit, ranging over all elliptic curves $E/\Q$:
+$\mathrm{BSDRankEndpointUnderAudit}$ denotes the official universal rank-BSD endpoint target under audit, ranging over all elliptic curves $E/\Q$:
 \[
 \forall E/\Q,\qquad \ord_{s=1}L(E,s)=\rank E(\Q).
 \]
-It is a target-fixation statement, not an assumption that the endpoint is true. It names the official theorem object being evaluated, so that a curvewise instance can be placed under endpoint audit without assuming rank equality for that curve. It is therefore an audit-target declaration rather than an additional mathematical hypothesis and does not contain the rank conclusion for any particular curve.
+It is a target-fixation statement, not an assumption that the endpoint is true. It names the official endpoint object being evaluated, so that a curvewise instance can be placed under audit without assuming rank equality for that curve. It is therefore an audit-target declaration rather than an additional mathematical hypothesis and does not contain the rank conclusion for any particular curve.
 \end{definition}
 
-\begin{theorem}[Universal endpoint binds pointwise endpoint use]\label{thm:universal-binds-pointwise}
-In a proof of the rank endpoint under audit, every curve instance $E/\Q$ is evaluated under
+\begin{theorem}[Universal target fixes pointwise endpoint use]\label{thm:universal-binds-pointwise}
+When the official rank endpoint target is evaluated, every curve instance $E/\Q$ is evaluated under
 \[
 \mathrm{OfficialBSDEndpointUse}(E)
 \quad\text{and}\quad
@@ -338,7 +347,7 @@ In a proof of the rank endpoint under audit, every curve instance $E/\Q$ is eval
 \end{theorem}
 
 \begin{proof}
-The universal target is a theorem over all elliptic curves. Fixing an arbitrary $E/\Q$ for the universal proof fixes the corresponding curve-level endpoint act and its carrier. The statement is not that the theorem is already true for $E$; it is that the $E$-instance is the endpoint under evaluation. Thus the pointwise endpoint-use and carrier-instantiation roles are active for the arbitrary fixed instance.
+The universal rank target ranges over all elliptic curves. Fixing an arbitrary $E/\Q$ fixes the corresponding curve-level endpoint slot and its carrier. The statement is not that rank equality is already true for $E$; it is that the $E$-instance is the fixed endpoint under evaluation. Thus pointwise endpoint-use and carrier-instantiation roles are active for the arbitrary fixed instance.
 \end{proof}
 
 \begin{proposition}[Endpoint use fixes carrier instantiation]\label{prop:endpoint-fixes-carrier}
@@ -354,15 +363,14 @@ Official endpoint use is theorem-bearing use on the fixed carrier $C_{\BSD}(E)$.
 
 \section{Kernel necessity and dependency order}
 
-This section imports the fixed-domain kernel in the local BSD vocabulary. The kernel is not an external AASC axiom package placed on top of arithmetic geometry. It is the minimal necessity packet already required for a theorem-bearing endpoint act to be non-degenerate. The dependency order is therefore:
+This section states the fixed-domain kernel in local BSD vocabulary. The kernel is not an external AASC axiom package placed on top of arithmetic geometry. It is the necessity packet already required for any same-carrier BSD endpoint regime to be non-degenerate. The dependency order is therefore:
 \[
 \begin{gathered}
-\text{official BSD endpoint use}\\
-\Rightarrow\ \text{non-degenerate fixed-carrier endpoint regime}\\
-\Rightarrow\ \text{kernel roles already active}.
+\text{non-degenerate fixed-carrier BSD endpoint regime}\\
+\Rightarrow\ \text{kernel governance already active}.
 \end{gathered}
 \]
-Every later exclusion theorem uses the kernel only after this endpoint-use act has fixed the carrier, the report slot, and the theorem-bearing status being evaluated.
+Official endpoint use is the ordinary curvewise target-fixation act that places the BSD rank endpoint under evaluation. It is not the source of the kernel. Every later exclusion theorem uses the kernel only after the fixed carrier, report slot, and theorem-bearing status have been supplied by non-degenerate endpoint use itself.
 
 \subsection{Kernel-neutral endpoint adequacy}
 
@@ -389,6 +397,13 @@ These are stated without using AASC vocabulary. They are the conditions under wh
 A BSD endpoint regime is non-degenerate when it has kernel-neutral endpoint adequacy, at least one standing-bearing endpoint act, lawful redescription identity, fail-closed treatment of out-of-domain moves, and no post-hoc repair of failed endpoint status as the same act.
 \end{definition}
 
+\begin{definition}[Non-degenerate fixed-carrier BSD rank regime]\label{def:nondeg-fixed-bsd-rank}
+\[
+\NonDegBSD(E)
+\]
+means a non-degenerate BSD endpoint regime whose carrier is $C_{\BSD}(E)$, whose target slot is the rank bridge between $\Van(E,n)$ and $\RankRead(E,n)$, and whose lawful redescriptions preserve the same elliptic curve, the same $L(E,s)$, the same Mordell-Weil group, the same analytic-rank standing slot, the same arithmetic-rank readout slot, and the same endpoint classification.
+\end{definition}
+
 \begin{theorem}[Endpoint adequacy forces the kernel roles]\label{thm:adequacy-forces-kernel-roles}
 Every endpoint-adequate BSD theorem act already requires the four governance roles later named reference, standing, admissibility, and irreversibility.
 \end{theorem}
@@ -413,6 +428,18 @@ Here:
 \end{itemize}
 \end{definition}
 
+\begin{theorem}[Kernel governance is forced by non-degenerate BSD endpoint regimes]\label{thm:kernel-governance-forced}
+For every elliptic curve $E/\Q$,
+\[
+\NonDegBSD(E)\Rightarrow \Kern_{\BSD}(E).
+\]
+Thus kernel governance is not an optional AASC add-on. It is the role-structure required for the BSD rank endpoint to function as a determinate same-carrier mathematical target.
+\end{theorem}
+
+\begin{proof}
+A non-degenerate fixed-carrier BSD rank regime has target determinacy, step evaluability, act-time finality, and same-regime fidelity by Definitions~\ref{def:kernel-neutral-adequacy} and~\ref{def:nondeg-fixed-bsd-rank}. By Theorem~\ref{thm:adequacy-forces-kernel-roles}, those four neutral adequacy conditions force the roles named reference, standing, irreversibility, and admissibility. Those roles are exactly $\Kern_{\BSD}(E)$ in Definition~\ref{def:bsd-kernel-roles}. Therefore every non-degenerate fixed-carrier BSD rank regime already instantiates the kernel.
+\end{proof}
+
 \begin{theorem}[BSD endpoint use instantiates the kernel]\label{thm:endpoint-instantiates-kernel}
 For every elliptic curve $E/\Q$,
 \[
@@ -421,20 +448,20 @@ For every elliptic curve $E/\Q$,
 \end{theorem}
 
 \begin{proof}
-Official endpoint use is theorem-bearing use of the BSD target on the fixed carrier. By Definition~\ref{def:kernel-neutral-adequacy}, such use already requires target determinacy, step evaluability, act-time finality, and same-regime fidelity. By Theorem~\ref{thm:adequacy-forces-kernel-roles}, those conditions are exactly the roles named reference, standing, irreversibility, and admissibility. Therefore $\Kern_{\BSD}(E)$ is already instantiated whenever the official BSD endpoint is used.
+Official endpoint use is determinate curvewise target-fixation for the BSD rank endpoint on $C_{\BSD}(E)$. Such use is a non-degenerate fixed-carrier rank regime when it is theorem-bearing rather than heuristic or bookkeeping. By Theorem~\ref{thm:kernel-governance-forced}, every such regime already instantiates $\Kern_{\BSD}(E)$. Therefore official endpoint use inherits the kernel from regime necessity; it does not add the kernel as a separate hypothesis.
 \end{proof}
 
 \begin{corollary}[No framework opt-out]\label{cor:no-framework-optout}
-A critic cannot preserve BSD as a determinate fixed-carrier theorem endpoint while rejecting the kernel roles. To opt out of the kernel, the critic must weaken at least one endpoint-adequacy condition in Definition~\ref{def:kernel-neutral-adequacy}.
+A critic cannot preserve BSD as a determinate fixed-carrier endpoint regime while rejecting the kernel roles. To opt out of the kernel, the critic must weaken at least one endpoint-adequacy condition in Definition~\ref{def:kernel-neutral-adequacy}. Such a move is a regime change, not a refusal of terminology.
 \end{corollary}
 
 
-\begin{theorem}[Kernel-denial cost for BSD endpoint use]\label{thm:kernel-denial-cost}
-Let $E/\Q$ be under official BSD endpoint audit. Any denial of $\Kern_{\BSD}(E)$ while preserving official endpoint use must abandon at least one of target determinacy, analytic/arithmetic standing, admissible bridge discipline, same-carrier fidelity, or act-time finality. Therefore a kernel denial is not a same-mode BSD counterexample unless it supplies an alternative non-degenerate endpoint regime preserving all of those roles.
+\begin{theorem}[Kernel-denial cost for BSD endpoint regimes]\label{thm:kernel-denial-cost}
+Let $E/\Q$ be evaluated inside a non-degenerate fixed-carrier BSD rank regime. Any denial of $\Kern_{\BSD}(E)$ while preserving that regime must abandon at least one of target determinacy, analytic/arithmetic standing, admissible bridge discipline, same-carrier fidelity, or act-time finality. Therefore a kernel denial is not a same-mode BSD counterexample unless it supplies an alternative non-degenerate endpoint regime preserving all of those roles.
 \end{theorem}
 
 \begin{proof}
-By Theorem~\ref{thm:endpoint-instantiates-kernel}, official endpoint use instantiates the kernel because the endpoint act already satisfies the adequacy conditions of Definition~\ref{def:kernel-neutral-adequacy}. Denying the kernel while retaining endpoint use therefore requires rejecting at least one adequacy condition: the fixed target, theorem-bearing standing, admissible transition boundary, act-time finality, or same-regime carrier fidelity. If none is rejected, the kernel remains in force. If one is rejected, the critic has left the non-degenerate BSD endpoint regime unless a replacement regime preserving exactly the same roles is supplied.
+By Theorem~\ref{thm:kernel-governance-forced}, a non-degenerate fixed-carrier BSD rank regime instantiates the kernel because the regime already satisfies the adequacy conditions of Definition~\ref{def:kernel-neutral-adequacy}. Denying the kernel while retaining the regime therefore requires rejecting at least one adequacy condition: the fixed target, theorem-bearing standing, admissible transition boundary, act-time finality, or same-regime carrier fidelity. If none is rejected, the kernel remains in force. If one is rejected, the critic has left the non-degenerate BSD endpoint regime unless a replacement regime preserving exactly the same roles is supplied.
 \end{proof}
 
 \subsection{Imported kernel consequences in local BSD form}
@@ -457,16 +484,16 @@ K9 & No post-selection repair & Later point construction, descent data, or formu
 K10 & AMetric no-selector boundary & Search height, preferred basis, numerical precision, regulator size, Selmer threshold, or local ranking cannot decide rank endpoint status before bridge admissibility is fixed.\\
 K11 & UEAP report preservation & A report may not exceed its carrier, bridge, and support. Analytic standing alone cannot be reported as arithmetic rank readout; mismatch support alone cannot replace endpoint proof.\\
 K12 & No silent redescription & A non-Mordell-Weil surrogate cannot be silently redescribed as rank readout, and a formula-factor surrogate cannot be silently redescribed as the refined formula factor.\\
-K13 & Endpoint exhaustion & Once carrier, standing packet, endpoint role, and admissibility boundary are fixed, endpoint-bearing branches are exhausted by bridge occupation or supported residue/mismatch. Unsupported, deferred, bookkeeping, and hidden-fifth statuses do not occupy endpoint truth.\\
+K13 & Endpoint exhaustion & Once carrier, standing packet, endpoint role, and admissibility boundary are fixed, endpoint-bearing branches are exhausted by positive bridge occupation or governed negative endpoint use. Proof support, supported residue, bookkeeping, unsupported mismatch, deferred status, repair, carrier shift, and hidden-fifth statuses do not occupy endpoint truth.\\
 \bottomrule
 \end{longtable}
 
 \begin{theorem}[Local kernel packet K1--K13]\label{thm:local-kernel-packet}
-For every official BSD endpoint use of $E/\Q$, the local kernel consequences K1--K13 in the table above are in force on the fixed carrier $C_{\BSD}(E)$.
+For every non-degenerate fixed-carrier BSD rank regime for $E/\Q$, and in particular for every official BSD endpoint use of $E/\Q$, the local kernel consequences K1--K13 in the table above are in force on $C_{\BSD}(E)$.
 \end{theorem}
 
 \begin{proof}
-By Theorem~\ref{thm:endpoint-instantiates-kernel}, official endpoint use instantiates reference, standing, admissibility, and irreversibility. K1 records their joint fixed-domain role. K2--K3 are the reference and role-separation consequences. K4--K6 are the fail-closed, unique-interior, and standing-admissibility consequences of a non-degenerate endpoint boundary. K7--K9 block generation, carrier transfer, and repair once the endpoint act is fixed. K10 blocks selector work at the boundary. K11 records report preservation. K12 blocks untracked role replacement. K13 is the exhaustion consequence: after the endpoint coordinates are fixed, a purported branch either occupies an admitted endpoint role, supplies proof support only, changes carrier, attempts repair, imports a selector or surrogate, or introduces forbidden second-classifier governance. No additional same-domain endpoint occupation remains.
+By Theorem~\ref{thm:kernel-governance-forced}, non-degenerate fixed-carrier BSD endpoint use instantiates reference, standing, admissibility, and irreversibility. K1 records their joint fixed-domain role. K2--K3 are the reference and role-separation consequences. K4--K6 are the fail-closed, unique-interior, and standing-admissibility consequences of a non-degenerate endpoint boundary. K7--K9 block generation, carrier transfer, and repair once the endpoint act is fixed. K10 blocks selector work at the boundary. K11 records report preservation. K12 blocks untracked role replacement. K13 is the exhaustion consequence: after the endpoint coordinates are fixed, a purported branch either occupies an admitted endpoint role, supplies proof support only, changes carrier, attempts repair, imports a selector or surrogate, or introduces forbidden second-classifier governance. No additional same-domain endpoint occupation remains.
 \end{proof}
 
 \begin{remark}[Kernel import discipline]
@@ -482,8 +509,125 @@ A derivation of a BSD endpoint role must have a fixed target, licensed steps, ac
 \end{proof}
 
 \begin{audit}[Kernel denial burden]\label{audit:kernel-denial-burden}
-A same-mode denial of the kernel must exhibit a BSD endpoint act that remains theorem-bearing while lacking target determinacy, step evaluability, act-time finality, or same-regime fidelity. Merely saying that AASC is optional does not meet this burden, because the kernel roles have been obtained from the non-degeneracy requirements of endpoint use itself.
+A same-mode denial of the kernel must exhibit a BSD endpoint regime that remains non-degenerate while lacking target determinacy, step evaluability, act-time finality, or same-regime fidelity. Merely saying that AASC is optional does not meet this burden, because the kernel roles have been obtained from the non-degeneracy requirements of endpoint use itself.
 \end{audit}
+
+\subsection{Weakening-resistance of the local BSD kernel packet}
+
+The remaining same-mode pressure on the proof is not whether reference, standing, admissibility, irreversibility, carrier fidelity, target-slot fixation, and minimal report evaluability are needed at all. Those are already forced by endpoint adequacy. The live question is whether a strictly weaker local BSD packet could preserve the same non-degenerate rank endpoint while permitting the analytic-arithmetic mismatch governance excluded below. This subsection answers that question at the nodes that do the most work: K5, K6, K11, and K13.
+
+The claim is local. The manuscript does not require an assertion that every possible arithmetic formalism must contain every AASC node in the same vocabulary. It requires the narrower theorem: on the fixed elliptic-curve carrier, under theorem-bearing same-endpoint use, weakening these nodes either becomes endpoint-equivalent, lowers the mismatch to support or bookkeeping, shifts carrier, or creates forbidden second endpoint authority.
+
+\begin{definition}[Core BSD endpoint adequacy packet]\label{def:core-bsd-packet}
+The core endpoint adequacy packet for the fixed BSD rank carrier is
+\[
+C^0_{\BSD}(E)=\{\RefK_E,\St_E,\Adm_E,\Irr_E\},
+\]
+together with target determinacy, step evaluability, act-time finality, same-regime fidelity, and the fixed carrier
+\[
+C_{\BSD}(E)=(E/\Q,E(\Q),L(E,s),s=1,\text{local factors},\sim_{\BSD}).
+\]
+This is the part of the endpoint regime already forced before the full local packet K1--K13 is invoked.
+\end{definition}
+
+\begin{definition}[Mismatch-governance-permissive weakening]\label{def:mismatch-governance-weakening}
+A mismatch-governance-permissive weakening is a regime $W$ such that:
+\begin{enumerate}[label=(\roman*)]
+\item $W$ preserves the same fixed carrier $C_{\BSD}(E)$;
+\item $W$ preserves theorem-bearing target-slot fixation for the same analytic-rank/Mordell-Weil-rank bridge;
+\item $W$ preserves minimal report evaluability, same-regime fidelity, and act-time finality: reports remain attached to the fixed target, remain classifiable as theorem-bearing or non-theorem-bearing, and do not silently change carrier;
+\item $W$ preserves the core packet $C^0_{\BSD}(E)$;
+\item $W$ permits an endpoint-resolving mismatch branch that is not proof support only, not bookkeeping, not carrier shift, not bridge completion, and not a lawful coequal target role.
+\end{enumerate}
+Endpoint determinacy in this definition means only that the curve, target slot, and report role are fixed enough for theorem-bearing evaluation. It does not include the full K13 exhaustion of unknown, deferred, unsupported, bookkeeping, and hidden-fifth statuses. K13 is proved below as the local theorem that those statuses cannot occupy endpoint truth without degenerating fixed-carrier endpoint use. Likewise, minimal report evaluability is weaker than K11: it requires only that reports be attached to the fixed target and classifiable by role. K11 is the local no-overreporting theorem that endpoint force may not exceed carrier, bridge, and tensor support.
+\end{definition}
+
+\begin{lemma}[Plural arithmetic routes are permitted; plural endpoint interiors are not]\label{lem:plural-routes-not-interiors}
+K5 does not prohibit plural descriptions, Selmer calculations, descent routes, Heegner-point arguments, Iwasawa-theoretic routes, regulator computations, numerical evidence, basis choices, curve models, or bridge-support structures. It prohibits only plural endpoint-governing admissible interiors for the same fixed rank slot when those interiors assign different endpoint status while preserving the same curve, analytic carrier, arithmetic carrier, theorem target, and endpoint role.
+\end{lemma}
+
+\begin{proof}
+Plural support data may coexist without assigning endpoint status. They remain proof support, auxiliary carriers, representatives, or bridge material until used as theorem-bearing endpoint authority. If two alleged interiors assign the same endpoint status, the second is extensionally bookkeeping. If they assign different endpoint status on the same carrier and same endpoint slot, they supply two governance authorities for one fixed BSD rank target. That is not harmless plurality of arithmetic data; it is plural endpoint governance.
+\end{proof}
+
+\begin{lemma}[Local necessity of K5]\label{lem:local-k5-bsd}
+Under $C^0_{\BSD}(E)$, a weakening that permits two distinct endpoint-governing admissible interiors for the same rank bridge either collapses to bookkeeping, splits the domain, or creates a second same-domain rank classifier.
+\end{lemma}
+
+\begin{proof}
+Let $I_1$ and $I_2$ be alleged endpoint-governing admissible interiors for the same fixed rank endpoint slot. If they agree on all endpoint-bearing acts, they are extensionally identical for endpoint purposes and the second is bookkeeping. If they disagree while preserving the same curve, analytic carrier, arithmetic carrier, endpoint role, and admissibility regime, then one endpoint slot receives two admissible governance verdicts. The disagreement must be resolved by a higher selector, a domain split, or a second classifier. A higher selector is endpoint governance above the gate; a domain split exits same-carrier use; a second classifier is exactly forbidden plural endpoint authority. Therefore K5 is locally necessary for non-degenerate same-carrier BSD rank determinacy.
+\end{proof}
+
+\begin{lemma}[Local necessity of K6]\label{lem:local-k6-bsd}
+Under $C^0_{\BSD}(E)$, endpoint standing outside admissibility is either support-only, carrier shift, or a second endpoint-status gate.
+\end{lemma}
+
+\begin{proof}
+Suppose a mismatch-like branch $B$ has endpoint standing while not being admissibility-bound. If $B$ does not affect endpoint status, it is support, bookkeeping, or lower-status report material. If it affects endpoint status while preserving the same carrier, it performs endpoint-status work outside the admissibility boundary and therefore acts as a second gate. If it avoids that conclusion by altering the curve, analytic carrier, arithmetic carrier, formula normalization, or endpoint role, it is carrier or domain shift. Hence same-carrier endpoint-standing use without admissibility either does no endpoint work, exits the domain, or creates second endpoint governance. K6 is the local exclusion of that split.
+\end{proof}
+
+\begin{lemma}[Local necessity of K11]\label{lem:local-k11-bsd}
+Under $C^0_{\BSD}(E)$ plus minimal report evaluability, a theorem-bearing endpoint report that exceeds its curve, analytic carrier, arithmetic carrier, bridge position, and support is unsupported endpoint authority, silent redescription, or no-carrier transfer.
+\end{lemma}
+
+\begin{proof}
+Minimal report evaluability says only that a report remains attached to the fixed target and can be classified as theorem-bearing, support-level, bookkeeping, or out-of-domain. K11 is the strengthening from that minimal evaluability to no-overreporting: a report may express no more endpoint force than its fixed target, carrier, standing packet, bridge position, and tensor support authorize. If a mismatch report records obstruction evidence only, it is proof support. If it reports endpoint failure on the same carrier, it governs endpoint status. If that endpoint force is not supplied by a lawful endpoint role or bridge support, the report overstates its support. The overstatement is unsupported endpoint authority when it remains on the carrier, silent redescription when a surrogate is redescribed as endpoint readout, or no-carrier transfer when status is imported from another curve, family, computation, or auxiliary object. K11 is therefore the local report-preservation condition required for non-degenerate same-carrier BSD endpoint use.
+\end{proof}
+
+\begin{lemma}[Local necessity of K13]\label{lem:local-k13-bsd}
+K13 does not deny epistemic uncertainty, open proof status, incomplete arithmetic information, conditional evidence, or review status. It states that unknown, deferred, unsupported, silent, bookkeeping, and hidden-fifth statuses are report or epistemic statuses, not endpoint truth branches on a fixed theorem-bearing BSD rank slot.
+\end{lemma}
+
+\begin{proof}
+Target-slot fixation by itself does not include endpoint exhaustion. It fixes what is being evaluated. K13 supplies the additional fail-closed theorem: once the curve, analytic carrier, arithmetic carrier, endpoint role, and admissibility boundary are fixed, a theorem-bearing endpoint branch is admitted for endpoint standing or not. Unknown or deferred status may describe the state of a proof attempt; unsupported status may describe lack of tensor support; bookkeeping may organize notation; review status may describe reception; conditional evidence may support a future bridge. None of these statuses occupies the endpoint truth slot. Treating any of them as a third endpoint truth branch leaves the BSD rank endpoint no longer determinate under same-carrier theorem use. K13 is the local fail-closed endpoint-exhaustion condition that prevents that degeneration.
+\end{proof}
+
+\begin{longtable}{L{0.18\linewidth}L{0.36\linewidth}L{0.36\linewidth}}
+\toprule
+\textbf{Node} & \textbf{Weakening attempt} & \textbf{Degeneracy cost}\\
+\midrule
+K5 & Permit two admissible endpoint interiors for the same rank slot, one bridge-aligning and one mismatch-governing. & If they agree, the second is bookkeeping. If they disagree, the same endpoint has two governing interiors on the same carrier, producing a second classifier or domain split.\\
+K6 & Permit mismatch standing without admissibility. & Standing becomes endpoint authority outside the admissibility gate. If endpoint-resolving, it is hidden classifier governance.\\
+K11 & Permit a mismatch report to exceed curve, carrier, bridge, and support. & The report becomes unsupported endpoint authority, silent redescription, or no-carrier transfer.\\
+K13 & Permit unknown, deferred, unsupported, or independently negative governance as a third endpoint status. & The endpoint slot is no longer determinate; the branch is admitted, rejected, support-only, carrier shift, bookkeeping, or second endpoint governance.\\
+\bottomrule
+\end{longtable}
+
+\begin{theorem}[No strict same-carrier weakening permits independent BSD mismatch governance]\label{thm:no-strict-bsd-weakening}
+Under the core endpoint adequacy packet $C^0_{\BSD}(E)$, there is no mismatch-governance-permissive weakening $W$ that preserves non-degenerate same-carrier BSD rank endpoint use.
+\end{theorem}
+
+\begin{proof}
+Assume such a weakening $W$ exists, and let $G^{-}(E)$ be the mismatch endpoint-governance act it permits. Since $G^{-}(E)$ is endpoint-resolving, it changes the endpoint status of the fixed analytic/arithmetic rank bridge. Since it is not proof support or bookkeeping, it is theorem-bearing. Since it is not carrier shift, it acts on the same $E/\Q$, the same $L(E,s)$, and the same Mordell-Weil group. Since it is not bridge completion, it does not occupy the positive BSD rank bridge. Since it is not a lawful coequal target role, it cannot be a separately declared alternative endpoint.
+
+There are then only four endpoint-relevant possibilities. First, $G^{-}(E)$ shares the same admissible interior as the BSD rank bridge. Then it collapses into that bridge and cannot supply mismatch exclusion. Second, it has a distinct admissible interior. By Lemma~\ref{lem:local-k5-bsd}, this creates plural endpoint governance, a second classifier, or a domain split. Third, it has endpoint standing without admissibility. By Lemma~\ref{lem:local-k6-bsd}, this is support-only, carrier shift, or a second gate. Fourth, it is neither admitted nor rejected as endpoint-bearing while being preserved as endpoint-resolving. By Lemma~\ref{lem:local-k13-bsd}, that is a third-status degeneration, not determinate endpoint use. If the mismatch report exceeds carrier and bridge support at any stage, Lemma~\ref{lem:local-k11-bsd} gives unsupported endpoint authority, silent redescription, or no-carrier transfer.
+
+Thus any weakening that permits $G^{-}(E)$ either reduces it to bridge completion, proof support, bookkeeping, carrier shift, or lawful coequal target role, or else reproduces the forbidden independent endpoint-governance structure. In none of these cases does $W$ preserve non-degenerate same-carrier BSD rank endpoint use while permitting the mismatch governance required to refute the endpoint. Therefore no such strict weakening survives.
+\end{proof}
+
+\begin{corollary}[Strict weakening either preserves the packet extensionally or exits endpoint use]\label{cor:strict-bsd-weakening}
+Let $W$ be a weaker regime preserving core BSD endpoint adequacy. If $W$ does not permit independent endpoint governance, then it is extensionally equivalent to the local packet for endpoint purposes. If $W$ permits independent endpoint governance, then it fails reference, standing, admissibility, irreversibility, target-slot fixation, minimal report evaluability, no-overreporting, endpoint exhaustion, or same-carrier fidelity.
+\end{corollary}
+
+\begin{proof}
+If $W$ does not alter endpoint-bearing statuses, its differences are bookkeeping, support-level, or presentation-level for the endpoint and it is extensionally equivalent to the local packet at the endpoint slot. If $W$ does alter endpoint-bearing status by permitting independent mismatch governance, Theorem~\ref{thm:no-strict-bsd-weakening} shows that it exits the non-degenerate same-carrier endpoint regime by one of the listed failures.
+\end{proof}
+
+\begin{audit}[Right-mode weakening challenge]\label{audit:right-mode-weakening-bsd}
+A critic may examine K5, K6, K11, and K13 node by node. The successful challenge must define a weakening $W$ that preserves fixed curve, theorem-bearing target-slot fixation, minimal report evaluability, standing-admissibility discipline, no post-hoc repair, and no carrier shift, while also showing how the mismatch branch avoids proof support, bridge completion, lawful coequal target role, bookkeeping, and second endpoint authority. The weakening-resistance theorem proves that no such $W$ survives without importing no-overreporting failure, endpoint-exhaustion failure, carrier drift, or second classifier governance.
+\end{audit}
+
+\begin{longtable}{L{0.28\linewidth}L{0.26\linewidth}L{0.36\linewidth}}
+\toprule
+\textbf{Neutral adequacy condition} & \textbf{Local role/K-node consequence} & \textbf{Denial cost}
+\\
+\midrule
+Target determinacy & Reference fixation; K1--K3 & The same curve, analytic carrier, arithmetic carrier, rank slot, or formula-factor carrier is no longer fixed.\\
+Step evaluability & Standing discipline; K4 and K6 & A comparison or mismatch is no longer classifiable as theorem-bearing, support-level, bookkeeping, or out-of-domain.\\
+Act-time finality & Irreversibility; K7--K9 & Later point construction, descent data, formula-factor certification, or reinterpretation can repair an earlier failed report as the same act.\\
+Same-regime fidelity & Admissibility; K10--K13 & Surrogate readout, selector import, overreporting, third-status occupation, or second endpoint authority becomes possible.\\
+\bottomrule
+\end{longtable}
 
 \section{BSD carrier adequacy packet}
 
@@ -555,6 +699,19 @@ For every elliptic curve $E/\Q$,
 Carrier instantiation fixes the same elliptic curve, its $L$-function, its Mordell-Weil group, and the lawful redescriptions that preserve these data. The analytic role is exactly the order of vanishing at $s=1$. The arithmetic role is exactly the free rank of the finitely generated Mordell-Weil group. These are unique integer-valued roles on the fixed carrier. Basis choices, model choices, or curve presentations may change representatives, but they do not change the analytic order or free rank under lawful redescription. Hence the instantiated carrier satisfies analytic adequacy, arithmetic adequacy, and both image-exactness clauses.
 \end{proof}
 
+\begin{lemma}[Rank roles are total and unique on the adequate carrier]\label{lem:rank-total-unique}
+Under $\mathrm{BSDCarrierAdeq}(E)$,
+\[
+\exists! n\in\Z_{\ge0}\,\Van(E,n),
+\qquad
+\exists! m\in\Z_{\ge0}\,\RankRead(E,m).
+\]
+\end{lemma}
+
+\begin{proof}
+Analytic carrier adequacy fixes $\ord_{s=1}L(E,s)$ as a unique integer-valued analytic standing on the fixed $L$-function carrier. Arithmetic carrier adequacy fixes $E(\Q)$ as a finitely generated Mordell-Weil group with a unique free rank. The image-exactness clauses identify these unique values with $\Van(E,n)$ and $\RankRead(E,m)$, respectively. Lawful redescription preserves both values. Therefore both rank roles are total and unique on the adequate carrier.
+\end{proof}
+
 \begin{definition}[Standard BSD carrier instantiation]
 $\mathrm{StdBSDCarrierInst}(E)$ means that the ordinary elliptic-curve data used in the classical BSD problem instantiate the fixed BSD carrier:
 \[
@@ -586,7 +743,7 @@ A carrier-adequacy objection has standing only if it identifies an analytic-rank
 
 \section{BSD rank correspondence bridges}
 
-The rank-mismatch exclusion theorem does not reclassify an ordinary counterexample by fiat. It proceeds through correspondence bridges. A pointwise BSD rank mismatch is first written in native analytic/arithmetic normal form. That normal form is then shown to be exactly bridge-image exclusion on the fixed BSD rank carrier. Endpoint-bearing bridge-image exclusion induces theorem-level rank-status discrimination. Only after these correspondences and the endpoint-use condition are fixed does endpoint-use governance apply.
+The rank-mismatch exclusion theorem does not classify an ordinary counterexample directly by assertion. It proceeds through correspondence bridges. A pointwise BSD rank mismatch is first written in native analytic/arithmetic normal form. That normal form is then shown to be exactly bridge-image exclusion on the fixed BSD rank carrier. Endpoint-bearing bridge-image exclusion induces theorem-level rank-status discrimination. Only after these correspondences and endpoint-resolving use are fixed does endpoint-governance analysis apply.
 
 \begin{definition}[Rank mismatch branch]
 \[
@@ -725,7 +882,7 @@ Thus an ordinary counterexample-like expression does not automatically carry end
 
 \section{Mismatch-use classification and endpoint governance}
 
-This section is the rank-BSD analogue of the final negative-branch hinge in the SAT endpoint proof. It prevents the phrase ``descriptive mismatch'' from floating between proof support and endpoint resolution.
+This section is the final negative-branch hinge for the BSD rank endpoint. It prevents the phrase ``descriptive mismatch'' from floating between proof support and endpoint resolution.
 
 
 \begin{definition}[Rank mismatch use kind]
@@ -783,6 +940,14 @@ Under the official rank target under audit,
 The official pointwise rank endpoint for the fixed carrier is rank equality. Under carrier adequacy and Theorem~\ref{thm:mismatch-normal}, $\RankMismatch(E)$ is exactly the proposition-level complement branch for that curve instance: it states that the analytic and arithmetic integer readouts are both fixed and unequal. If such a branch is theorem-bearing in the official endpoint target under audit, it resolves the pointwise rank endpoint negatively. If it is not theorem-bearing, it is proof support, bookkeeping, or an incomplete expression and is not a proposition-level endpoint branch. If it changes carrier, it is not the same curve instance. Therefore under the official rank target and fixed carrier instantiation, $\RankMismatch(E)$ is $\mathrm{OfficialBSDNegativeResolution}(E)$.
 \end{proof}
 
+\begin{theorem}[Rank mismatch is not a lawful coequal BSD endpoint role]\label{thm:mismatch-not-coequal}
+On the fixed BSD rank carrier, $\RankMismatch(E)$ is not a separately declared coequal endpoint role of the official rank-BSD target. If it is used to resolve the same fixed rank endpoint, it is proof support, bookkeeping, carrier shift, bridge completion failure reported as endpoint governance, or forbidden second endpoint authority.
+\end{theorem}
+
+\begin{proof}
+The official rank-BSD endpoint declares equality between analytic vanishing order and Mordell-Weil rank on the same elliptic-curve carrier. A lawful coequal target role would have to be fixed as an alternative endpoint before evaluation, with its own standing and admissibility boundary. BSD does not declare such a two-output endpoint; it declares the equality bridge. A mismatch expression may be used as local evidence, counterexample-form notation, proof support, or carrier diagnosis. Once it resolves the official equality endpoint negatively on the same carrier, it governs endpoint status from outside positive bridge occupation. That is the governance structure audited below, not a lawful coequal target role.
+\end{proof}
+
 \begin{definition}[BSD rank endpoint-status governance]
 $\mathrm{BSDRankEndpointStatusGovernance}(E)$ means tensor-level endpoint-status governance of the rank bridge by a theorem-level mismatch discriminator that is not itself positive rank-bridge occupation.
 \end{definition}
@@ -796,7 +961,7 @@ $\mathrm{BSDRankEndpointStatusGovernance}(E)$ means tensor-level endpoint-status
 \end{theorem}
 
 \begin{proof}
-Official negative resolution uses mismatch to settle the BSD rank endpoint negatively. By Theorem~\ref{thm:hidden-fifth-rank}, endpoint-resolving non-governance is impossible. By Theorem~\ref{thm:ats-mismatch}, a same-carrier endpoint-resolving act is tensor. By the UEAP report bound, it cannot be analytic standing alone or Mordell-Weil readout alone. It is not positive bridge completion, because it declares bridge-image exclusion. It is not proof support only, because it resolves the endpoint. It is not carrier shift, because the official negative resolution is on the fixed carrier. Hence the only remaining same-carrier endpoint-resolving role is endpoint-status governance.
+Official negative resolution uses mismatch to settle the BSD rank endpoint negatively. By Theorem~\ref{thm:hidden-fifth-rank}, endpoint-resolving non-governance is impossible. By Theorem~\ref{thm:ats-mismatch}, a same-carrier endpoint-resolving act is tensor. By the UEAP report bound, it cannot be analytic standing alone or Mordell-Weil readout alone. It is not positive bridge completion, because it declares bridge-image exclusion. By Theorem~\ref{thm:mismatch-not-coequal}, it is not a lawful coequal BSD endpoint role. It is not proof support only, because it resolves the endpoint. It is not carrier shift, because the official negative resolution is on the fixed carrier. Hence the only remaining same-carrier endpoint-resolving role is endpoint-status governance.
 \end{proof}
 
 \section{Rank mismatch as independent theorem-level discriminator}
@@ -807,7 +972,7 @@ $\mathrm{IndependentBSDRankDiscriminator}(E)$ means a theorem-level rank-status 
 \item preserves the same curve, analytic carrier, and arithmetic carrier;
 \item does not occupy the positive rank bridge;
 \item nevertheless governs whether the rank endpoint is aligned or bridge-excluded;
-\item is not a lawful carrier reset, proof-support observation, bookkeeping act, or bridge-complete certificate.
+\item is not a lawful carrier reset, proof-support observation, bookkeeping act, lawful coequal target role, or bridge-complete certificate.
 \end{enumerate}
 \end{definition}
 
@@ -833,6 +998,7 @@ Bridge completion & Mismatch denies common bridge occupation by asserting $n\neq
 Bridge support & Support may contribute to a proof, but support alone does not resolve the endpoint.\\
 Carrier shift & Official endpoint use fixes $C_{\BSD}(E)$, so carrier-changing comparison is not same endpoint use.\\
 Bookkeeping & Bookkeeping has no endpoint effect and therefore cannot resolve the BSD rank endpoint.\\
+Lawful coequal target role & The official BSD rank endpoint is the equality bridge, not a separately declared two-output classifier; Theorem~\ref{thm:mismatch-not-coequal} excludes this role.\\
 Ordinary counterexample without governance & This is the hidden fifth case: endpoint-resolving but allegedly non-governing mismatch use, excluded by Theorem~\ref{thm:hidden-fifth-rank}.\\
 Lawful bridge certificate & A bridge certificate for the rank endpoint would occupy the positive bridge and yield equality, not bridge exclusion.\\
 \bottomrule
@@ -872,7 +1038,7 @@ For every fixed official BSD endpoint carrier,
 \end{theorem}
 
 \begin{proof}
-An independent rank discriminator would govern the same fixed rank endpoint while not occupying the positive rank bridge and not changing carrier. It would therefore supply a second same-domain endpoint-status authority over the analytic-to-arithmetic transition. By the local kernel packet, K5 excludes plural admissible interiors for the same endpoint slot, K6 forbids endpoint standing outside admissibility, K11 forbids reports that exceed carrier and bridge support, and K13 exhausts endpoint branches once carrier, standing, endpoint role, and admissibility boundary are fixed. Thus the alleged discriminator has only four possible statuses: it is bridge occupation, proof support only, carrier reset, or forbidden second-classifier governance. The definition of independent rank discriminator excludes the first three. The fourth is inadmissible by K5, K6, K11, and K13. Therefore no independent same-domain BSD rank discriminator survives.
+An independent rank discriminator would govern the same fixed rank endpoint while not occupying the positive rank bridge and not changing carrier. It would therefore supply a second same-domain endpoint-status authority over the analytic-to-arithmetic transition. By the local kernel packet, K5 excludes plural admissible interiors for the same endpoint slot, K6 forbids endpoint standing outside admissibility, K11 forbids reports that exceed carrier and bridge support, and K13 exhausts endpoint branches once carrier, standing, endpoint role, and admissibility boundary are fixed. Thus the alleged discriminator has only five possible statuses: positive bridge occupation, proof support only, carrier/domain reset, bookkeeping, or forbidden second-classifier governance. The definition of independent rank discriminator excludes the first four. The fifth is inadmissible by K5, K6, K11, and K13. The weakening-resistance theorem, Theorem~\ref{thm:no-strict-bsd-weakening}, also shows that a purported weaker same-carrier regime permitting such governance is not a non-degenerate BSD endpoint regime. Therefore no independent same-domain BSD rank discriminator survives.
 \end{proof}
 
 \begin{corollary}[Rank mismatch branch is excluded]\label{cor:rank-mismatch-excluded}
@@ -883,7 +1049,7 @@ For every $E/\Q$,
 \end{corollary}
 
 \begin{proof}
-Assume $\mathrm{OfficialBSDEndpointUse}(E)$ and $\RankMismatch(E)$. By Proposition~\ref{prop:endpoint-fixes-carrier}, carrier instantiation is active. The curve instance is under the official rank target under audit, so Theorem~\ref{thm:mismatch-negative-occupation} identifies the mismatch branch as the official pointwise negative resolution. By Theorem~\ref{thm:mismatch-disc}, it induces an independent BSD rank discriminator. By Theorem~\ref{thm:endpoint-instantiates-kernel}, official endpoint use instantiates $\Kern_{\BSD}(E)$. By Theorem~\ref{thm:no-independent-rank-disc}, such a discriminator is impossible. Therefore $\RankMismatch(E)$ is excluded at the proposition-level endpoint branch, not merely as an inadmissible report label.
+Assume $\mathrm{OfficialBSDEndpointUse}(E)$ and $\RankMismatch(E)$. By Proposition~\ref{prop:endpoint-fixes-carrier}, carrier instantiation is active. The curve instance is under the official rank target under audit, so Theorem~\ref{thm:mismatch-negative-occupation} identifies the mismatch branch as the official pointwise negative resolution. By Theorem~\ref{thm:mismatch-not-coequal}, this negative branch is not a lawful coequal endpoint role. By Theorem~\ref{thm:mismatch-disc}, it induces an independent BSD rank discriminator. By Theorem~\ref{thm:endpoint-instantiates-kernel}, official endpoint use instantiates $\Kern_{\BSD}(E)$ by regime necessity. By Theorem~\ref{thm:no-independent-rank-disc}, such a discriminator is impossible. Therefore $\RankMismatch(E)$ is excluded at the proposition-level endpoint branch, not merely as an inadmissible report label.
 \end{proof}
 
 \section{Rank equality endpoint}
@@ -896,7 +1062,11 @@ For every elliptic curve $E/\Q$,
 \end{theorem}
 
 \begin{proof}
-Fix an arbitrary elliptic curve $E/\Q$. By Theorem~\ref{thm:universal-binds-pointwise}, the BSD rank endpoint under audit evaluates this instance under $\mathrm{OfficialBSDEndpointUse}(E)$ and $\mathrm{BSDCarrierInstantiated}(E)$. By Theorem~\ref{thm:carrier-adequate}, the analytic rank and Mordell-Weil rank are unique integer-valued roles on that fixed carrier. If they were unequal, $\RankMismatch(E)$ would hold by Theorem~\ref{thm:mismatch-normal}. Corollary~\ref{cor:rank-mismatch-excluded}, applied to $\mathrm{OfficialBSDEndpointUse}(E)$, excludes $\RankMismatch(E)$. Therefore the two unique integer-valued roles are equal. Since $E$ was arbitrary, the rank endpoint under audit follows.
+Fix an arbitrary elliptic curve $E/\Q$ and evaluate the ordinary rank-BSD target on its fixed carrier. By Theorem~\ref{thm:universal-binds-pointwise}, this target-fixation act supplies $\mathrm{OfficialBSDEndpointUse}(E)$ and $\mathrm{BSDCarrierInstantiated}(E)$ without assuming rank equality. By Theorem~\ref{thm:endpoint-instantiates-kernel}, the fixed-carrier regime is kernel-governed by necessity. By Theorem~\ref{thm:carrier-adequate} and Lemma~\ref{lem:rank-total-unique}, there are unique integers $n,m\in\Z_{\ge0}$ with $\Van(E,n)$ and $\RankRead(E,m)$. If $n\neq m$, then $\RankMismatch(E)$ holds. Corollary~\ref{cor:rank-mismatch-excluded} excludes $\RankMismatch(E)$ under the same fixed endpoint use. Hence $n=m$, and by the definitions of $\Van$ and $\RankRead$,
+\[
+\ord_{s=1}L(E,s)=\rank E(\Q).
+\]
+Since $E$ was arbitrary, the rank endpoint follows.
 \end{proof}
 
 \begin{corollary}[Rank bridge completion is forced]
@@ -994,12 +1164,25 @@ This manuscript does not supply a separate arithmetic construction of finite-ord
 This manuscript does not separately prove $\Sha(E)$ finite by arithmetic construction. The refined formula theorem below is a conditional endpoint closure at the standing-fixed factor layer. A fully unconditional refined BSD endpoint requires the factor-standing theorem, including finite-order standing for $\Sha(E)$, before the formula equality is read without qualification.
 \end{nonclaim}
 
-\begin{theorem}[Refined formula endpoint use instantiates formula kernel]
-If the refined BSD formula is used as a theorem-bearing endpoint for $E$, then the formula-level kernel roles are already active on $C_{\BSDFormula}(E)$.
+\begin{definition}[Official refined formula endpoint use]\label{def:official-refined-formula-use}
+$\FormulaUse(E)$ means determinate theorem-target use of the refined BSD leading-coefficient formula on $C_{\BSDFormula}(E)$ after the formula-factor roles have standing. It is target fixation at the formula layer, not an assertion that the formula equality has already been proved.
+\end{definition}
+
+\begin{definition}[Official refined formula negative resolution]\label{def:official-refined-formula-negative}
+$\FormulaNeg(E)$ means theorem-bearing use of $\FormulaMismatch(E)$ as the official negative endpoint resolution of the standing-fixed refined formula on the same formula carrier.
+\end{definition}
+
+\begin{theorem}[Refined formula endpoint use instantiates formula kernel]\label{thm:formula-kernel}
+\[
+\FormulaUse(E)
+\Rightarrow
+\mathrm{FormulaKernelActive}(E).
+\]
+Here $\mathrm{FormulaKernelActive}(E)$ abbreviates formula-level reference, standing, admissibility, and irreversibility on $C_{\BSDFormula}(E)$.
 \end{theorem}
 
 \begin{proof}
-A refined formula endpoint report must fix the same analytic leading coefficient, same rank, same period, same regulator, same Tamagawa factors, same torsion subgroup, and same Tate-Shafarevich factor. Otherwise the equation is not a determinate formula endpoint. Standing, admissibility, reference, and irreversibility are therefore required at the formula layer for the same reasons they are required at the rank layer.
+A refined formula endpoint report must fix the same analytic leading coefficient, same rank, same period, same regulator, same Tamagawa factors, same torsion subgroup, and same Tate-Shafarevich factor. Otherwise the equation is not a determinate formula endpoint. Standing, admissibility, reference, and irreversibility are therefore required at the formula layer for the same reasons they are required at the rank layer. The formula kernel is consequently forced by non-degenerate formula endpoint use; it is not added as an optional layer.
 \end{proof}
 
 \section{Formula mismatch normal form and exclusion}
@@ -1033,15 +1216,15 @@ If a formula mismatch merely supports a proof, it is not endpoint-resolving. If 
 
 \begin{theorem}[Formula mismatch induces independent formula discriminator]\label{thm:formula-disc}
 \[
-\FormulaMismatch(E)
-\Rightarrow
-\mathrm{IndependentBSDFormulaDiscriminator}(E)
+\begin{aligned}
+&\FormulaMismatch(E)\wedge \FormulaNeg(E)\\
+&\Rightarrow \mathrm{IndependentBSDFormulaDiscriminator}(E).
+\end{aligned}
 \]
-whenever the mismatch is used as the official refined formula negative endpoint.
 \end{theorem}
 
 \begin{proof}
-The mismatch declares the positive formula bridge unoccupied while preserving the same factor carrier. If endpoint-resolving, it governs formula status. Since it is not positive formula bridge occupation and not carrier shift, it is an independent formula discriminator.
+The mismatch declares the positive formula bridge unoccupied while preserving the same factor carrier. If it is the official negative formula resolution, it is endpoint-resolving and therefore governs formula status by Theorem~\ref{thm:formula-governance}. Since it is not positive formula bridge occupation, not carrier shift, and not bookkeeping, it is an independent formula discriminator.
 \end{proof}
 
 \begin{theorem}[No independent formula discriminator]\label{thm:no-formula-disc}
@@ -1052,33 +1235,40 @@ At the formula-standing layer,
 \end{theorem}
 
 \begin{proof}
-An independent formula discriminator would govern the same refined formula endpoint while not occupying the formula bridge and not resetting the formula carrier. This duplicates endpoint-status authority at the same formula slot. Kernel-forced no-second-classifier closure excludes that possibility. The alleged discriminator must collapse into formula bridge occupation, proof support, carrier shift, or the hidden fifth case.
+An independent formula discriminator would govern the same refined formula endpoint while not occupying the formula bridge and not resetting the formula carrier. This duplicates endpoint-status authority at the same formula slot. Kernel-forced no-second-classifier closure excludes that possibility. The alleged discriminator must collapse into formula bridge occupation, proof support, bookkeeping, carrier shift, or the hidden fifth case.
 \end{proof}
 
-\begin{corollary}[Formula mismatch excluded]
-Under $\mathrm{FormulaFactorsStanding}(E)$,
+\begin{corollary}[Formula mismatch excluded at the official factor-standing endpoint]\label{cor:formula-mismatch-excluded}
 \[
-\neg\FormulaMismatch(E).
+\begin{aligned}
+&\mathrm{FormulaFactorsStanding}(E)\wedge \FormulaUse(E)\\
+&\Rightarrow \neg\FormulaMismatch(E).
+\end{aligned}
 \]
 \end{corollary}
 
 \begin{proof}
-Formula mismatch used as the official negative formula endpoint induces an independent formula discriminator by Theorem~\ref{thm:formula-disc}. This is impossible by Theorem~\ref{thm:no-formula-disc}. Non-endpoint uses do not resolve the formula endpoint; carrier-changing uses are not same endpoint; endpoint-resolving non-governance is the hidden fifth case. Hence formula mismatch does not survive.
+Assume formula-factor standing and official refined formula endpoint use. Assume also that formula mismatch holds. On the standing-fixed formula carrier, a theorem-bearing formula mismatch is the official negative formula resolution; non-endpoint uses remain proof support or bookkeeping and do not resolve the formula endpoint. Thus $\FormulaNeg(E)$ holds for the endpoint-resolving branch. Theorem~\ref{thm:formula-disc} induces an independent formula discriminator, contradicting Theorem~\ref{thm:no-formula-disc}. Carrier-changing uses are not same endpoint, and endpoint-resolving non-governance is the hidden fifth case. Hence formula mismatch is excluded at the official factor-standing refined endpoint.
 \end{proof}
 
 \section{Conditional refined BSD formula closure}
 
 \begin{theorem}[Conditional refined BSD formula closure]\label{thm:refined-endpoint}
-For every elliptic curve $E/\Q$, conditional on the standard BSD formula factors being standing-fixed,
+For every elliptic curve $E/\Q$, at the standing-fixed refined formula endpoint,
 \[
+\begin{aligned}
+&\mathrm{FormulaFactorsStanding}(E)\wedge \FormulaUse(E)\\
+&\Rightarrow
 \frac{L^{(r)}(E,1)}{r!}
 =
-\frac{\Omega_E\Reg_E |\Sha(E)|\prod_p c_p}{|E(\Q)_{\tors}|^2}.
+\frac{\Omega_E\Reg_E |\Sha(E)|\prod_p c_p}
+{|E(\Q)_{\tors}|^2}.
+\end{aligned}
 \]
 \end{theorem}
 
 \begin{proof}
-By Theorem~\ref{thm:rank-endpoint}, the rank $r$ is fixed. The hypothesis supplies formula-factor standing, including finite-order standing for the $|\Sha(E)|$ factor. If the formula equality failed, $\FormulaMismatch(E)$ would hold. Formula mismatch is excluded at the standing-fixed formula layer. Therefore the conditional formula equality holds. This theorem does not independently construct formula-factor standing; it closes the formula endpoint once those factors are standing-fixed.
+By Theorem~\ref{thm:rank-endpoint}, the rank $r$ is fixed. Formula-factor standing supplies the leading coefficient, period, regulator, Tamagawa factors, torsion subgroup, and finite-order standing for the $|\Sha(E)|$ factor. If the formula equality failed at the official refined formula endpoint, $\FormulaMismatch(E)$ would hold. Corollary~\ref{cor:formula-mismatch-excluded} excludes formula mismatch under the same factor-standing endpoint use. Therefore the conditional formula equality holds. This theorem does not independently construct formula-factor standing; it closes the formula endpoint once those factors are standing-fixed and the refined formula endpoint is the target under evaluation.
 \end{proof}
 
 \section{No-fifth BSD negative occupation}
@@ -1182,6 +1372,14 @@ An endpoint-resolving mismatch must change status, substitute a readout, declare
 
 The proof does not ban arithmetic invariants, obstructions, or bridge data. It distinguishes proof support from endpoint-status governance.
 
+\begin{theorem}[Mismatch exclusion is not a ban on negative arithmetic]\label{thm:nonexplosive-mismatch-exclusion}
+AASC does not forbid negative arithmetic results, obstruction data, conditional counterexample analysis, Selmer or Sha evidence, numerical failures, local incompatibilities, or bridge-route dead ends as such. It forbids, on the fixed BSD endpoint carrier, an endpoint-resolving mismatch use that simultaneously preserves the same curve, denies bridge occupation, refuses proof-support or bookkeeping status, and supplies endpoint-status authority independently of the admitted bridge.
+\end{theorem}
+
+\begin{proof}
+A negative arithmetic result attached to a lawful target role is governed by that role. A negative obstruction used inside a proof route is support until it resolves the endpoint. A negative statement obtained by changing curve, carrier, normalization, or formula-factor standing is a domain shift. A negative datum with no endpoint effect is bookkeeping. None of these cases is excluded by no-independent-discriminator closure. The excluded case is the residue after those legitimate roles are removed: same-carrier endpoint resolution by a mismatch branch that does not occupy the positive BSD bridge but still governs endpoint status. That residue is independent same-domain endpoint authority, which the kernel excludes.
+\end{proof}
+
 \begin{longtable}{L{0.30\linewidth}L{0.18\linewidth}L{0.42\linewidth}}
 \toprule
 \textbf{Object or use} & \textbf{Legitimate?} & \textbf{Reason}\\
@@ -1233,8 +1431,10 @@ The formula is an equality among typed factor roles. If a factor is not standing
 The paper does not construct rational points. & Wrong-mode unless the objection identifies a failed theorem link. Point construction is a bridge-complete route, not the proof class here.\\
 The paper does not prove a new descent theorem. & Wrong-mode unless descent is claimed as the route.\\
 The paper does not estimate $L(E,s)$. & Wrong-mode unless the proof depends on such an estimate.\\
-The paper uses AASC. & Not a refutation. The critic must deny the kernel-instantiation theorem or a later endpoint link.\\
+The paper uses AASC. & Not a refutation. AASC is the mathematical constraint formalism of this proof; the critic must identify a failed definition, theorem link, kernel dependency, or formal constraint.\\
+Lean is not a full arithmetic-geometry proof of BSD. & Granted but irrelevant if used against the manuscript proof. Lean is audit support for the stated endpoint spine, not a replacement proof.\\
 A mismatch statement could be ordinary mathematical data. & Granted as proof support or lower-status data. If endpoint-resolving, it enters the use-kind classification.\\
+A weaker kernel packet might allow mismatch governance. & Right-mode, not wrong-mode. The critic must define the weakening and meet the weakening-resistance burden in Section~\ref{audit:right-mode-weakening-bsd}.\\
 \bottomrule
 \end{longtable}
 
@@ -1243,22 +1443,26 @@ A right-mode objection must target a named theorem link. The live targets are:
 \begin{enumerate}
 \item The endpoint-under-audit declaration as target fixation rather than assumption of rank equality.
 \item The pointwise endpoint-use binding for the official rank target under audit.
+\item Kernel governance as necessity for every non-degenerate fixed-carrier BSD rank regime.
 \item The cost-of-kernel-denial theorem.
+\item Weakening-resistance of K5, K6, K11, and K13; specifically, whether a strict same-carrier weakening preserves target-slot fixation and minimal report evaluability while permitting independent mismatch governance.
 \item Standard BSD carrier instantiation and carrier adequacy.
-\item Semantic exactness of analytic standing and Mordell-Weil rank readout.
+\item Semantic exactness, totality, and uniqueness of analytic standing and Mordell-Weil rank readout.
 \item Rank mismatch normal form correspondence.
 \item Standard mismatch normal form as bridge-image exclusion.
 \item Endpoint-used bridge-image exclusion as theorem-level rank-status discrimination.
 \item ATS classification of mismatch use.
 \item UEAP report bound for official negative rank reports.
 \item Rank mismatch as the pointwise negative endpoint branch.
+\item Rank mismatch not being a lawful coequal BSD endpoint role.
 \item Endpoint-resolving mismatch as endpoint-status governance.
 \item No hidden fifth case.
 \item Endpoint governance as independent rank discrimination.
 \item No independent same-domain BSD rank discriminator.
+\item Non-explosiveness of mismatch exclusion.
 \item Official rank endpoint correspondence.
 \item Formula-factor standing conditionality.
-\item Formula-mismatch exclusion at the standing-fixed factor layer.
+\item Formula-mismatch exclusion at the standing-fixed refined formula endpoint under formula endpoint use.
 \end{enumerate}
 
 \subsection{Referee burden worksheet}
@@ -1266,9 +1470,10 @@ A right-mode objection must target a named theorem link. The live targets are:
 \toprule
 \textbf{Target} & \textbf{What a successful objection must produce}\\
 \midrule
-Kernel instantiation / denial cost & A theorem-bearing BSD endpoint act preserving the fixed carrier while abandoning a named kernel role without losing non-degenerate endpoint status.\\
+Kernel governance / denial cost & A non-degenerate fixed-carrier BSD endpoint regime preserving the fixed carrier while abandoning a named kernel role without losing reference, standing, admissibility, irreversibility, fail-closed status, or no-second-classifier discipline.\\
+Weakening-resistance & A weaker regime $W$ preserving fixed carrier, theorem-bearing target-slot fixation, minimal report evaluability, standing-admissibility discipline, no carrier shift, and no post-hoc repair while permitting endpoint-resolving mismatch governance that is not proof support, bridge completion, lawful coequal target role, bookkeeping, or second endpoint authority.\\
 Standard carrier instantiation & A standard elliptic-curve BSD datum not represented by the fixed carrier $C_{\BSD}(E)$.\\
-Carrier adequacy & A concrete analytic or arithmetic rank value not represented by the carrier exactness clauses.\\
+Carrier adequacy & A concrete analytic or arithmetic rank value not represented by the carrier exactness, totality, and uniqueness clauses.\\
 Semantic role boundary & A claim that the proof requires algorithms for analytic rank, Mordell-Weil generators, or basis selection rather than semantic endpoint roles.\\
 Mismatch normal form & A mismatch that does not reduce to distinct unique integer values for analytic and arithmetic rank.\\
 Bridge correspondence & A standard rank-mismatch normal form that is not bridge-image exclusion on the fixed BSD carrier.\\
@@ -1276,9 +1481,10 @@ Theorem-level discriminator & Official endpoint-bearing bridge-image exclusion t
 ATS/UEAP classification & Endpoint-resolving mismatch that is neither tensor endpoint work nor carrier shift nor proof support.\\
 Endpoint governance & A mismatch theorem that resolves BSD while doing no endpoint-status work.\\
 No fifth case & A fifth same-carrier, endpoint-resolving, non-governing mismatch occupation.\\
-Independent discriminator & Endpoint-resolving rank governance that is not analytic standing, not arithmetic readout, not bridge completion, not bridge support, not carrier shift, not bookkeeping, and not second endpoint authority.\\
+Independent discriminator & Endpoint-resolving rank governance that is not analytic standing, not arithmetic readout, not bridge completion, not bridge support, not carrier shift, not bookkeeping, not lawful coequal target role, and not second endpoint authority.\\
+Non-explosiveness & A demonstration that the proof globally forbids negative arithmetic, rather than excluding only same-carrier endpoint-resolving mismatch governance outside the bridge.\\
 Official rank correspondence & A proof that the fixed-carrier rank equality is not the official BSD rank statement.\\
-Formula layer & A standing-fixed formula mismatch that resolves the conditional refined formula endpoint while avoiding formula-status governance.\\
+Formula layer & A standing-fixed formula mismatch that resolves the conditional refined formula endpoint under formula endpoint use while avoiding formula-status governance.\\
 \bottomrule
 \end{longtable}
 
@@ -1297,11 +1503,16 @@ This is Theorem~\ref{thm:rank-endpoint}.
 \end{proof}
 
 \begin{theorem}[Conditional refined BSD endpoint]
-For every elliptic curve $E/\Q$, conditional on the standard BSD formula factors being standing-fixed,
+For every elliptic curve $E/\Q$, at the standing-fixed refined formula endpoint,
 \[
+\begin{aligned}
+&\mathrm{FormulaFactorsStanding}(E)\wedge \FormulaUse(E)\\
+&\Rightarrow
 \frac{L^{(r)}(E,1)}{r!}
 =
-\frac{\Omega_E\Reg_E |\Sha(E)|\prod_p c_p}{|E(\Q)_{\tors}|^2}.
+\frac{\Omega_E\Reg_E |\Sha(E)|\prod_p c_p}
+{|E(\Q)_{\tors}|^2}.
+\end{aligned}
 \]
 \end{theorem}
 
@@ -1315,31 +1526,60 @@ The BSD rank endpoint is closed in the fixed-carrier AASC endpoint sense, and th
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
-The proof begins from the dependency order forced by endpoint use. A theorem-bearing BSD endpoint already requires a non-degenerate fixed carrier. That carrier already requires reference, standing, admissibility, and irreversibility. Under those conditions, an analytic-arithmetic mismatch cannot survive as a stable same-carrier endpoint branch. The proof does not make this move by retyping mismatch in one step: mismatch is first identified with native standard mismatch normal form, then with bridge-image exclusion, then with theorem-level rank-status discrimination, and only then with endpoint-status governance when used as the official negative endpoint. If it is proof support only, it does not resolve BSD. If it resolves BSD, it governs endpoint status. If it resolves BSD while claiming not to govern endpoint status, it is the hidden fifth case. If it changes carrier, it is not the same endpoint. Endpoint-status governance by an independent same-domain mismatch discriminator is excluded by kernel-forced no-second-classifier closure. Therefore the mismatch branch is eliminated and rank equality follows. By the official endpoint correspondence theorem, that fixed-carrier equality is the rank part of the BSD endpoint, not a merely internal role statement. The refined formula follows conditionally by the same endpoint-governance closure after formula-factor standing is fixed; the separate factor-standing burden, including finite-order standing for $\Sha(E)$, is not disguised as an arithmetic construction in this proof class.
+The proof begins from the dependency order forced by non-degenerate fixed-carrier endpoint use. Kernel governance is necessary in any such regime: reference, standing, admissibility, and irreversibility are already required before a BSD report can function as determinate endpoint content. Under those conditions, an analytic-arithmetic mismatch cannot survive as a stable same-carrier endpoint branch. The proof does not make this move by retyping mismatch in one step: mismatch is first identified with native standard mismatch normal form, then with bridge-image exclusion, then with theorem-level rank-status discrimination, and only then with endpoint-status governance when used as the official negative endpoint. If it is proof support only, it does not resolve BSD. If it resolves BSD, it governs endpoint status. If it resolves BSD while claiming not to govern endpoint status, it is the hidden fifth case. If it changes carrier, it is not the same endpoint. Endpoint-status governance by an independent same-domain mismatch discriminator is excluded by kernel-forced no-second-classifier closure. Therefore the mismatch branch is eliminated and rank equality follows. By the official endpoint correspondence theorem, that fixed-carrier equality is the rank part of the BSD endpoint, not a merely internal role statement. The refined formula follows conditionally by the same endpoint-governance closure after formula-factor standing and refined formula endpoint use are fixed; the separate factor-standing burden, including finite-order standing for $\Sha(E)$, is not disguised as an arithmetic construction in this proof class.
 
 \appendix
 
+\section{Anti-Circularity Audit}
+\begin{longtable}{L{0.38\linewidth}L{0.52\linewidth}}
+\toprule
+\textbf{Potential circle or overreach} & \textbf{Audit response}\\
+\midrule
+AASC is merely philosophical. & Blocked by the mathematical-status lock: AASC is the mathematical constraint formalism of this proof. A same-mode objection must identify a failed definition, theorem, inference, kernel dependency, or formal constraint.\\
+Lean is substituted for the proof. & No. The manuscript theorem chain is the proof; Lean is audit support for route discipline, no-import boundaries, and endpoint-spine reproducibility.\\
+Endpoint under audit assumes BSD. & No. It fixes the official universal rank target for curvewise evaluation; it does not assert rank equality for the fixed curve.\\
+Kernel governance is optional. & No. Kernel governance is forced by any non-degenerate fixed-carrier BSD endpoint regime. Denying the kernel denies a regime condition such as reference, standing, admissibility, irreversibility, fail-closed status, or no second endpoint authority.\\
+Rank mismatch is classified by assertion. & No. Mismatch first appears as native analytic/arithmetic normal form, then as bridge-image exclusion, then as endpoint governance only under official negative endpoint use.\\
+The rank bridge slot contains rank equality. & No. The slot fixes the typed transition; admissibility fixes same-carrier discipline; bridge completion is forced only after all mismatch occupations are excluded.\\
+Analytic rank becomes its own discriminator. & No. Analytic standing reports only $\ord_{s=1}L(E,s)=n$. It becomes endpoint-governing only if used to settle the analytic/arithmetic bridge without the bridge.\\
+Mordell-Weil rank becomes its own discriminator. & No. Mordell-Weil readout reports only $\rank E(\Q)=n$. It does not by itself license analytic standing or bridge equality.\\
+The proof bans counterexamples globally. & No. Negative arithmetic data remain lawful as support, obstruction, carrier diagnosis, or lawful negative target roles. The theorem excludes only same-carrier endpoint-resolving mismatch governance outside the bridge.\\
+K5 bans ordinary arithmetic plurality. & No. K5 bans plural endpoint-governing admissible interiors for one fixed rank slot. It does not ban multiple descents, Selmer computations, Heegner routes, Iwasawa routes, numerical checks, bases, or models.\\
+K13 bans uncertainty. & No. K13 classifies uncertainty, deferral, incompleteness, and review status as epistemic/report statuses, not endpoint truth occupations.\\
+Target-slot determinacy smuggles in K13. & No. Target-slot determinacy fixes what is evaluated. K13 is the separate fail-closed theorem showing that unknown, deferred, unsupported, bookkeeping, and hidden-fifth statuses cannot occupy endpoint truth.\\
+Minimal report evaluability smuggles in K11. & No. Minimal report evaluability only attaches reports to the fixed target and classifies them by role. K11 is the separate no-overreporting theorem that endpoint force may not exceed carrier, bridge, and tensor support.\\
+Refined formula closure secretly proves Sha finiteness. & No. The refined formula is conditional at the standing-fixed factor layer. Finite-order standing for $\Sha(E)$ remains a separate factor-standing burden.\\
+Formula mismatch exclusion is unconditional. & No. Formula mismatch is excluded at the standing-fixed refined endpoint under official refined formula endpoint use; non-endpoint formula data remain support or bookkeeping.\\
+Standard arithmetic routes are dismissed. & No. Descent, Euler systems, Iwasawa theory, Heegner points, Sha computations, regulators, and numerical evidence are legitimate bridge routes or support. They are blocked only when silently promoted into independent endpoint authority.\\
+\bottomrule
+\end{longtable}
+
 \section{Theorem ladder}
 \begin{enumerate}
-\item $\mathrm{BSDRankEndpointUnderAudit}$ fixes the official universal rank target as the theorem under audit, not as an assumed conclusion.
+\item $\mathrm{BSDRankEndpointUnderAudit}$ fixes the official universal rank target under audit, not as an assumed conclusion.
 \item The endpoint-under-audit declaration binds every curve instance to pointwise endpoint use and carrier instantiation.
-\item Official endpoint use instantiates the kernel, and denying the kernel has explicit non-degeneracy cost.
+\item Kernel governance is forced by every non-degenerate fixed-carrier BSD rank regime; official endpoint use inherits the kernel from regime necessity.
+\item Denying the kernel has explicit non-degeneracy cost.
+\item Weakening-resistance shows that K5, K6, K11, and K13 are locally necessary against strict same-carrier weakenings that would permit endpoint-resolving mismatch governance.
 \item The standard BSD carrier instantiates the adequate fixed carrier.
 \item Analytic rank and Mordell-Weil rank are semantic exact standing/readout roles, not computation procedures.
+\item The two rank roles are total and unique on the adequate carrier.
 \item Rank mismatch has the standard native analytic/arithmetic normal form.
 \item Standard mismatch normal form is equivalent to rank bridge-image exclusion.
 \item Endpoint-used bridge-image exclusion induces theorem-level rank-status discrimination.
 \item ATS classifies mismatch use as proof support, tensor endpoint work, or carrier shift.
 \item UEAP bounds official negative rank reports by carrier, standing, and bridge support.
 \item Rank mismatch is the pointwise negative endpoint branch under the official target.
+\item Rank mismatch is not a lawful coequal BSD endpoint role.
 \item Endpoint-resolving mismatch is endpoint-status governance; endpoint-resolving non-governance is the hidden fifth case.
 \item Endpoint-status governance is independent rank discrimination after legitimate roles are exhausted.
 \item Independent rank discriminators are excluded by kernel-forced no-second-classifier closure.
+\item Non-explosiveness confirms that negative arithmetic data are not globally forbidden; only fixed-carrier endpoint-resolving mismatch governance is excluded.
 \item Rank mismatch is excluded.
 \item Rank equality follows for every elliptic curve over $\Q$.
 \item The proved rank equality corresponds to the official BSD rank endpoint.
 \item Formula-factor standing is the conditional refined-formula boundary.
-\item Formula mismatch induces independent formula-status governance and is excluded at the standing-fixed factor layer.
+\item Formula mismatch induces independent formula-status governance and is excluded at the standing-fixed refined formula endpoint.
 \item The conditional refined formula correspondence follows.
 \end{enumerate}
 
@@ -1411,7 +1651,7 @@ The shortest Lean-facing rank endpoint chain is:
 \item \texttt{officialBSDRankEndpoint\_of\_aascContext};
 \item \texttt{bsdRankEndpointAASCContext\_closes\_rankEndpoint}.
 \end{enumerate}
-This chain has the same proof-role shape as the SAT endpoint archive: once fixed endpoint use, carrier standing, kernel standing, and no-independent-classifier closure are packaged in the endpoint AASC context, the official rank endpoint follows.
+This chain has the same proof-role shape as the companion fixed-carrier endpoint archives: once fixed endpoint use, carrier standing, kernel standing, and no-independent-classifier closure are packaged in the endpoint AASC context, the official rank endpoint follows.
 
 \subsection{Main Lean anchors}
 The BSD proof-spine objects are in \texttt{MaleyLean/Papers/BSD/EndpointClosure.lean}. The principal carrier and endpoint anchors are:
