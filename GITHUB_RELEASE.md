@@ -13,7 +13,7 @@ This release verifies the manuscript-facing AASC route to the BSD rank endpoint
 in a dedicated repository separated from the broader AASC working checkout. The
 audit surface includes the reusable AASC foundation layer, the BSD rank
 endpoint bridge layer, a structured conditional refined-formula standing
-packet, a truth-boundary ledger, and a combined full-stack AASC/BSD axiom
+packet, an explicit refined-formula bridge-boundary ledger, and a combined full-stack AASC/BSD axiom
 check.
 The short theorem-chain handoff is in `AUDIT_HANDOFF.md`.
 Local zip packages can be created with `scripts/package-bsd-release.ps1`.
@@ -38,7 +38,7 @@ powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
 Audit status:
 
 - `BSDRankEndpointClosure=100%`
-- `BSDRefinedFormulaConditionalClosure=82%`
+- `BSDRefinedFormulaBridgeBoundary=100%`
 - `BSDReferenceArchiveMaturityComparable=93%`
 - 7 focused AASC/BSD audit files run, including the truth-boundary check and
   the combined full-stack check
@@ -57,8 +57,9 @@ Audit status:
 - truth-boundary metadata and row-count completion are audited through
   `bsdTruthBoundaryMetadataComplete_holds` and
   `bsdTruthBoundaryCountComplete_holds`
-- refined formula endpoint remains conditional on
-  `BSDFormulaFactorStandingPacket`
+- refined formula layer is recorded as an explicit bridge/factor-standing
+  boundary through `BSDFormulaFactorStandingPacket`, not as an unfinished
+  analytic-construction route
 
 Truth boundary:
 

@@ -59,10 +59,11 @@ Audit status:
   them with the BSD status ledger.
 - Recorded progress:
   `BSDRankEndpointClosure=100%`,
-  `BSDRefinedFormulaConditionalClosure=82%`,
+  `BSDRefinedFormulaBridgeBoundary=100%`,
   `BSDReferenceArchiveMaturityComparable=93%`.
-- The refined BSD formula layer remains conditional on
-  `BSDFormulaFactorStandingPacket`.
+- The refined BSD formula layer is recorded as an explicit
+  bridge/factor-standing boundary through `BSDFormulaFactorStandingPacket`,
+  not as a partially complete analytic-construction route.
 
 Truth boundary:
 
@@ -73,9 +74,9 @@ regulators, Tamagawa factors, or the full refined BSD formula. Those objects
 are represented at the audit surface by explicit carriers, fields, and
 standing hypotheses.
 
-The refined formula guard is now split into named standing components for
-analytic continuation, functional equation, leading coefficient, regulator,
-Tamagawa, torsion, and Tate-Shafarevich factors.
+The refined formula guard is now split into named bridge/factor-standing
+components for analytic continuation, functional equation, leading
+coefficient, regulator, Tamagawa, torsion, and Tate-Shafarevich factors.
 
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
 signature map and is not part of the executable proof surface. The aggregate

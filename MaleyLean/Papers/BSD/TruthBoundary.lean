@@ -17,6 +17,7 @@ namespace BSD
 inductive BSDTruthBoundaryKind where
   | leanClosedProofSpine
   | semanticCarrierAbstraction
+  | structuralRoleCompressionBoundary
   | externalArithmeticGeometryStanding
   | manuscriptSnapshotBoundary
 deriving DecidableEq, Repr
@@ -24,6 +25,8 @@ deriving DecidableEq, Repr
 def BSDTruthBoundaryKind.label : BSDTruthBoundaryKind -> String
   | .leanClosedProofSpine => "closed in the Lean proof spine"
   | .semanticCarrierAbstraction => "semantic carrier abstraction"
+  | .structuralRoleCompressionBoundary =>
+      "structural AASC role-compression boundary"
   | .externalArithmeticGeometryStanding =>
       "external arithmetic-geometry standing"
   | .manuscriptSnapshotBoundary => "manuscript snapshot boundary"
@@ -31,6 +34,7 @@ def BSDTruthBoundaryKind.label : BSDTruthBoundaryKind -> String
 /-- Named truth-boundary items that should remain visible to auditors. -/
 inductive BSDTruthBoundaryItem where
   | carrierAndRankReadouts
+  | roleCompressionArchitecture
   | rankEndpointRoute
   | aascClassifierExclusion
   | refinedFormulaFactorStanding
@@ -41,12 +45,14 @@ deriving DecidableEq, Repr
 def BSDTruthBoundaryItem.title : BSDTruthBoundaryItem -> String
   | .carrierAndRankReadouts =>
       "BSD carrier and rank readouts are semantic audit carriers"
+  | .roleCompressionArchitecture =>
+      "BSD role-compression paper supplies the AASC claim-class architecture"
   | .rankEndpointRoute =>
       "Rank endpoint route is closed in the AASC proof spine"
   | .aascClassifierExclusion =>
       "Independent same-domain classifier exclusion is supplied by AASC"
   | .refinedFormulaFactorStanding =>
-      "Refined formula factors remain external arithmetic standing"
+      "Refined formula factors are an explicit bridge/factor-standing boundary"
   | .refinedFormulaGuardExact =>
       "Refined formula endpoint has an exact conditional guard"
   | .manuscriptPdfSnapshot =>
@@ -54,6 +60,7 @@ def BSDTruthBoundaryItem.title : BSDTruthBoundaryItem -> String
 
 def bsdTruthBoundaryItemCatalog : List BSDTruthBoundaryItem :=
   [ .carrierAndRankReadouts
+  , .roleCompressionArchitecture
   , .rankEndpointRoute
   , .aascClassifierExclusion
   , .refinedFormulaFactorStanding
@@ -81,6 +88,11 @@ def bsdTruthBoundaryRows : List BSDTruthBoundaryRow :=
       leanAnchor := "BSDCarrier"
       truthBoundary := "elliptic curves, L-functions, and rank readouts are represented by audit carriers, not formalized from first principles"
       declared := true }
+  , { item := .roleCompressionArchitecture
+      kind := .structuralRoleCompressionBoundary
+      leanAnchor := "A_Structural_Solution_to_the_Birch_and_Swinnerton_Dyer_Role_Compression_Problem"
+      truthBoundary := "role-compression paper fixes the AASC proof class: structural endpoint closure locates bridge completion rather than constructing BSD analytically"
+      declared := true }
   , { item := .rankEndpointRoute
       kind := .leanClosedProofSpine
       leanAnchor := "bsdRankEndpointAASCContext_closes_rankEndpoint"
@@ -92,9 +104,9 @@ def bsdTruthBoundaryRows : List BSDTruthBoundaryRow :=
       truthBoundary := "BSD rank discriminator exclusion is routed through the shared AASC same-domain classifier closure"
       declared := true }
   , { item := .refinedFormulaFactorStanding
-      kind := .externalArithmeticGeometryStanding
+      kind := .structuralRoleCompressionBoundary
       leanAnchor := "BSDFormulaFactorStandingPacket"
-      truthBoundary := "analytic continuation, functional equation, leading coefficient, regulator, Tamagawa, torsion, and Tate-Shafarevich standing remain explicit conditions"
+      truthBoundary := "analytic continuation, functional equation, leading coefficient, regulator, Tamagawa, torsion, and Tate-Shafarevich standing are fixed as bridge/factor roles, not tracked as an unfinished analytic proof route"
       declared := true }
   , { item := .refinedFormulaGuardExact
       kind := .leanClosedProofSpine
@@ -137,17 +149,23 @@ def bsdTruthBoundaryExternalStandingCount : Nat :=
     (fun row =>
       row.kind == BSDTruthBoundaryKind.externalArithmeticGeometryStanding)).length
 
+def bsdTruthBoundaryStructuralBoundaryCount : Nat :=
+  (bsdTruthBoundaryRows.filter
+    (fun row =>
+      row.kind ==
+        BSDTruthBoundaryKind.structuralRoleCompressionBoundary)).length
+
 def bsdTruthBoundarySnapshotCount : Nat :=
   (bsdTruthBoundaryRows.filter
     (fun row =>
       row.kind == BSDTruthBoundaryKind.manuscriptSnapshotBoundary)).length
 
 theorem bsdTruthBoundaryRows_count_eq :
-    bsdTruthBoundaryRows.length = 6 := by
+    bsdTruthBoundaryRows.length = 7 := by
   rfl
 
 theorem bsdTruthBoundaryItemCatalog_count_eq :
-    bsdTruthBoundaryItemCatalog.length = 6 := by
+    bsdTruthBoundaryItemCatalog.length = 7 := by
   rfl
 
 theorem bsdTruthBoundaryItems_match_catalog :
@@ -176,7 +194,11 @@ theorem bsdTruthBoundaryLeanClosedCount_eq :
   rfl
 
 theorem bsdTruthBoundaryExternalStandingCount_eq :
-    bsdTruthBoundaryExternalStandingCount = 1 := by
+    bsdTruthBoundaryExternalStandingCount = 0 := by
+  rfl
+
+theorem bsdTruthBoundaryStructuralBoundaryCount_eq :
+    bsdTruthBoundaryStructuralBoundaryCount = 2 := by
   rfl
 
 theorem bsdTruthBoundarySnapshotCount_eq :
@@ -184,8 +206,8 @@ theorem bsdTruthBoundarySnapshotCount_eq :
   rfl
 
 def bsdTruthBoundaryMetadataComplete : Prop :=
-  bsdTruthBoundaryRows.length = 6 /\
-  bsdTruthBoundaryItemCatalog.length = 6 /\
+  bsdTruthBoundaryRows.length = 7 /\
+  bsdTruthBoundaryItemCatalog.length = 7 /\
   bsdTruthBoundaryItems = bsdTruthBoundaryItemCatalog /\
   bsdTruthBoundaryItemTitlesPopulatedBool = true /\
   bsdTruthBoundaryAllDeclaredBool = true /\
@@ -194,7 +216,8 @@ def bsdTruthBoundaryMetadataComplete : Prop :=
 
 def bsdTruthBoundaryCountComplete : Prop :=
   bsdTruthBoundaryLeanClosedCount = 3 /\
-  bsdTruthBoundaryExternalStandingCount = 1 /\
+  bsdTruthBoundaryExternalStandingCount = 0 /\
+  bsdTruthBoundaryStructuralBoundaryCount = 2 /\
   bsdTruthBoundarySnapshotCount = 1
 
 def bsdTruthBoundaryLedgerComplete : Prop :=
@@ -216,6 +239,7 @@ theorem bsdTruthBoundaryCountComplete_holds :
     bsdTruthBoundaryCountComplete := by
   refine And.intro bsdTruthBoundaryLeanClosedCount_eq ?_
   refine And.intro bsdTruthBoundaryExternalStandingCount_eq ?_
+  refine And.intro bsdTruthBoundaryStructuralBoundaryCount_eq ?_
   exact bsdTruthBoundarySnapshotCount_eq
 
 theorem bsdTruthBoundaryLedgerComplete_holds :

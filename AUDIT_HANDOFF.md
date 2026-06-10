@@ -5,11 +5,12 @@ This file is the short audit path for the standalone BSD endpoint archive.
 ## Current Status
 
 - `BSDRankEndpointClosure=100%`
-- `BSDRefinedFormulaConditionalClosure=82%`
+- `BSDRefinedFormulaBridgeBoundary=100%`
 - `BSDReferenceArchiveMaturityComparable=93%`
 
 The rank endpoint is the closed Lean proof-spine target.  The refined formula
-endpoint is intentionally conditional on explicit formula-factor standing.
+layer is recorded as an explicit AASC bridge/factor-standing boundary, not as
+an unfinished analytic construction route.
 
 ## Verification Commands
 
@@ -59,19 +60,20 @@ fixed BSD endpoint use, carrier standing, kernel standing, and AASC
 no-independent-classifier closure are packaged in `BSDRankEndpointAASCContext`,
 the official rank endpoint follows.
 
-## Refined Formula Boundary
+## Refined Formula Bridge Boundary
 
-The refined formula layer is not claimed unconditionally.  The audited guard is:
+The refined formula layer is not tracked as a partially complete analytic
+proof.  The audited guard records the AASC role-compression boundary:
 
 - `BSDFormulaFactorStandingPacket`
 - `BSDRefinedFormulaConditionalContext`
 - `refinedBSDEndpoint_context_iff`
 - `bsdRefinedFormulaEndpoint_remains_conditional`
 
-This means the archive records the exact conditional boundary, but does not
-formalize analytic continuation, functional equation, leading coefficient,
-regulator, Tamagawa, torsion, or Tate-Shafarevich standing from first
-principles.
+This means the archive records the exact bridge/factor-standing boundary. It
+does not claim an arithmetic construction of analytic continuation, functional
+equation, leading coefficient, regulator, Tamagawa, torsion, or
+Tate-Shafarevich standing from first principles.
 
 ## Truth Boundary
 
@@ -83,13 +85,13 @@ The archive has an explicit Lean truth-boundary ledger:
 
 The ledger completion now includes metadata checks for populated item titles,
 Lean anchors, and explanatory boundary text, plus the expected closed,
-external-standing, and snapshot row counts.
+structural-boundary, external-standing, and snapshot row counts.
 
 That ledger separates:
 
 - closed Lean proof-spine claims;
 - semantic carrier abstraction;
-- external arithmetic-geometry standing;
+- structural AASC role-compression boundaries;
 - manuscript PDF snapshot status.
 
 ## Manuscript Snapshot

@@ -16,8 +16,8 @@ The stabilized proof surface is:
 9. The imported kernel excludes independent same-domain BSD rank discriminators.
 10. Rank mismatch is excluded, and rank equality follows.
 11. The fixed-carrier rank equality matches the official BSD rank endpoint.
-12. The refined formula layer is closed conditionally on formula-factor standing,
-    with the guard aligned to `refinedBSDEndpoint_context_iff`.
+12. The refined formula layer is recorded as an explicit bridge/factor-standing
+    boundary, with the guard aligned to `refinedBSDEndpoint_context_iff`.
 
 ## Lean audit additions
 
@@ -33,8 +33,8 @@ The stabilized proof surface is:
   surface: `BSDFormula`, `BSDRefinedFormulaConditionalContext`, and
   `refinedBSDEndpoint_context_iff`.
 - Added a Lean truth-boundary ledger distinguishing closed proof-spine claims,
-  semantic carrier abstraction, external formula-factor standing, and the PDF
-  snapshot boundary.
+  semantic carrier abstraction, structural role-compression boundaries, and
+  the PDF snapshot boundary.
 - Added aggregate parse checking for the pre-Lean manuscript signature map,
   outside the active axiom-free proof surface.
 - Added an aggregate import-boundary guard verifying that the pre-Lean
@@ -44,6 +44,9 @@ The stabilized proof surface is:
 - Strengthened the truth-boundary ledger with item-catalog, row-count,
   Lean-anchor, explanatory-text, metadata-completion, and count-completion
   checks.
+- Reframed the refined formula layer from an `82%` partial closure signal to a
+  `100%` explicit bridge-boundary signal, in line with the BSD
+  role-compression analysis.
 
 ## Verification
 

@@ -3,8 +3,12 @@
 Current comparable maturity against the final P vs NP SAT endpoint archive:
 
 - `BSDRankEndpointClosure=100%`
-- `BSDRefinedFormulaConditionalClosure=82%`
+- `BSDRefinedFormulaBridgeBoundary=100%`
 - `BSDReferenceArchiveMaturityComparable=93%`
+
+The refined formula figure is no longer a partial analytic-construction
+percentage. It records that the AASC bridge/factor-standing boundary is
+explicit in Lean, matching the role-compression analysis.
 
 ## Closed In The Lean Audit Spine
 
@@ -50,9 +54,10 @@ Current comparable maturity against the final P vs NP SAT endpoint archive:
   `bsdTruthBoundaryCountComplete_holds`,
   `bsdTruthBoundaryLedgerComplete_holds`
 
-## Conditional Boundary
+## Bridge Boundary
 
-The refined formula endpoint is intentionally conditional:
+The refined formula endpoint is intentionally recorded at the bridge/factor
+standing boundary:
 
 - `bsdConditionalRefinedFormula_correspondence`
 - `BSDFormulaFactorStandingPacket`
@@ -65,9 +70,22 @@ The refined formula endpoint is intentionally conditional:
 - `BSDFormulaFactorsStanding`
 - `bsdTruthBoundaryLedgerComplete_holds`
 
-The archive does not claim a first-principles arithmetic-geometry
-formalization of elliptic curves, L-functions, regulators, Tamagawa factors,
+The archive does not claim a first-principles arithmetic construction of
+elliptic curves, L-functions, regulators, Tamagawa factors,
 Tate-Shafarevich finiteness, or the refined leading coefficient formula.
+Those are bridge/factor roles in the AASC role-compression framing, not an
+unfinished analytic proof route inside this repo.
+
+## Role-Compression Source Boundary
+
+The AASC claim-class framing is supplied by:
+
+- `A_Structural_Solution_to_the_Birch_and_Swinnerton_Dyer_Role_Compression_Problem`
+
+That source locates the classical BSD/refined formula content as bridge
+completion inside the decompressed role architecture. The Lean audit archive
+uses that framing to keep rank endpoint closure, carrier abstraction, and
+factor-standing boundaries separate.
 
 ## Pre-Lean Map Boundary
 

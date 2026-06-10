@@ -19,6 +19,7 @@ open MaleyLean.Papers.BSD
 #print axioms bsdTruthBoundaryTextsPopulatedBool_eq_true
 #print axioms bsdTruthBoundaryLeanClosedCount_eq
 #print axioms bsdTruthBoundaryExternalStandingCount_eq
+#print axioms bsdTruthBoundaryStructuralBoundaryCount_eq
 #print axioms bsdTruthBoundarySnapshotCount_eq
 #print axioms bsdTruthBoundaryMetadataComplete_holds
 #print axioms bsdTruthBoundaryCountComplete_holds

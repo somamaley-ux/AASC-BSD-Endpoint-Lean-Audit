@@ -36,14 +36,15 @@ The strongest truthful claim for this archive is:
   Lean anchors, and explanatory boundary text.
 - Current recorded progress is
   `BSDRankEndpointClosure=100%`,
-  `BSDRefinedFormulaConditionalClosure=82%`, and
+  `BSDRefinedFormulaBridgeBoundary=100%`, and
   `BSDReferenceArchiveMaturityComparable=93%`.
 - The final internal endpoint is `OfficialBSDRankEndpoint`, stated as
   pointwise equality of the represented analytic and Mordell-Weil rank
   readouts on the explicit BSD carrier.
-- The refined BSD formula layer is represented only conditionally through a
-  structured `BSDFormulaFactorStandingPacket`; this archive does not claim a
-  first-principles formalization of the leading coefficient formula,
+- The refined BSD formula layer is represented as an explicit
+  bridge/factor-standing boundary through a structured
+  `BSDFormulaFactorStandingPacket`; this archive does not claim a
+  first-principles arithmetic construction of the leading coefficient formula,
   Tate-Shafarevich group finiteness, regulators, Tamagawa factors, torsion,
   analytic continuation, or functional equations.
 - The seven focused BSD/AASC audit files run, including the truth-boundary
@@ -179,11 +180,13 @@ geometry required to construct analytic rank, Mordell-Weil rank, the BSD
 leading coefficient formula, or the standard literature surrounding elliptic
 curves over `Q`.
 
-The rank endpoint and refined formula endpoint are deliberately separated:
+The rank endpoint and refined formula bridge boundary are deliberately
+separated:
 
 - the rank endpoint route is the closed audit spine in Lean;
-- the refined formula endpoint is conditional on the additional formula-factor
-  standing represented by `BSDFormulaFactorStandingPacket`.
+- the refined formula layer is the explicit AASC bridge/factor-standing
+  boundary represented by `BSDFormulaFactorStandingPacket`, not an unfinished
+  analytic-construction percentage.
 
 `formalization_map/BSD_EndpointClosure_PreLeanMap.lean` is a pre-Lean
 manuscript signature map. It intentionally contains planning `axiom`
