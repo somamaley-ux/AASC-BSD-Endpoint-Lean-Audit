@@ -37,35 +37,26 @@ axiom BSDRankReadout : BSDCarrier -> Nat -> Prop
 axiom BSDRankMismatch : BSDCarrier -> Prop
 axiom BSDRankMismatchNormalForm : BSDCarrier -> Prop
 axiom BSDRankBridgeImageExclusion : BSDCarrier -> Prop
-axiom BSDRankBridgeImageSeparatorBranch : BSDCarrier -> Prop
-axiom BSDRankMismatchEndpointOccupation : BSDCarrier -> Prop
-axiom BSDGovernedEndpointUse : BSDCarrier -> Prop
-axiom BSDNegativeGovernedEndpointUse : BSDCarrier -> Prop
 axiom BSDTheoremLevelRankStatusDiscriminator : BSDCarrier -> Prop
 axiom BSDRankEndpointStatusGovernance : BSDCarrier -> Prop
+axiom BSDATSUseClassification : BSDCarrier -> Prop
+axiom BSDEndpointResolvingNonGovernanceHiddenFifthCase : Prop
 axiom BSDIndependentRankDiscriminator : BSDCarrier -> Prop
 axiom OfficialBSDRankEndpoint : Prop
-
-inductive BSDRankEndpointStatus where
-  | positive
-  | separator
-
-axiom BSDRankEndpointStatusOccupation :
-  BSDCarrier -> BSDRankEndpointStatus -> Prop
 
 axiom BSDFormulaFactorsStanding : BSDCarrier -> Prop
 axiom BSDFormula : BSDCarrier -> Prop
 axiom ConditionalRefinedBSDEndpoint : BSDCarrier -> Prop
-axiom BSDRefinedFormulaConditionalContext : BSDCarrier -> Prop
+axiom BSDFormulaMismatch : BSDCarrier -> Prop
+axiom BSDFormulaEndpointStatusGovernance : BSDCarrier -> Prop
+axiom BSDIndependentFormulaDiscriminator : BSDCarrier -> Prop
+axiom BSDOfficialFormulaNegativeEndpointUse : BSDCarrier -> Prop
 
 inductive BSDRankMismatchUseKind where
   | proofSupportObservation
   | endpointResolvingMismatchTheorem
   | endpointResolvingNonGovernance
   | carrierChangingMismatchClaim
-
-axiom BSDRankMismatchUseClassification :
-  BSDRankMismatchUseKind -> Prop
 
 axiom bsdEndpointUnderAudit_pointwiseUse
     {E : BSDCarrier} :
@@ -123,21 +114,13 @@ axiom bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator
     BSDRankBridgeImageExclusion E -> BSDOfficialNegativeEndpointUse E ->
       BSDTheoremLevelRankStatusDiscriminator E
 
-axiom bsdGovernedEndpointUse_bivalent
+axiom bsdATSClassifiesMismatchUse
     {E : BSDCarrier} :
-    BSDGovernedEndpointUse E ->
-      BSDRankEndpointStatusOccupation E BSDRankEndpointStatus.positive \/
-        BSDRankEndpointStatusOccupation E BSDRankEndpointStatus.separator
+    BSDRankMismatch E -> BSDATSUseClassification E
 
-axiom bsdNegativeGovernedEndpointUse_has_separatorStatus
+axiom bsdUEAPBoundForNegativeRankReport
     {E : BSDCarrier} :
-    BSDNegativeGovernedEndpointUse E ->
-      BSDRankEndpointStatusOccupation E BSDRankEndpointStatus.separator
-
-axiom bsdRankBridgeImageSeparatorBranch_of_negativeGovernedEndpointUse
-    {E : BSDCarrier} :
-    BSDNegativeGovernedEndpointUse E ->
-      BSDRankBridgeImageSeparatorBranch E
+    BSDOfficialNegativeEndpointUse E -> BSDRankEndpointStatusGovernance E
 
 axiom bsdRankMismatch_pointwiseNegativeBranch
     {E : BSDCarrier} :
@@ -145,8 +128,7 @@ axiom bsdRankMismatch_pointwiseNegativeBranch
       BSDRankMismatch E -> BSDOfficialNegativeEndpointUse E
 
 axiom bsdEndpointResolvingNonGovernance_hiddenFifthCase_impossible :
-    Not (BSDRankMismatchUseClassification
-      BSDRankMismatchUseKind.endpointResolvingNonGovernance)
+    Not BSDEndpointResolvingNonGovernanceHiddenFifthCase
 
 axiom bsdTheoremLevelDiscriminator_endpointGovernance
     {E : BSDCarrier} :
@@ -181,22 +163,20 @@ axiom bsdConditionalRefinedFormula_correspondence
     BSDFormulaFactorsStanding E -> BSDFormula E ->
       ConditionalRefinedBSDEndpoint E
 
-axiom refinedBSDEndpoint_formulaFactorsStanding
+axiom bsdFormulaMismatch_endpointGovernance
     {E : BSDCarrier} :
-    ConditionalRefinedBSDEndpoint E -> BSDFormulaFactorsStanding E
+    BSDOfficialFormulaNegativeEndpointUse E -> BSDFormulaEndpointStatusGovernance E
 
-axiom refinedBSDEndpoint_formula
+axiom bsdFormulaMismatch_independentDiscriminator
     {E : BSDCarrier} :
-    ConditionalRefinedBSDEndpoint E -> BSDFormula E
+    BSDFormulaMismatch E -> BSDIndependentFormulaDiscriminator E
 
-axiom refinedBSDEndpoint_context_iff
+axiom bsdNoIndependentFormulaDiscriminator
     {E : BSDCarrier} :
-    ConditionalRefinedBSDEndpoint E <->
-      BSDRefinedFormulaConditionalContext E
+    BSDKernelInstantiated E -> Not (BSDIndependentFormulaDiscriminator E)
 
-axiom bsdRefinedFormulaEndpoint_remains_conditional
+axiom bsdConditionalRefinedFormula_forced
     {E : BSDCarrier} :
-    BSDRefinedFormulaConditionalContext E ->
-      ConditionalRefinedBSDEndpoint E
+    BSDFormulaFactorsStanding E -> BSDFormula E
 
 end BSD.EndpointClosure

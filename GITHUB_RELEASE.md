@@ -32,7 +32,9 @@ cross-platform A+ support-audit scan hardening. The audit now also checks that
 the pre-Lean manuscript signature map is not imported by the active Lean proof
 surface, and it strengthens the status/truth-boundary ledgers with metadata
 completion anchors for titles, Lean anchors, source evidence, explanatory
-boundary text, row counts, and current progress summaries.
+boundary text, row counts, and current progress summaries. This release line
+also refreshes the bundled BSD endpoint PDF, source snapshot, and parse-only
+manuscript-to-Lean map from the finalized handoff package.
 
 Verification passed:
 

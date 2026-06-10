@@ -117,9 +117,14 @@ The bundled PDF is:
 
 - `papers/bsd/BSD_Endpoint_Closure_AASC.pdf`
 
-The bundled PDF has been refreshed from the Codex handoff render:
+The bundled PDF and source snapshot have been refreshed from the finalized
+Codex handoff render:
 
-- `The_Birch_and_Swinnerton_Dyer_Endpoint_by_Exclusion_of_Analytic_Arithmetic_Mismatch.pdf`
+- `The_Birch_and_Swinnerton_Dyer_Endpoint_by_Exclusion_of_Analytic_Arithmetic_Mismatch (1).pdf`
+
+The bundled manuscript-to-Lean map was also refreshed from the final source
+package and normalized so the parse-only map audit remains green while staying
+outside the active Lean proof surface.
 
 The BSD role-compression reference layer is now local:
 

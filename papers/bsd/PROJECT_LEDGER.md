@@ -64,11 +64,14 @@ The stabilized proof surface is:
   role-compression analysis.
 - Added the BSD role-compression paper PDF/source zip as local reference
   artifacts under `papers/bsd/references/role-compression/`.
+- Refreshed the bundled BSD endpoint manuscript PDF, source snapshot, and
+  pre-Lean signature map from the finalized Codex handoff package; the map
+  remains parse-checked outside the active Lean proof surface.
 
 ## Verification
 
-Bundled PDF snapshot: refreshed from the Codex handoff render
-`The_Birch_and_Swinnerton_Dyer_Endpoint_by_Exclusion_of_Analytic_Arithmetic_Mismatch.pdf`.
+Bundled PDF snapshot: refreshed from the finalized Codex handoff render
+`The_Birch_and_Swinnerton_Dyer_Endpoint_by_Exclusion_of_Analytic_Arithmetic_Mismatch (1).pdf`.
 
 Current source note: `main.tex` contains the Lean-name alignment for the
 refined formula guard, and the bundled PDF has been refreshed for the release

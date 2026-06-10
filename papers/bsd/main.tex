@@ -150,6 +150,9 @@ For the conditional refined formula layer:
 \]
 Therefore the refined leading-coefficient formula holds conditionally once the standard formula-factor roles are standing-fixed.
 
+\subsection*{Audit and truth-boundary posture}
+The companion Lean 4 archive is a reproducibility and theorem-routing audit for this proof spine, not a replacement for the mathematical manuscript and not a full arithmetic-geometry library. It audits the fixed-carrier endpoint route: kernel-governed endpoint use, rank-mismatch occupation, bridge-image exclusion, theorem-level endpoint-status governance, independent-discriminator exclusion, rank-mismatch impossibility, pointwise rank equality, official rank-endpoint correspondence, and the refined formula bridge/factor-standing boundary. The archive also records a truth-boundary ledger separating closed AASC proof-spine claims from semantic carrier abstraction, arithmetic background standing, role-compression reference material, and manuscript snapshot status. The mathematical proof route below is therefore the source of the argument; Lean records the proof-spine audit surface and its reproducibility boundary.
+
 \subsection*{Dependency inversion exclusion}
 The dependency order is not
 \[
@@ -818,7 +821,7 @@ For the fixed BSD rank carrier,
 \end{theorem}
 
 \begin{proof}
-Endpoint-status governance is independent precisely when it settles the fixed rank endpoint while failing to occupy the positive bridge and while preserving the same carrier. The possible legitimate roles are exhausted by the following BSD-native endpoint-status role audit.
+Endpoint-status governance is independent precisely when it settles the fixed rank endpoint while failing to occupy the positive bridge and while preserving the same carrier. The possible legitimate roles are exhausted by the following BSD-native ATS/UEAP role audit.
 \begin{center}
 \begin{tabular}{L{0.28\linewidth}L{0.58\linewidth}}
 \toprule
@@ -1270,7 +1273,7 @@ Semantic role boundary & A claim that the proof requires algorithms for analytic
 Mismatch normal form & A mismatch that does not reduce to distinct unique integer values for analytic and arithmetic rank.\\
 Bridge correspondence & A standard rank-mismatch normal form that is not bridge-image exclusion on the fixed BSD carrier.\\
 Theorem-level discriminator & Official endpoint-bearing bridge-image exclusion that does not classify the endpoint status of the fixed analytic/arithmetic pair.\\
-Endpoint-status role audit & Endpoint-resolving mismatch that is neither positive bridge occupation nor carrier shift nor proof support.\\
+ATS/UEAP classification & Endpoint-resolving mismatch that is neither tensor endpoint work nor carrier shift nor proof support.\\
 Endpoint governance & A mismatch theorem that resolves BSD while doing no endpoint-status work.\\
 No fifth case & A fifth same-carrier, endpoint-resolving, non-governing mismatch occupation.\\
 Independent discriminator & Endpoint-resolving rank governance that is not analytic standing, not arithmetic readout, not bridge completion, not bridge support, not carrier shift, not bookkeeping, and not second endpoint authority.\\
@@ -1279,138 +1282,6 @@ Formula layer & A standing-fixed formula mismatch that resolves the conditional 
 \bottomrule
 \end{longtable}
 
-
-\section{Formalization map}
-
-This section records Lean-facing theorem anchors for the later audit skeleton. It is not a claim that elliptic curves, $L$-functions, Mordell-Weil groups, or Sha have already been formalized from first principles. Its role is to freeze the theorem-routing surface for the later Lean audit.
-
-\subsection{Rank endpoint signatures}
-\begin{verbatim}
-structure BSDCarrier where
-  curve : EllipticCurveQ
-  Lfunction : LFunction curve
-  MWGroup : MordellWeilGroup curve
-  lawfulEquiv : BSDLawfulEquivalence curve
-
-def BSDRankEndpointUnderAudit : Prop := ...
-def BSDOfficialEndpointUse (E : BSDCarrier) : Prop := ...
-def BSDKernelInstantiated (E : BSDCarrier) : Prop := ...
-def BSDCarrierInstantiated (E : BSDCarrier) : Prop := ...
-def BSDCarrierAdequate (E : BSDCarrier) : Prop := ...
-def StandardBSDCarrierInstantiated (E : BSDCarrier) : Prop := ...
-def OfficialBSDRankEndpoint : Prop := ...
-def ConditionalRefinedBSDEndpoint (E : BSDCarrier) : Prop := ...
-
-def BSDAnalyticStanding (E : BSDCarrier) (n : Nat) : Prop :=
-  analyticRank E = n
-
-def BSDRankReadout (E : BSDCarrier) (n : Nat) : Prop :=
-  mordellWeilRank E = n
-
-def BSDRankMismatch (E : BSDCarrier) : Prop :=
-  exists n m, BSDAnalyticStanding E n /\
-    BSDRankReadout E m /\ n <> m
-\end{verbatim}
-
-\subsection{Central theorem anchors}
-\begin{verbatim}
-theorem bsdKernelDenial_hasEndpointCost :
-  BSDOfficialEndpointUse E -> Not (BSDKernelInstantiated E) ->
-    BSDLossOfNonDegenerateEndpointStatus E
-
-theorem bsdEndpointUnderAudit_pointwiseUse :
-  BSDRankEndpointUnderAudit -> BSDOfficialEndpointUse E
-
-theorem bsdStandardCarrier_instantiates_adequateCarrier :
-  StandardBSDCarrierInstantiated E ->
-    BSDCarrierInstantiated E /\ BSDCarrierAdequate E
-
-theorem bsdEndpointUse_instantiates_kernel :
-  BSDOfficialEndpointUse E -> BSDKernelInstantiated E
-
-def BSDRankMismatchNormalForm (E : BSDCarrier) : Prop := ...
-def BSDRankBridgeImageExclusion (E : BSDCarrier) : Prop := ...
-def BSDTheoremLevelRankStatusDiscriminator (E : BSDCarrier) : Prop := ...
-def BSDRankEndpointStatusGovernance (E : BSDCarrier) : Prop := ...
-def BSDIndependentRankDiscriminator (E : BSDCarrier) : Prop := ...
-
-theorem bsdRankMismatch_iff_standardNormalForm :
-  BSDRankMismatch E <-> BSDRankMismatchNormalForm E
-
-theorem bsdStandardNormalForm_iff_rankBridgeImageExclusion :
-  BSDRankMismatchNormalForm E <-> BSDRankBridgeImageExclusion E
-
-theorem bsdRankMismatch_iff_bridgeImageExclusion :
-  BSDRankMismatch E <-> BSDRankBridgeImageExclusion E
-
-theorem bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator :
-  BSDRankBridgeImageExclusion E ->
-  BSDOfficialNegativeEndpointUse E ->
-    BSDTheoremLevelRankStatusDiscriminator E
-
-theorem bsdGovernedEndpointUse_bivalent :
-  BSDGovernedEndpointUse E ->
-    BSDRankEndpointStatusOccupation E .positive \/
-      BSDRankEndpointStatusOccupation E .separator
-
-theorem bsdNegativeGovernedEndpointUse_has_separatorStatus :
-  BSDNegativeGovernedEndpointUse E ->
-    BSDRankEndpointStatusOccupation E .separator
-
-theorem bsdRankBridgeImageSeparatorBranch_of_negativeGovernedEndpointUse :
-  BSDNegativeGovernedEndpointUse E ->
-    BSDRankBridgeImageSeparatorBranch E
-
-theorem bsdRankMismatch_pointwiseNegativeBranch :
-  BSDRankEndpointUnderAudit -> BSDCarrierInstantiated E ->
-    BSDRankMismatch E -> BSDOfficialNegativeEndpointUse E
-
-theorem bsdEndpointResolvingNonGovernance_hiddenFifthCase_impossible :
-  Not BSDRankMismatchUseKind.endpointResolvingNonGovernance
-
-theorem bsdTheoremLevelDiscriminator_endpointGovernance :
-  BSDTheoremLevelRankStatusDiscriminator E ->
-  BSDOfficialNegativeEndpointUse E ->
-    BSDRankEndpointStatusGovernance E
-
-theorem bsdEndpointGovernance_independentRankDiscriminator :
-  BSDRankEndpointStatusGovernance E -> BSDIndependentRankDiscriminator E
-
-theorem bsdKernel_noIndependentRankDiscriminator :
-  BSDKernelInstantiated E -> Not (BSDIndependentRankDiscriminator E)
-
-theorem bsdRankMismatch_impossible :
-  BSDRankEndpointUnderAudit -> BSDCarrierInstantiated E ->
-    Not (BSDRankMismatch E)
-
-theorem bsdRankEquality_forced :
-  BSDRankEndpointUnderAudit ->
-    analyticRank E = mordellWeilRank E
-
-theorem bsdRankEndpoint_officialCorrespondence :
-  (forall E, analyticRank E = mordellWeilRank E) ->
-    OfficialBSDRankEndpoint
-\end{verbatim}
-
-\subsection{Refined formula anchors}
-\begin{verbatim}
-def BSDFormulaFactorsStanding (E : BSDCarrier) : Prop := ...
-def BSDFormula (E : BSDCarrier) : Prop := ...
-structure BSDFormulaFactorStandingPacket (E : BSDCarrier) : Prop where ...
-def BSDRefinedFormulaConditionalContext (E : BSDCarrier) : Prop := ...
-
-theorem bsdConditionalRefinedFormula_correspondence :
-  BSDFormulaFactorsStanding E -> BSDFormula E ->
-    ConditionalRefinedBSDEndpoint E
-
-theorem refinedBSDEndpoint_context_iff :
-  ConditionalRefinedBSDEndpoint E <->
-    BSDRefinedFormulaConditionalContext E
-
-theorem bsdRefinedFormulaEndpoint_remains_conditional :
-  BSDRefinedFormulaConditionalContext E ->
-    ConditionalRefinedBSDEndpoint E
-\end{verbatim}
 
 \section{Main theorem and conclusion}
 
@@ -1458,8 +1329,8 @@ The proof begins from the dependency order forced by endpoint use. A theorem-bea
 \item Rank mismatch has the standard native analytic/arithmetic normal form.
 \item Standard mismatch normal form is equivalent to rank bridge-image exclusion.
 \item Endpoint-used bridge-image exclusion induces theorem-level rank-status discrimination.
-\item Endpoint-status bivalence classifies governed rank use as positive bridge occupation or separator-status occupation.
-\item Negative governed endpoint use enters the bridge-image separator branch on the fixed carrier.
+\item ATS classifies mismatch use as proof support, tensor endpoint work, or carrier shift.
+\item UEAP bounds official negative rank reports by carrier, standing, and bridge support.
 \item Rank mismatch is the pointwise negative endpoint branch under the official target.
 \item Endpoint-resolving mismatch is endpoint-status governance; endpoint-resolving non-governance is the hidden fifth case.
 \item Endpoint-status governance is independent rank discrimination after legitimate roles are exhausted.
@@ -1488,6 +1359,145 @@ Mismatch as proof support & Legitimate & Does not resolve BSD.\\
 Mismatch as endpoint resolution & Excluded & Induces forbidden endpoint-status governance.\\
 \bottomrule
 \end{longtable}
+
+
+\section{Lean 4 audit appendix}
+
+\subsection{Audit posture and release boundary}
+The Lean layer is a theorem-routing and reproducibility audit for the BSD endpoint proof spine. It is not a conventional arithmetic-geometry formalization of elliptic curves, modularity, analytic continuation, Mordell-Weil groups, regulators, Tamagawa factors, torsion, or Tate-Shafarevich groups from first principles. Those objects remain represented by explicit carrier fields and semantic endpoint predicates so that the AASC endpoint-closure route can be audited without importing a full arithmetic-geometry library.
+
+The public audit archive is
+\[
+\texttt{https://github.com/somamaley-ux/AASC-BSD-Endpoint-Lean-Audit}
+\]
+and the associated Zenodo archive is DOI \texttt{10.5281/zenodo.20619017}. The repository states the result claim as a complete AASC endpoint-structure proof route for the BSD rank endpoint: fixed-carrier endpoint use enters the kernel-governed endpoint regime, analytic-arithmetic mismatch becomes theorem-level same-domain endpoint-status governance, the corresponding independent rank discriminator is excluded by AASC no-second-classifier closure, rank mismatch is impossible, and the official BSD rank endpoint follows. The same archive records the refined leading-coefficient formula as a bridge/factor-standing boundary rather than as a conventional arithmetic construction of the full refined formula.
+
+The Lean audit is therefore read under the following boundary.
+\begin{enumerate}
+\item It audits the theorem-bearing proof spine stated in the manuscript.
+\item It checks the BSD endpoint routing surface, status ledger, truth-boundary ledger, and focused axiom-print entry points.
+\item It does not claim to construct rational points, prove a new descent theorem, prove Sha finiteness by arithmetic methods, or analytically derive the refined leading-coefficient formula from first principles.
+\item It does not replace the manuscript proof; it supplies a reproducible formal audit of the route once the carrier and semantic endpoint predicates are fixed.
+\end{enumerate}
+
+\subsection{Verification commands and environment}
+The audit archive records the following public verification commands:
+\begin{verbatim}
+lake build MaleyLean.Papers.BSD.AuditRunners
+powershell -ExecutionPolicy Bypass -File scripts/check-bsd-endpoint-audit.ps1
+\end{verbatim}
+The repository README records the pinned environment as:
+\begin{itemize}
+\item Lean toolchain: \texttt{leanprover/lean4:v4.28.0};
+\item mathlib revision: \texttt{8f9d9cff6bd728b17a24e163c9402775d9e6a365}.
+\end{itemize}
+The audit runner prints the Lean toolchain and pinned manifest revision, scans the active audit surface for live \texttt{axiom}, \texttt{sorry}, \texttt{admit}, or \texttt{unsafe} declarations, builds the BSD audit runner, runs the focused BSD/AASC audit files, checks that the pre-Lean manuscript signature map is not imported by the active Lean audit surface, and parses that map outside the active axiom-free proof surface.
+
+\subsection{Audit handoff chain}
+The shortest Lean-facing rank endpoint chain is:
+\begin{enumerate}
+\item \texttt{bsdRankMismatchOccupation\_nonoptional};
+\item \texttt{bsdGovernedEndpointUse\_bivalent};
+\item \texttt{bsdNegativeGovernedEndpointUse\_has\_separatorStatus};
+\item \texttt{bsdRankBridgeImageSeparatorBranch\_of\_negativeGovernedEndpointUse};
+\item \texttt{bsdRankBridgeImageSeparatorBranch\_theoremLevelDiscriminator};
+\item \texttt{bsdOfficialNegativeEndpointUse\_endpointStatusGovernance};
+\item \texttt{bsdMismatch\_independentRankDiscriminator};
+\item \texttt{bsdNoIndependentRankDiscriminator\_of\_foundationalNoClassifier};
+\item \texttt{bsdRankMismatch\_impossible};
+\item \texttt{bsdRankEquality\_forced};
+\item \texttt{officialBSDRankEndpoint\_of\_auditHypotheses};
+\item \texttt{officialBSDRankEndpoint\_of\_foundationalNoClassifier};
+\item \texttt{officialBSDRankEndpoint\_of\_aascContext};
+\item \texttt{bsdRankEndpointAASCContext\_closes\_rankEndpoint}.
+\end{enumerate}
+This chain has the same proof-role shape as the SAT endpoint archive: once fixed endpoint use, carrier standing, kernel standing, and no-independent-classifier closure are packaged in the endpoint AASC context, the official rank endpoint follows.
+
+\subsection{Main Lean anchors}
+The BSD proof-spine objects are in \texttt{MaleyLean/Papers/BSD/EndpointClosure.lean}. The principal carrier and endpoint anchors are:
+\begin{verbatim}
+EllipticCurveQ
+BSDCarrier
+OfficialBSDRankEndpoint
+BSDRankEndpointAuditHypotheses
+BSDRankEndpointAASCContext
+BSDRefinedFormulaConditionalContext
+BSDFormulaFactorStandingPacket
+BSDFormulaFactorsStanding
+ConditionalRefinedBSDEndpoint
+\end{verbatim}
+
+The key BSD rank-route anchors are:
+\begin{verbatim}
+BSDRankMismatch
+BSDRankMismatchNormalForm
+BSDRankBridgeImageExclusion
+BSDRankBridgeImageSeparatorBranch
+BSDRankMismatchEndpointOccupation
+BSDRankEndpointStatus
+BSDRankEndpointStatusOccupation
+BSDGovernedEndpointUse
+BSDNegativeGovernedEndpointUse
+BSDOfficialNegativeEndpointUse
+BSDTheoremLevelRankStatusDiscriminator
+BSDRankEndpointStatusGovernance
+BSDIndependentRankDiscriminator
+BSDRankFoundationalCandidate
+bsdRankMismatch_iff_standardNormalForm
+bsdStandardNormalForm_iff_rankBridgeImageExclusion
+bsdRankMismatch_iff_bridgeImageExclusion
+bsdBridgeImageExclusion_iff_separatorBranch
+bsdRankMismatch_iff_bridgeImageSeparatorBranch
+bsdRankMismatchOccupation_exhaustion
+bsdRankMismatchOccupation_nonoptional
+bsdGovernedEndpointUse_bivalent
+bsdNegativeGovernedEndpointUse_has_separatorStatus
+bsdRankBridgeImageSeparatorBranch_of_negativeGovernedEndpointUse
+bsdRankBridgeImageSeparatorBranch_theoremLevelDiscriminator
+bsdOfficialNegativeEndpointUse_endpointStatusGovernance
+bsdEndpointResolvingMismatchTheorem_is_endpointStatusGovernance
+bsdRankFoundationalCandidate_classifier_iff
+bsdNoIndependentRankDiscriminator_of_foundationalNoClassifier
+bsdRankEndpointAuditHypotheses_of_foundationalNoClassifier
+bsdBridgeImageExclusion_endpointUsed_theoremLevelDiscriminator
+bsdEndpointResolvingNonGovernance_hiddenFifthCase_impossible
+bsdMismatch_endpointGovernance
+bsdMismatch_independentRankDiscriminator
+bsdRankMismatch_impossible
+bsdRankEquality_forced
+officialBSDRankEndpoint_of_auditHypotheses
+officialBSDRankEndpoint_of_foundationalNoClassifier
+officialBSDRankEndpoint_of_aascContext
+bsdRankEndpointAASCContext_closes_rankEndpoint
+\end{verbatim}
+
+\subsection{Refined formula and truth-boundary anchors}
+The refined formula layer is represented as an explicit bridge/factor-standing boundary through:
+\begin{verbatim}
+BSDFormulaFactorStandingPacket
+BSDRefinedFormulaConditionalContext
+bsdFormulaFactorsStanding_of_packet
+bsdFormulaFactorStandingPacket_components
+refinedBSDEndpoint_context_iff
+bsdConditionalRefinedFormula_correspondence
+conditionalRefinedBSDEndpoint_of_context
+bsdRefinedFormulaEndpoint_remains_conditional
+\end{verbatim}
+The truth-boundary ledger separates closed Lean proof-spine claims from semantic carrier abstraction, structural AASC role-compression boundaries, external arithmetic standing, and manuscript snapshot status. Its completion anchor is:
+\begin{verbatim}
+bsdTruthBoundaryLedgerComplete_holds
+\end{verbatim}
+The repository status ledger records three completion entries:
+\begin{itemize}
+\item \texttt{BSDRankEndpointClosure=100\%};
+\item \texttt{BSDRefinedFormulaBridgeBoundary=100\%};
+\item \texttt{BSDReferenceArchiveMaturityComparable=100\%}.
+\end{itemize}
+These percentages record audit-surface maturity for the stated AASC endpoint target; they are not a claim that the repository formalizes all classical arithmetic geometry from foundations.
+
+\subsection{Focused audit boundary}
+The focused BSD checks report no project-level axioms for the audited BSD closeout anchors on the active proof surface. The pre-Lean formalization map remains outside the active import graph and may contain planning declarations; the aggregate audit checks that this map is not imported by the executable audit surface before parsing it separately. This separation prevents signature planning material from being counted as an axiom-free proof file.
+
 
 \section{Selected background references}
 \begin{thebibliography}{9}

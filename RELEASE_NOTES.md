@@ -30,7 +30,7 @@ Included:
   `formalization_map`.
 - Import-boundary check confirming the pre-Lean manuscript signature map is
   not imported by the active Lean audit surface.
-- Manuscript-facing BSD PDF/source snapshot under `papers/bsd`.
+- Final manuscript-facing BSD PDF/source snapshot under `papers/bsd`.
 - Short audit handoff in `AUDIT_HANDOFF.md`.
 - Pre-Lean manuscript-to-formalization map under `formalization_map`.
 - Audit runner: `scripts/check-bsd-endpoint-audit.ps1`.
@@ -38,6 +38,8 @@ Included:
 - Local release packager: `scripts/package-bsd-release.ps1`.
 - Cross-platform support-audit scanning for the reusable Minimal Conditions /
   A+ audit script.
+- Final-paper snapshot refresh for the BSD endpoint PDF, source, and parse-only
+  manuscript-to-Lean map.
 
 Verification command:
 
