@@ -94,3 +94,17 @@ Pinned environment:
 Manuscript archive DOI:
 
 - `10.5281/zenodo.20619017`
+## Manuscript-Faithful Mechanization Standard
+
+This repository is calibrated to the manuscript as the proof object.  The Lean
+surface formalizes the manuscript-facing AASC endpoint route for the BSD rank endpoint:
+fixed-carrier endpoint use, the target-specific negative/separator occupation,
+same-domain discriminator exclusion, and the final represented endpoint
+closeout.
+
+The classical elliptic-curve, L-function, analytic-rank, Mordell-Weil-rank, and refined formula carrier and equivalence bridges are represented by
+named adequacy, standing, or bridge anchors matching the manuscript.  They are
+not claimed here as a full first-principles formalization of the surrounding
+classical subject.  The repo therefore should be read as a manuscript-faithful
+AASC endpoint mechanization, with explicit carrier-adequacy boundaries, rather
+than as a rebuilt-from-foundations formalization of the entire classical field.
