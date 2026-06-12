@@ -1,4 +1,9 @@
-# Release Notes
+﻿
+## v0.1.14 - Hardened Clay endpoint sync
+
+- Synced the manuscript-facing snapshot from the hardened Clay endpoint package.
+- Added HARDENED_ENDPOINT_SYNC.md as the repository-level handoff note.
+- Preserved the existing Lean audit/truth-boundary posture while making the hardened package visible in the public repo surface.# Release Notes
 
 ## AASC BSD Endpoint Lean Audit v0.1.13
 
@@ -127,3 +132,4 @@ not claimed here as a full first-principles formalization of the surrounding
 classical subject.  The repo therefore should be read as a manuscript-faithful
 AASC endpoint mechanization, with explicit carrier-adequacy boundaries, rather
 than as a rebuilt-from-foundations formalization of the entire classical field.
+

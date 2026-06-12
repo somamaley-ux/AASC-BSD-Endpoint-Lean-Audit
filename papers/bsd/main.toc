@@ -1,0 +1,50 @@
+\contentsline {section}{Mathematical-status lock and Lean support boundary}{2}{Doc-Start}%
+\contentsline {section}{Read this first: endpoint proof spine}{5}{Doc-Start}%
+\contentsline {section}{\numberline {1}Proof-class, claim-class, and endpoint locks}{9}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Proof-class lock}{9}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Claim-class lock}{9}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Endpoint layers}{9}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Official BSD endpoint and fixed carrier}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Rank endpoint}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Refined endpoint}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Fixed BSD carrier}{11}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Kernel necessity and dependency order}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Kernel-neutral endpoint adequacy}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}BSD kernel role packet}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Imported kernel consequences in local BSD form}{14}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Weakening-resistance of the local BSD kernel packet}{17}{subsection.3.4}%
+\contentsline {section}{\numberline {4}BSD carrier adequacy packet}{21}{section.4}%
+\contentsline {section}{\numberline {5}BSD rank correspondence bridges}{23}{section.5}%
+\contentsline {section}{\numberline {6}ATS and UEAP audit of rank mismatch use}{25}{section.6}%
+\contentsline {section}{\numberline {7}Mismatch-use classification and endpoint governance}{26}{section.7}%
+\contentsline {section}{\numberline {8}Rank mismatch as independent theorem-level discriminator}{28}{section.8}%
+\contentsline {section}{\numberline {9}No independent BSD rank discriminator}{30}{section.9}%
+\contentsline {section}{\numberline {10}Local reductio engine and rank endpoint closeout}{30}{section.10}%
+\contentsline {section}{\numberline {11}Rank equality endpoint}{32}{section.11}%
+\contentsline {section}{\numberline {12}Official BSD endpoint correspondence}{33}{section.12}%
+\contentsline {section}{\numberline {13}Refined formula carrier adequacy}{34}{section.13}%
+\contentsline {section}{\numberline {14}Formula mismatch normal form and exclusion}{35}{section.14}%
+\contentsline {section}{\numberline {15}Conditional refined BSD formula closure}{36}{section.15}%
+\contentsline {section}{\numberline {16}No-fifth BSD negative occupation}{36}{section.16}%
+\contentsline {section}{\numberline {17}Standard BSD routes as endpoint tests}{37}{section.17}%
+\contentsline {section}{\numberline {18}Rank bridge certificate packet}{37}{section.18}%
+\contentsline {section}{\numberline {19}Route-locus exhaustion for rank mismatch}{39}{section.19}%
+\contentsline {section}{\numberline {20}Legitimate arithmetic data versus forbidden endpoint governance}{40}{section.20}%
+\contentsline {section}{\numberline {21}Formula-factor adequacy matrix}{41}{section.21}%
+\contentsline {section}{\numberline {22}Hostile-referee audit}{42}{section.22}%
+\contentsline {subsection}{\numberline {22.1}Wrong-mode objections}{42}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.2}Right-mode objections}{42}{subsection.22.2}%
+\contentsline {subsection}{\numberline {22.3}Referee burden worksheet}{44}{subsection.22.3}%
+\contentsline {section}{\numberline {23}Main theorem and conclusion}{45}{section.23}%
+\contentsline {section}{Conclusion}{45}{theorem.23.3}%
+\contentsline {section}{\numberline {A}Anti-Circularity Audit}{46}{appendix.A}%
+\contentsline {section}{\numberline {B}Theorem ladder}{48}{appendix.B}%
+\contentsline {section}{\numberline {C}Claim-status ledger}{49}{appendix.C}%
+\contentsline {section}{\numberline {D}Lean 4 audit appendix}{50}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}Audit posture and release boundary}{50}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}Verification commands and environment}{51}{subsection.D.2}%
+\contentsline {subsection}{\numberline {D.3}Audit handoff chain}{51}{subsection.D.3}%
+\contentsline {subsection}{\numberline {D.4}Main Lean anchors}{52}{subsection.D.4}%
+\contentsline {subsection}{\numberline {D.5}Refined formula and truth-boundary anchors}{53}{subsection.D.5}%
+\contentsline {subsection}{\numberline {D.6}Focused audit boundary}{53}{subsection.D.6}%
+\contentsline {section}{\numberline {E}Selected background references}{54}{appendix.E}%

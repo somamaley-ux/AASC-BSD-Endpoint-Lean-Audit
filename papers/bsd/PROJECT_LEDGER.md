@@ -14,14 +14,16 @@ The stabilized proof surface is:
 8. Rank mismatch is equivalent to standard BSD mismatch normal form.
 9. Standard mismatch normal form is equivalent to rank bridge-image exclusion.
 10. Endpoint-used bridge-image exclusion induces theorem-level rank-status discrimination.
-11. Rank mismatch is not a lawful coequal BSD endpoint role.
-12. ATS/UEAP classify endpoint-resolving mismatch as tensor endpoint governance and block the hidden fifth case.
-13. Endpoint governance is independent rank discrimination after legitimate roles are exhausted.
-14. The imported kernel excludes independent same-domain BSD rank discriminators.
-15. The non-explosiveness theorem preserves lawful negative arithmetic data while excluding only fixed-carrier endpoint-resolving mismatch governance.
-16. Rank mismatch is excluded, and rank equality follows.
-17. The fixed-carrier rank equality matches the official BSD rank endpoint.
-18. The refined formula layer is closed conditionally on formula-factor standing and official refined formula endpoint use.
+11. The explicit rank bridge object records the BSD rank bridge without containing rank equality.
+12. The local exact-complement route discharges the mismatch assumption itself.
+13. Rank mismatch is not a lawful coequal BSD endpoint role.
+14. ATS/UEAP classify endpoint-resolving mismatch as tensor endpoint governance and block the hidden fifth case.
+15. Endpoint governance is independent rank discrimination after legitimate roles are exhausted.
+16. The imported kernel excludes independent same-domain BSD rank discriminators.
+17. The non-explosiveness theorem preserves lawful negative arithmetic data while excluding only fixed-carrier endpoint-resolving mismatch governance.
+18. Rank mismatch is excluded, and rank equality follows.
+19. The fixed-carrier rank equality matches the official BSD rank endpoint.
+20. The refined formula layer is closed conditionally on formula-factor standing and official refined formula endpoint use.
 
 ## Necessity-hardening pass
 
@@ -34,6 +36,7 @@ The stabilized proof surface is:
 - Added totality and uniqueness of analytic and arithmetic rank roles on the adequate carrier.
 - Added formula-layer endpoint-use and negative-resolution predicates so formula mismatch exclusion is read only at the standing-fixed refined endpoint.
 - Added a named non-explosiveness theorem separating lawful negative arithmetic data from forbidden endpoint governance.
+- Added the explicit rank bridge object and local exact-complement reductio/annotation-discharge closeout.
 - Expanded the anti-circularity appendix and hostile-referee worksheet.
 
 ## Lean appendix alignment
@@ -44,6 +47,6 @@ The stabilized proof surface is:
 
 ## Verification
 
-Final PDF build: clean three-pass `pdflatex` verification, 50 pages, with no unresolved references, no rerun warnings, and no overfull/underfull hbox warnings in the final log.
+Final PDF build: clean three-pass `pdflatex` verification, 54 pages, with no unresolved references, no rerun warnings, and no overfull/underfull hbox warnings in the final log.
 
 Representative render verification: regenerated from the final PDF and summarized in `verification/contact_sheet_stabilized_poppler.png` and `verification/contact_sheet_lean_appendix.png`.
